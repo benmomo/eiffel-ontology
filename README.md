@@ -12,7 +12,7 @@ Ontology:
 * https://purl.org/eiffo
 
 JSON-LD context:
-* https://eiffo.satrdlab.upv.es/ontology/eiffo-context.jsonld
+* https://purl.org/eiffo/context.jsonld
 
 Contacts: 
 * Benjamin Molina <benmomo@upvnet.upv.es>
