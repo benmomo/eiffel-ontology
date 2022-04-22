@@ -14,7 +14,7 @@
 <http://purl.org/eiffo/ecv> rdf:type owl:Ontology ;
                              dc:creator "Benjamin Molina"@en ;
                              dc:date "2022"@en ;
-                             dc:description """The EIFFEL ontology intends to help while searching for EO services and EO datasets or collections. In doing that, it makes use of the ECV taxonomy, which was created by GCOS, but not as a formal file.
+                             dc:description """The EIFFEL ontology intends to help while searching for EO services and EO datasets or collections. In doing that, it makes use of the ECV taxonomy, which was created by GCOS, but not as a formal file (format)
 Though it could have been integrated directly in the EIFFEL ontology, it was desgined in a modular way, so that it can be extended and reused independently."""@en ;
                              dc:language "en"@en ;
                              dc:rights "The ECV taxonomy is available under the Creative Commons Attribution 4.0 Unported license; see http://creativecommons.org/licenses/by/4.0/. In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). Proper Attribution: Simply include the statement \"This work is based on the ECV taxonomy, developed by  Benjamin Molina  from the ECV taxonomy documented by GCOS (https://gcos.wmo.int/en/essential-climate-variables/table), used by the EIFFEL project and available at https://purl.org/eiffo/ecvtaxonomy\""@en ;
@@ -367,6 +367,25 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
 #    Individuals
 #################################################################
 
+###  http://purl.org/eiffo/ecv#AboveGroundBiomassECV1
+:AboveGroundBiomassECV1 rdf:type owl:NamedIndividual ,
+                                 :ECV ;
+                        :hasDataSource :DS_081 ,
+                                       :DS_082 ,
+                                       :DS_083 ,
+                                       :DS_084 ;
+                        :hasDomain :BiosphereDomain1 ;
+                        :hasECVProduct :ECVProduct_073 ;
+                        :hasECVSteward :ECVSteward_21 ,
+                                       :ECVSteward_22 ;
+                        :hasScientificArea :ScientificArea_06 ;
+                        :ecvDescription "Land cover is the observed (bio)-physical cover on the Earth’s surface. It influences climate by modifying water and energy exchanges with the atmosphere and by changing greenhouse gas and aerosol sources and sinks. Land-cover conditions are inherently dynamic (i.e. seasonality) and distributions are linked to regional climatic conditions, so changes in cover can be due to climate change on a regional scale as well as directly due to human activities" ;
+                        :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/biomass_ecv_factsheet_201905.pdf?UIj2pnLviZJQEYAmaNuHOB3_fWsMjQoS" ;
+                        :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-bio-above-ground-biomass_hover.png?9_9apKhjAgL8jiCQ0E29_w1uo_u7tE1V=" ;
+                        :ecvName "Above-ground Biomass" ;
+                        rdfs:label "Above-ground Biomass" .
+
+
 ###  http://purl.org/eiffo/ecv#AerosolECV1
 :AerosolECV1 rdf:type owl:NamedIndividual ,
                       :ECV ;
@@ -391,6 +410,67 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
              :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ac-aerosols_hover.png?19GOEoYMrJnVc1_L04S4QwfyMm9UV6_f=" ;
              :ecvName "Aerosol Properties" ;
              rdfs:label "Aerosol Properties" .
+
+
+###  http://purl.org/eiffo/ecv#AlbedoECV1
+:AlbedoECV1 rdf:type owl:NamedIndividual ,
+                     :ECV ;
+            :hasDataSource :DS_006 ,
+                           :DS_085 ,
+                           :DS_086 ;
+            :hasDomain :BiosphereDomain1 ;
+            :hasECVProduct :ECVProduct_074 ,
+                           :ECVProduct_075 ,
+                           :ECVProduct_076 ,
+                           :ECVProduct_077 ;
+            :hasECVSteward :ECVSteward_23 ;
+            :hasScientificArea :ScientificArea_03 ;
+            :ecvDescription "The land surface albedo is the ratio of the radiant flux reflected from Earth’s surface to the incident flux. It is a key forcing parameter controlling the partitioning of radiative energy between the atmospheric and surface. In the case of vegetation, a reference surface is typically defined at or near the top of the canopy and must be specified explicitly. Surface albedo depends on natural variations, highly variable in space and time as a result of terrestrial properties changes, and with illumination conditions and human activities and is a sensitive indicator of environmental vulnerability" ;
+            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/albedo_ecv_factsheet_201905.pdf?_UGkfFiOyAusFLwiLAP54ty4plAVXXf7" ;
+            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-bio-albedo_hover.png?MhkdFeueNURaJhR7YMQhLsIwgFk9AYjm=" ;
+            :ecvName "Albedo" ;
+            rdfs:label "Albedo" .
+
+
+###  http://purl.org/eiffo/ecv#AnthropogenicGHGEmissionsECV1
+:AnthropogenicGHGEmissionsECV1 rdf:type owl:NamedIndividual ,
+                                        :ECV ;
+                               :hasDataSource :DS_084 ,
+                                              :DS_107 ,
+                                              :DS_108 ,
+                                              :DS_109 ,
+                                              :DS_110 ,
+                                              :DS_111 ;
+                               :hasDomain :AnthroposphereDomain1 ;
+                               :hasECVProduct :ECVProduct_098 ,
+                                              :ECVProduct_099 ,
+                                              :ECVProduct_100 ,
+                                              :ECVProduct_101 ,
+                                              :ECVProduct_102 ;
+                               :hasECVSteward :ECVSteward_30 ,
+                                              :ECVSteward_31 ;
+                               :hasScientificArea :ScientificArea_06 ;
+                               :ecvDescription "Global anthropogenic emissions of Greenhouse gases (CO2, CH4, N2O and F-gases) continue to be emitted at an annual rate that is not yet  significantly decreasing. The global warming potential of each of the greenhouse gases and their long residence time in the atmosphere are causing increased surface temperature and climate change. The scientific community illustrated with inverse models and data assimilation how consistent the reported inventories and the atmospheric observations are, which is taken up also in few national inventory reports (e.g. UK, Switzerland, Australia)" ;
+                               :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/anthropogenic_ghg_ecv_factsheet_201905.pdf?T1.d30Ea8EwukWhqM0g4VqZJkkk0tDOP" ;
+                               :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ant-ghg-fluxes_hover.png?rTpiuZyu8uQDWXGDji42qDff6CNC3tHH=" ;
+                               :ecvName "Anthropogenic Greenhouse Gas Emissions" ;
+                               rdfs:label "Anthropogenic Greenhouse Gas Emissions" .
+
+
+###  http://purl.org/eiffo/ecv#AnthropogenicWaterUseECV1
+:AnthropogenicWaterUseECV1 rdf:type owl:NamedIndividual ,
+                                    :ECV ;
+                           :hasDataSource :DS_112 ,
+                                          :DS_113 ;
+                           :hasDomain :AnthroposphereDomain1 ;
+                           :hasECVProduct :ECVProduct_103 ;
+                           :hasECVSteward :ECVSteward_32 ;
+                           :hasScientificArea :ScientificArea_01 ;
+                           :ecvDescription "Data on water extractions by sector and available renewable freshwater provide key information on the availability of freshwater and the amount of water stress in a country. Climate Change is projected to reduce  renewable surfacewater and groundwater resources significantly in most dry subtropical regions. In contrast, water resources are projected to increase at high latitudes. Climate change is also projected to reduce raw water quality, posing risks to drinking water quality, even with conventional treatment. The availability of freshwater plays a crucial role in food production and food security." ;
+                           :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/anthropogenic_water_ecv_factsheet_201905.pdf?oQFYGQXzcRd7e0OKlSXO.G3gX2BlKFUd" ;
+                           :ecvIconLink "https://gcos.wmo.int/en/essential-climate-variables/water-use/" ;
+                           :ecvName "Anthropogenic Water Use" ;
+                           rdfs:label "Anthropogenic Water Use" .
 
 
 ###  http://purl.org/eiffo/ecv#AnthroposphereDomain1
@@ -1156,6 +1236,480 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
         rdfs:label "Global DEM 2m" .
 
 
+###  http://purl.org/eiffo/ecv#DS_078
+:DS_078 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://gtnp.arcticportal.org/" ;
+        :dsName "Global Terrestrial Network for Permafrost (GTN-P) Database" ;
+        rdfs:label "Global Terrestrial Network for Permafrost (GTN-P) Database" .
+
+
+###  http://purl.org/eiffo/ecv#DS_079
+:DS_079 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://nsidc.org/data/" ;
+        :dsName "National Snow & Ice Data Center" ;
+        rdfs:label "National Snow & Ice Data Center" .
+
+
+###  http://purl.org/eiffo/ecv#DS_080
+:DS_080 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.cryoland.eu/" ;
+        :dsName "Copernicus GMES Service Snow and Land Ice" ;
+        rdfs:label "Copernicus GMES Service Snow and Land Ice" .
+
+
+###  http://purl.org/eiffo/ecv#DS_081
+:DS_081 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.globbiomass.org/" ;
+        :dsName "ESA-Globbiomass" ;
+        rdfs:label "ESA-Globbiomass" .
+
+
+###  http://purl.org/eiffo/ecv#DS_082
+:DS_082 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "lucid.wur.nl" ;
+        :dsName "GEOCARBON" ;
+        rdfs:label "GEOCARBON" .
+
+
+###  http://purl.org/eiffo/ecv#DS_083
+:DS_083 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.globalforestwatch.org/" ;
+        :dsName "WRI Global Forest Watch" ;
+        rdfs:label "WRI Global Forest Watch" .
+
+
+###  http://purl.org/eiffo/ecv#DS_084
+:DS_084 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://fluxnet.ornl.gov/fluxnetdb" ;
+        :dsName "FLUXNET" ;
+        rdfs:label "FLUXNET" .
+
+
+###  http://purl.org/eiffo/ecv#DS_085
+:DS_085 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://modis.gsfc.nasa.gov/data/dataprod/mod43.php" ;
+        :dsName "MODIS Collection 6 surface albedo" ;
+        rdfs:label "MODIS Collection 6 surface albedo" .
+
+
+###  http://purl.org/eiffo/ecv#DS_086
+:DS_086 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://cds.climate.copernicus.eu/#!/home" ;
+        :dsName "Copernicus Climate Change Service (C3S) data store" ;
+        rdfs:label "Copernicus Climate Change Service (C3S) data store" .
+
+
+###  http://purl.org/eiffo/ecv#DS_087
+:DS_087 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.fluxcom.org/" ,
+                "https://opendata.dwd.de/climate_environment/GPCC/html/download_gate.html" ;
+        :dsName "FLUXCOM" ,
+                "Global Precipitation Climatology Centre (GPCC)" ;
+        :dsType "Gridded In Situ" ;
+        rdfs:label "FLUXCOM" ,
+                   "Global Precipitation Climatology Centre (GPCC)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_088
+:DS_088 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.gleam.eu/" ;
+        :dsName "Global Land Evaporation Amsterdam Model (GLEAM)" ;
+        rdfs:label "Global Land Evaporation Amsterdam Model (GLEAM)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_089
+:DS_089 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://ladsweb.modaps.eosdis.nasa.gov/search/order/2/MOD16A2--6" ;
+        :dsName "MOD16" ;
+        rdfs:label "MOD16" .
+
+
+###  http://purl.org/eiffo/ecv#DS_090
+:DS_090 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://data.csiro.au/dap/landingpage?pid=csiro:17375&v=2&d=true" ;
+        :dsName "Penman–Monteith–Leuning (PML)" ;
+        rdfs:label "Penman–Monteith–Leuning (PML)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_091
+:DS_091 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.landflux.org/Data.php" ;
+        :dsName "Priestley–Taylor, Jet Propulsion Laboratory (PT-JPL)" ;
+        rdfs:label "Priestley–Taylor, Jet Propulsion Laboratory (PT-JPL)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_092
+:DS_092 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.esa-fire-cci.org/" ;
+        :dsName "Global burned area products generated under the Climate Change Initiative Programme of the European Space Agency" ;
+        rdfs:label "Global burned area products generated under the Climate Change Initiative Programme of the European Space Agency" .
+
+
+###  http://purl.org/eiffo/ecv#DS_093
+:DS_093 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://modis-land.gsfc.nasa.gov/burn.html" ;
+        :dsName "Global burned area products generated by NASA" ;
+        rdfs:label "Global burned area products generated by NASA" .
+
+
+###  http://purl.org/eiffo/ecv#DS_094
+:DS_094 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.esa-landcover-cci.org/" ;
+        :dsName "ESA-CCI Land Cover data" ;
+        rdfs:label "ESA-CCI Land Cover data" .
+
+
+###  http://purl.org/eiffo/ecv#DS_095
+:DS_095 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://modis.gsfc.nasa.gov/data/dataprod/mod12.php" ;
+        :dsName "MODIS global land cover data" ;
+        rdfs:label "MODIS global land cover data" .
+
+
+###  http://purl.org/eiffo/ecv#DS_096
+:DS_096 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://land.copernicus.eu/global/products/lc" ;
+        :dsName "Copernicus Global Land Monitoring Service" ;
+        rdfs:label "Copernicus Global Land Monitoring Service" .
+
+
+###  http://purl.org/eiffo/ecv#DS_097
+:DS_097 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.gofcgold.wur.nl/" ;
+        :dsName "GOFC-GOLD" ;
+        rdfs:label "GOFC-GOLD" .
+
+
+###  http://purl.org/eiffo/ecv#DS_098
+:DS_098 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://lpvs.gsfc.nasa.gov/" ;
+        :dsName "CEOS Working Group on Calibration and Validation Land Product Validation Subgroup" ;
+        rdfs:label "CEOS Working Group on Calibration and Validation Land Product Validation Subgroup" .
+
+
+###  http://purl.org/eiffo/ecv#DS_099
+:DS_099 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://land.copernicus.vgt.vito.be/PDF/portal/Application.html#Home" ;
+        :dsName "Copernicus Global Land Service providing bio-geophysical products of global land surface" ;
+        rdfs:label "Copernicus Global Land Service providing bio-geophysical products of global land surface" .
+
+
+###  http://purl.org/eiffo/ecv#DS_100
+:DS_100 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://data.globtemperature.info/" ;
+        :dsName "ESA DUE GlobTemperature" ;
+        rdfs:label "ESA DUE GlobTemperature" .
+
+
+###  http://purl.org/eiffo/ecv#DS_101
+:DS_101 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://webarchive.iiasa.ac.at/Research/LUC/External-World-soil-database/HTML/" ;
+        :dsName "Harmonized World Soil Database v 1.2" ;
+        rdfs:label "Harmonized World Soil Database v 1.2" .
+
+
+###  http://purl.org/eiffo/ecv#DS_102
+:DS_102 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://54.229.242.119/GSOCmap/" ;
+        :dsName "GLOSIS – GSOCmap" ;
+        rdfs:label "GLOSIS – GSOCmap" .
+
+
+###  http://purl.org/eiffo/ecv#DS_103
+:DS_103 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.esa-soilmoisture-cci.org/" ;
+        :dsName "ESA Climate Change Initiative for Soil Moisture" ;
+        rdfs:label "ESA Climate Change Initiative for Soil Moisture" .
+
+
+###  http://purl.org/eiffo/ecv#DS_104
+:DS_104 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://ismn.geo.tuwien.ac.at/" ;
+        :dsName "International Soil Moisture Network" ;
+        rdfs:label "International Soil Moisture Network" .
+
+
+###  http://purl.org/eiffo/ecv#DS_105
+:DS_105 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.nasa.gov/smap" ;
+        :dsName "Soil Moisture Active Passive mission (NASA)" ;
+        rdfs:label "Soil Moisture Active Passive mission (NASA)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_106
+:DS_106 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.esa.int/Our_Activities/Observing_the_Earth/SMOS" ;
+        :dsName "Soil Moisture Ocean Salinity mission (ESA)" ;
+        rdfs:label "Soil Moisture Ocean Salinity mission (ESA)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_107
+:DS_107 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://di.unfccc.int/time_series" ;
+        :dsName "United Nations Framework Convention on Climate Change inventory data" ;
+        rdfs:label "United Nations Framework Convention on Climate Change inventory data" .
+
+
+###  http://purl.org/eiffo/ecv#DS_108
+:DS_108 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://edgar.jrc.ec.europa.eu/s/" ;
+        :dsName "Emissions Database for Global Atmospheric Research (Edgar)" ;
+        rdfs:label "Emissions Database for Global Atmospheric Research (Edgar)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_109
+:DS_109 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://db.cger.nies.go.jp/dataset/ODIAC/" ;
+        :dsName "Open-Data Inventory for Anthropogenic Carbon dioxide (ODIAC)" ;
+        rdfs:label "Open-Data Inventory for Anthropogenic Carbon dioxide (ODIAC)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_110
+:DS_110 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://cdiac.ess-dive.lbl.gov/" ;
+        :dsName "Carbon Dioxide Information Analysis Center" ;
+        rdfs:label "Carbon Dioxide Information Analysis Center" .
+
+
+###  http://purl.org/eiffo/ecv#DS_111
+:DS_111 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.globalchange.umd.edu/ceds/" ,
+                "https://www.globalcarbonproject.org/" ;
+        :dsName "Community Emissions Data System (CEDS)" ,
+                "The Global Carbon Project (GCP)" ;
+        rdfs:label "Community Emissions Data System (CEDS)" ,
+                   "The Global Carbon Project (GCP)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_112
+:DS_112 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.fao.org/nr/water/aquastat/data/query/index.html?lang=en" ;
+        :dsName "Global data source: Aquastat of Food and Agricultural Organization (FAO)" ;
+        rdfs:label "Global data source: Aquastat of Food and Agricultural Organization (FAO)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_113
+:DS_113 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.abs.gov.au/ausstats/abs@.nsf/mf/4610.0" ;
+        :dsName "Multiple national data sources, e.g. for Australia; Australian Bureau of Statistics (ABS)" ;
+        rdfs:label "Multiple national data sources, e.g. for Australia; Australian Bureau of Statistics (ABS)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_114
+:DS_114 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://oaflux.whoi.edu/" ;
+        :dsName "Woods Hole Oceanographic Institution (WHOI) Objectively Analyzed air-sea Fluxes (OAFlux)" ;
+        rdfs:label "Woods Hole Oceanographic Institution (WHOI) Objectively Analyzed air-sea Fluxes (OAFlux)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_115
+:DS_115 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.nodc.noaa.gov/OC5/3M_HEAT_CONTENT/" ;
+        :dsName "National Centers for Environmental Information (NCEI) - Ocena Surface Heat Flux" ;
+        rdfs:label "National Centers for Environmental Information (NCEI) - Ocean Surface Heat Flux" .
+
+
+###  http://purl.org/eiffo/ecv#DS_116
+:DS_116 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://seaflux.org/" ;
+        :dsName "Seaflux" ;
+        rdfs:label "Seaflux" .
+
+
+###  http://purl.org/eiffo/ecv#DS_117
+:DS_117 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://icoads.noaa.gov/" ;
+        :dsName "International Comprehensive Ocean-Atmosphere Data Set" ;
+        rdfs:label "International Comprehensive Ocean-Atmosphere Data Set" .
+
+
+###  http://purl.org/eiffo/ecv#DS_118
+:DS_118 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://samos.coaps.fsu.edu/html/nav.php?s=2" ;
+        :dsName "Shipboard Automated Meteorological and Oceanographic System (SAMOS)" ;
+        rdfs:label "Shipboard Automated Meteorological and Oceanographic System (SAMOS)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_119
+:DS_119 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://ghrsst-pp.metoffice.com/pages/latest_analysis/ostia.html" ;
+        :dsName "Met Office National Centre for Ocean Forecasting (NCOF) Operational Sea Surface Temperature and Sea Ice Analysis (OSTIA)" ;
+        rdfs:label "Met Office National Centre for Ocean Forecasting (NCOF) Operational Sea Surface Temperature and Sea Ice Analysis (OSTIA)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_120
+:DS_120 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://marine.copernicus.eu/" ;
+        :dsName "Copernicus Marine Environment Monitoring Service" ;
+        rdfs:label "Copernicus Marine Environment Monitoring Service" .
+
+
+###  http://purl.org/eiffo/ecv#DS_121
+:DS_121 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.osi-saf.org/?q=content/sea-ice-products" ;
+        :dsName "EUMETSAT Ocean and Sea Ice SAF" ;
+        rdfs:label "EUMETSAT Ocean and Sea Ice SAF" .
+
+
+###  http://purl.org/eiffo/ecv#DS_122
+:DS_122 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.gloss-sealevel.org/data/" ;
+        :dsName "GLOSS - Global Sea-Level Observing System" ;
+        :dsType "In Situ" ;
+        rdfs:label "GLOSS - Global Sea-Level Observing System" .
+
+
+###  http://purl.org/eiffo/ecv#DS_123
+:DS_123 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.aviso.altimetry.fr/en/data/products/sea-surface-height-products.html" ;
+        :dsName "Aviso - Sea level" ;
+        :dsType "Satellite" ;
+        rdfs:label "Aviso - Sea level" .
+
+
+###  http://purl.org/eiffo/ecv#DS_124
+:DS_124 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://podaac.jpl.nasa.gov/OceanSurfaceTopography" ;
+        :dsName "JPL PODAAC" ;
+        :dsType "Satellite" ;
+        rdfs:label "JPL PODAAC" .
+
+
+###  http://purl.org/eiffo/ecv#DS_125
+:DS_125 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.nodc.noaa.gov/General/wave.html" ;
+        :dsName "National Centers for Environmental Information (NCEI) - Sea state" ;
+        rdfs:label "National Centers for Environmental Information (NCEI) - Sea state" .
+
+
+###  http://purl.org/eiffo/ecv#DS_126
+:DS_126 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.bodc.ac.uk/data/bodc_database/waves/" ;
+        :dsName "British Oceanographic Data Center (BODC)" ;
+        rdfs:label "British Oceanographic Data Center (BODC)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_127
+:DS_127 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.oceannet.org/online_data_by_theme/waves/" ;
+        :dsName "Marine Environment Data & Information Network (MEDIN)" ;
+        rdfs:label "Marine Environment Data & Information Network (MEDIN)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_128
+:DS_128 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.aviso.altimetry.fr/en/data/data-access/las-live-access-server/lively-data/2005/feb-15-2005-waves-in-statistics.html" ;
+        :dsName "Aviso - Sea state" ;
+        rdfs:label "Aviso - Sea state" .
+
+
+###  http://purl.org/eiffo/ecv#DS_129
+:DS_129 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.globcurrent.org/" ;
+        :dsName "Globcurrent" ;
+        rdfs:label "Globcurrent" .
+
+
+###  http://purl.org/eiffo/ecv#DS_130
+:DS_130 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.esr.org/research/oscar/" ;
+        :dsName "Ocean Surface Current Analyses Real-time (OSCAR)" ;
+        rdfs:label "Ocean Surface Current Analyses Real-time (OSCAR)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_131
+:DS_131 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://podaac.jpl.nasa.gov/" ;
+        :dsName "Physical Oceanography Distributed Active Archive Center (PO.DAAC)" ;
+        rdfs:label "Physical Oceanography Distributed Active Archive Center (PO.DAAC)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_132
+:DS_132 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.nodc.noaa.gov/GTSPP/access_data/index.html" ;
+        :dsName "The Global Temperature and Salinity Profile Programme (GTSPP)" ;
+        rdfs:label "The Global Temperature and Salinity Profile Programme (GTSPP)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_133
+:DS_133 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://podaac.jpl.nasa.gov/aquarius" ;
+        :dsName "Physical Oceanographic Distributed Active Archive Center (PODAAC) - Sea surface salinity" ;
+        rdfs:label "Physical Oceanographic Distributed Active Archive Center (PODAAC) -Sea surface salinity" .
+
+
+###  http://purl.org/eiffo/ecv#DS_134
+:DS_134 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.catds.fr/" ;
+        :dsName "Centre Aval de Traitement des Données SMOS (CATDS)" ;
+        rdfs:label "Centre Aval de Traitement des Données SMOS (CATDS)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_135
+:DS_135 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://podaac.jpl.nasa.gov/OceanWind" ;
+        :dsName "Physical Oceanography Distributed Active Archive Center (PO.DAAC) - Sea surface stress" ;
+        rdfs:label "Physical Oceanography Distributed Active Archive Center (PO.DAAC) - Sea surface stress" .
+
+
 ###  http://purl.org/eiffo/ecv#ECVProduct_001
 :ECVProduct_001 rdf:type owl:NamedIndividual ,
                          :ECVProduct ;
@@ -1824,6 +2378,490 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                 rdfs:label "ECV Product 67 - Ice Sheets and Ice Shelves"@en .
 
 
+###  http://purl.org/eiffo/ecv#ECVProduct_068
+:ECVProduct_068 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Ground temperatures measured at specified depths along profiles." ;
+                :productName "Thermal State of Permafrost" ;
+                dc:description "ECV Product for Precipitation"@en ;
+                :hasECVProducRequirement :Requirement_068 ;
+                rdfs:label "ECV Product 68 - Permafrost"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_069
+:ECVProduct_069 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Thickness of seasonally thawed ground measured in (cm)." ;
+                :productName "Active Layer Thickness" ;
+                dc:description "ECV Product for Precipitation"@en ;
+                :hasECVProducRequirement :Requirement_069 ;
+                rdfs:label "ECV Product 69 - Permafrost"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_070
+:ECVProduct_070 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Snow cover refers to the area of land covered by snow at a given time." ;
+                :productName "Area covered by snow" ;
+                dc:description "ECV Product for Snow"@en ;
+                :hasECVProducRequirement :Requirement_070 ;
+                rdfs:label "ECV Product 70 - Snow"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_071
+:ECVProduct_071 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Snow depth is the perpendicular distance between snowpack surface and the underlying ground." ;
+                :productName "Snow depth" ;
+                dc:description "ECV Product for Snow"@en ;
+                :hasECVProducRequirement :Requirement_071 ;
+                rdfs:label "ECV Product 71 - Snow"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_072
+:ECVProduct_072 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "It is depth of water that result from the snowpack melting in a unit of area." ;
+                :productName "Snow water equivalent" ;
+                dc:description "ECV Product for Snow"@en ;
+                :hasECVProducRequirement :Requirement_072 ;
+                rdfs:label "ECV Product 72 - Snow"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_073
+:ECVProduct_073 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Mass of live and/or dead organic matter in terrestrial vegetation." ;
+                :productName "Maps of aboveground biomass" ;
+                dc:description "ECV Product for Above-ground biomass"@en ;
+                :hasECVProducRequirement :Requirement_073 ;
+                rdfs:label "ECV Product 73 - Above-ground biomass"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_074
+:ECVProduct_074 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Albedo without diffuse irradiance component." ;
+                :productName "Maps of directional hemispherical reflectance (DHR) albedo for adaptation" ;
+                dc:description "ECV Product for Albedo"@en ;
+                :hasECVProducRequirement :Requirement_074 ;
+                rdfs:label "ECV Product 74 - albedo"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_075
+:ECVProduct_075 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Albedo with isotropic illumination only (white-sky)" ;
+                :productName "Maps of bihemispherical reflectance (BHR) albedo for adaptation" ;
+                dc:description "ECV Product for Albedo"@en ;
+                :hasECVProducRequirement :Requirement_075 ;
+                rdfs:label "ECV Product 75 - albedo"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_076
+:ECVProduct_076 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Albedo without diffuse irradiance component" ;
+                :productName "Maps of DHR albedo for modelling" ;
+                dc:description "ECV Product for Albedo"@en ;
+                :hasECVProducRequirement :Requirement_076 ;
+                rdfs:label "ECV Product 76 - albedo"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_077
+:ECVProduct_077 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Albedo with isotropic illumination only (white-sky)" ;
+                :productName "Maps of BHR albedo for modelling" ;
+                dc:description "ECV Product for Albedo"@en ;
+                :hasECVProducRequirement :Requirement_077 ;
+                rdfs:label "ECV Product 77 - albedo"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_078
+:ECVProduct_078 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "The terrestrial surface latent heat flux refers to the transfer of heat from land to atmosphere that is associated with evaporation, i.e. with the vaporisation of liquid water (transpiration, soil evaporation, or interception loss), and sublimation of ice and snow." ;
+                :productName "Latent heat flux" ;
+                dc:description "ECV Product for Evaporation from Land"@en ;
+                :hasECVProducRequirement :Requirement_078 ;
+                rdfs:label "ECV Product 78 - Evaporation from Land"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_079
+:ECVProduct_079 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "The terrestrial surface sensible heat flux refers to the transfer of heat that is caused by the difference in temperature between land and atmosphere." ;
+                :productName "Sensible heat flux" ;
+                dc:description "ECV Product for Evaporation from Land"@en ;
+                :hasECVProducRequirement :Requirement_078 ;
+                rdfs:label "ECV Product 79 - Evaporation from Land"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_080
+:ECVProduct_080 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Burned area means the area affected by the fire, including natural vegetation and croplands. X_area means the horizontal area occupied by X within the grid cell. The extent of an individual grid cell is defined by the horizontal coordinates and any associated coordinate bounds or by a string valued auxiliary coordinate variable with a standard name of region." ;
+                :productName "Burnt Area" ;
+                dc:description "ECV Product for Fire"@en ;
+                :hasECVProducRequirement :Requirement_079 ;
+                rdfs:label "ECV Product 80 - Fire"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_081
+:ECVProduct_081 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Presence of a temporal thermal anomaly within a grid cell. Those thermal  anomalies that are permanent should be linked to other sources of thermal emission (volcanos, gas flaring, industrial or power plants). Generally, the active fire maps are defined by the date/hour when the thermal anomaly was detected" ;
+                :productName "Active Fire Maps" ;
+                dc:description "ECV Product for Fire"@en ;
+                :hasECVProducRequirement :Requirement_080 ;
+                rdfs:label "ECV Product 81 - Fire"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_082
+:ECVProduct_082 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Amount of energy released by area unit. Commonly it is expressed in W/m2 . This variable is a function of actual temperature of the active fire at the satellite overpass and the proportion of the grid cell being burned." ;
+                :productName "Fire Radiative Power" ;
+                dc:description "ECV Product for Fire"@en ;
+                :hasECVProducRequirement :Requirement_081 ;
+                rdfs:label "ECV Product 82 - Fire"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_083
+:ECVProduct_083 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "FAPAR is the fraction of the incoming radiation in the 400-700 nm band absorbed by the leaves, which can be used for photosynthesis. Definitions differ according to  illumination conditions and leaf state." ;
+                :productName "Maps of FAPAR for modelling" ;
+                dc:description "ECV Product for FAPAR"@en ;
+                :hasECVProducRequirement :Requirement_082 ;
+                rdfs:label "ECV Product 83 - FAPAR"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_084
+:ECVProduct_084 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "FAPAR is the fraction of the incoming radiation in the 400-700 nm band absorbed by the leaves, which can be used for photosynthesis. Definitions differ according to  illumination conditions and leaf state." ;
+                :productName "Maps of FAPAR for adaptation" ;
+                dc:description "ECV Product for FAPAR"@en ;
+                :hasECVProducRequirement :Requirement_083 ;
+                rdfs:label "ECV Product 83 - FAPAR"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_085
+:ECVProduct_085 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Primary unit are categories (binary variables such as forest or cropland) or continuous variables classifiers (e.g. fraction of tree canopy cover in percent)" ;
+                :productName "Maps of land cover" ;
+                dc:description "ECV Product for Land Cover"@en ;
+                :hasECVProducRequirement :Requirement_084 ;
+                rdfs:label "ECV Product 85 - Land Cover"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_086
+:ECVProduct_086 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Primary unit are categories (binary variables such as forest or cropland) or continuous variables classifiers (e.g. fraction of tree canopy cover in percent). Secondary outputs include surface area of land cover/use types and land cover/use changes (in ha)" ;
+                :productName "Maps of high resolution land cover" ;
+                dc:description "ECV Product for Land Cover"@en ;
+                :hasECVProducRequirement :Requirement_085 ;
+                rdfs:label "ECV Product 86 - Land Cover"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_087
+:ECVProduct_087 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "IPCC Good Practice Guidelines land use categories (forest land, cropland, grassland, wetland, settlement, other land)" ;
+                :productName "Maps of key IPCC land use, related changes and land management types" ;
+                dc:description "ECV Product for Land Cover"@en ;
+                :hasECVProducRequirement :Requirement_086 ;
+                rdfs:label "ECV Product 87 - Land Cover"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_088
+:ECVProduct_088 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Aggregated radiometric surface temperature of the ensemble of components within the sensor field of view." ;
+                :productName "Maps of land surface temperature" ;
+                dc:description "ECV Product for Land Surface Temperature"@en ;
+                :hasECVProducRequirement :Requirement_087 ;
+                rdfs:label "ECV Product 88 - Land Surface Temperature"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_089
+:ECVProduct_089 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Effective Leaf Area Index." ;
+                :productName "Maps of LAI for modelling" ;
+                dc:description "ECV Product for Leaf Area Index"@en ;
+                :hasECVProducRequirement :Requirement_088 ;
+                rdfs:label "ECV Product 89 - Leaf Area Index"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_090
+:ECVProduct_090 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Effective Leaf Area Index." ;
+                :productName "Maps of LAI for adaptation" ;
+                dc:description "ECV Product for Leaf Area Index"@en ;
+                :hasECVProducRequirement :Requirement_089 ;
+                rdfs:label "ECV Product 89 - Leaf Area Index"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_091
+:ECVProduct_091 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "% of organic carbon in the topmost 30 cm" ;
+                :productName "% Carbon in soil" ;
+                dc:description "ECV Product for Soil carbon "@en ;
+                :hasECVProducRequirement :Requirement_090 ;
+                rdfs:label "ECV Product 91 - Soil carbon"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_092
+:ECVProduct_092 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Bulk density of dry soil averaged over the topmost 30 cm and topmost 1 m, kg/m3" ;
+                :productName "Mineral soil bulk density to 30 cms and 1m" ;
+                dc:description "ECV Product for Soil carbon "@en ;
+                :hasECVProducRequirement :Requirement_090 ;
+                rdfs:label "ECV Product 92 - Soil carbon"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_093
+:ECVProduct_093 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Geographic extent of peatlands and depth of peat at intervals (20 m) within the peatlands" ;
+                :productName "Peatlands total depth of profile, area and location" ;
+                dc:description "ECV Product for Soil carbon "@en ;
+                :hasECVProducRequirement :Requirement_091 ;
+                rdfs:label "ECV Product 93 - Soil carbon"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_094
+:ECVProduct_094 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Average water content in topmost soil layer (0-5 cm)" ;
+                :productName "Surface soil moisture" ;
+                dc:description "ECV Product for soil moisturen"@en ;
+                :hasECVProducRequirement :Requirement_092 ;
+                rdfs:label "ECV Product 94 - soil moisture"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_095
+:ECVProduct_095 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Flag indicating whether the land surface is frozen or not" ;
+                :productName "Freeze/thaw" ;
+                dc:description "ECV Product for soil moisturen"@en ;
+                :hasECVProducRequirement :Requirement_093 ;
+                rdfs:label "ECV Product 95 - soil moisture"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_096
+:ECVProduct_096 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Flag indicating whether the land surface is inundated or not" ;
+                :productName "Surface inundation" ;
+                dc:description "ECV Product for soil moisturen"@en ;
+                :hasECVProducRequirement :Requirement_093 ;
+                rdfs:label "ECV Product 96 - soil moisture"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_097
+:ECVProduct_097 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Average soil moisture content in root-zone layer" ;
+                :productName "Root-zone soil moisture" ;
+                dc:description "ECV Product for soil moisturen"@en ;
+                :hasECVProducRequirement :Requirement_094 ;
+                rdfs:label "ECV Product 97 - soil moisture"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_098
+:ECVProduct_098 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Anthropogenic emissions according to IPCC guidelines" ;
+                :productName "Emissions from fossil fuel use, industry, agriculture and waste sectors" ;
+                dc:description "ECV Product for Anthropogenic Greenhouse Gas Emissions"@en ;
+                :hasECVProducRequirement :Requirement_095 ;
+                rdfs:label "ECV Product 98 - Anthropogenic Greenhouse Gas Emissions"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_099
+:ECVProduct_099 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Anthropogenic emissions and removals from the LULCF category according to IPCC guidelines" ;
+                :productName "Emissions/ removals by IPCC land categories" ;
+                dc:description "ECV Product for Anthropogenic Greenhouse Gas Emissions"@en ;
+                :hasECVProducRequirement :Requirement_096 ;
+                rdfs:label "ECV Product 99 - Anthropogenic Greenhouse Gas Emissions"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_100
+:ECVProduct_100 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "GHG emission/ removals (modelled using inversion of atmospheric composition), continental scale" ;
+                :productName "Estimated fluxes by inversions of observed atmospheric composition – continental" ;
+                dc:description "ECV Product for Anthropogenic Greenhouse Gas Emissions"@en ;
+                :hasECVProducRequirement :Requirement_097 ;
+                rdfs:label "ECV Product 100 - Anthropogenic Greenhouse Gas Emissions"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_101
+:ECVProduct_101 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "GHG emission/ removals (modelled using inversion of atmospheric composition), national scale" ;
+                :productName "Estimated fluxes by inversions of observed atmospheric composition - national" ;
+                dc:description "ECV Product for Anthropogenic Greenhouse Gas Emissions"@en ;
+                :hasECVProducRequirement :Requirement_098 ;
+                rdfs:label "ECV Product 101 - Anthropogenic Greenhouse Gas Emissions"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_102
+:ECVProduct_102 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Spatially resolved GHG emission plume around local source" ;
+                :productName "Hi-res CO2 column concentrations to monitor point sources" ;
+                dc:description "ECV Product for Anthropogenic Greenhouse Gas Emissions"@en ;
+                :hasECVProducRequirement :Requirement_099 ;
+                rdfs:label "ECV Product 102 - Anthropogenic Greenhouse Gas Emissions"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_103
+:ECVProduct_103 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Total human use of global freshwater resources for livestock, irrigation, industrial and domestic consumption (km3 yr-1)" ;
+                :productName "Volume of Water Use" ;
+                dc:description "ECV Product for Anthropogenic Water Use"@en ;
+                :hasECVProducRequirement :Requirement_100 ;
+                rdfs:label "ECV Product 103 - Anthropogenic Water Use"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_104
+:ECVProduct_104 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "The heat exchanged between the ocean and atmosphere associated with the phase change from liquid to gas of seawater during evaporation or from gas to liquid during condensation." ;
+                :productName "LATENT HEAT FLUX" ;
+                dc:description "ECV Product for Ocean Surface Heat Flux"@en ;
+                :hasECVProducRequirement :Requirement_101 ;
+                rdfs:label "ECV Product 104 - Ocean Surface Heat Flux"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_105
+:ECVProduct_105 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "The heat exchanged between the atmosphere and ocean when a warmer ocean warms the air above or when a cooler ocean cools the air above." ;
+                :productName "SENSIBLE HEAT FLUX" ;
+                dc:description "ECV Product for Ocean Surface Heat Flux"@en ;
+                :hasECVProducRequirement :Requirement_101 ;
+                rdfs:label "ECV Product 105 - Ocean Surface Heat Flux"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_106
+:ECVProduct_106 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "The heat exchanged between the ocean and atmosphere resulting from the balance between radiation leaving the sea surface (reflected and emitted) and radiation passing through the sea surface into the ocean; often divided into an infrared or longwave and a visible or shortwave components." ;
+                :productName "RADIATIVE HEAT FLUX" ;
+                dc:description "ECV Product for Ocean Surface Heat Flux"@en ;
+                :hasECVProducRequirement :Requirement_101 ;
+                rdfs:label "ECV Product 106 - Ocean Surface Heat Flux"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_107
+:ECVProduct_107 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Fraction of area covered with sea ice." ;
+                :productName "Sea Ice Concentration" ;
+                dc:description "ECV Product for Sea ice"@en ;
+                :hasECVProducRequirement :Requirement_102 ;
+                rdfs:label "ECV Product 107 - Sea ice"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_108
+:ECVProduct_108 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Sea ice extent is the area of sea with a specified minimum fraction of  ice-cover, usually 15%. " ;
+                :productName "Sea Ice Extent" ;
+                dc:description "ECV Product for Sea ice"@en ;
+                :hasECVProducRequirement :Requirement_103 ;
+                rdfs:label "ECV Product 108 - Sea ice"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_109
+:ECVProduct_109 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Average thickness from sea ice surface-to-underside in the icecovered fraction of an area. " ;
+                :productName "Sea Ice Thickness" ;
+                dc:description "ECV Product for Sea ice"@en ;
+                :hasECVProducRequirement :Requirement_104 ;
+                rdfs:label "ECV Product 109 - Sea ice"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_110
+:ECVProduct_110 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Rate of movement of Sea Ice due to winds, currents or other forces." ;
+                :productName "Sea Ice Drift" ;
+                dc:description "ECV Product for Sea ice"@en ;
+                :hasECVProducRequirement :Requirement_105 ;
+                rdfs:label "ECV Product 110 - Sea ice"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_111
+:ECVProduct_111 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "The height of the ocean surface relative to a reference geoid. " ;
+                :productName "GLOBAL MEAN SEA LEVEL" ;
+                dc:description "ECV Product for Sea level"@en ;
+                :hasECVProducRequirement :Requirement_106 ;
+                rdfs:label "ECV Product 111 - Sea level"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_112
+:ECVProduct_112 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "The height of the ocean surface relative to a reference geoid or an agreed regional datum  " ;
+                :productName "REGIONAL MEAN SEA LEVEL" ;
+                dc:description "ECV Product for Sea level"@en ;
+                :hasECVProducRequirement :Requirement_106 ;
+                rdfs:label "ECV Product 112 - Sea level"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_113
+:ECVProduct_113 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "The distance between the trough of the wave and the adjacent crest of the wave. The significant wave height is the mean wave height (trough to crest) of the highest third of the waves in a wave spectrum" ;
+                :productName "Wave Height" ;
+                dc:description "ECV Product for Sea state"@en ;
+                :hasECVProducRequirement :Requirement_108 ;
+                rdfs:label "ECV Product 113 - Sea state"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_114
+:ECVProduct_114 rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_115
+:ECVProduct_115 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Salinity of seawater,at or near the surface - Salinity is unitless, and is expressed with the suffix psu (practical salinity unit, PSS-78)." ;
+                :productName "Sea Surface Salinity" ;
+                dc:description "ECV Product for Sea Surface Salinity"@en ;
+                :hasECVProducRequirement :Requirement_110 ;
+                rdfs:label "ECV Product 115 - Sea Surface Salinity"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_14
+:ECVProduct_14 rdf:type owl:NamedIndividual ,
+                        :ECVProduct ;
+               :productDefinition "Ocean Vector motion measured at or near the surface (at stated depth)" ;
+               :productName "Surface Geostrophic Current" ;
+               dc:description "ECV Product for Sea Surface Currents"@en ;
+               :hasECVProducRequirement :Requirement_109 ;
+               rdfs:label "ECV Product 114 - Sea Surface Currents"@en .
+
+
 ###  http://purl.org/eiffo/ecv#ECVSteward_01
 :ECVSteward_01 rdf:type owl:NamedIndividual ,
                         :ECVSteward ;
@@ -1968,6 +3006,109 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                rdfs:label "Hiroyuki Enomoto" .
 
 
+###  http://purl.org/eiffo/ecv#ECVSteward_20
+:ECVSteward_20 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "Institut de Géographie Alpine, Grénoble, Franc" ,
+                                   "School of Earth, Atmosphere and Environment, CRC For Water Sensitive Cities, Monash University, Australia" ;
+               :stewardName "Nigel Tapper" ,
+                            "Philippe Schoeneich" ;
+               rdfs:label "Nigel Tapper" ,
+                          "Philippe Schoeneich" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_21
+:ECVSteward_21 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "GOFC-GOLD, Wageningen University, Netherlands" ;
+               :stewardName "Martin Herold" ;
+               rdfs:label "Martin Herold" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_22
+:ECVSteward_22 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "Jet Propulsion Laboratory California Institute of Technology, US" ;
+               :stewardName "Sassan Saatchi" ;
+               rdfs:label "Sassan Saatchi" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_23
+:ECVSteward_23 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "European Commission, Joint Research Centre, Institute for Environment and Sustainability" ;
+               :stewardName "Nadine Gobron" ;
+               rdfs:label "Nadine Gobron" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_24
+:ECVSteward_24 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "Ghent University, Belgium" ;
+               :stewardName "Diego Miralles" ;
+               rdfs:label "Diego Miralles" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_25
+:ECVSteward_25 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "University of Alcala, Alcalá, Spain" ;
+               :stewardName "Emilio Chuvieco-Salinero" ;
+               rdfs:label "Emilio Chuvieco-Salinero" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_26
+:ECVSteward_26 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "National Centre for Earth Observation (NCEO), Earth Observation Science Department of Physics and Astronomy,University of Leicester, United Kingdom" ;
+               :stewardName "Darren Ghent" ;
+               rdfs:label "Darren Ghent" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_27
+:ECVSteward_27 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "Integrated Carbon Observation System (ICOS) European Research Infrastructure Consortium (ERIC), Finland" ;
+               :stewardName "Dr Werner KUTSCH" ;
+               rdfs:label "Dr Werner KUTSCH" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_28
+:ECVSteward_28 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "Vienna University of Technology, Austria" ;
+               :stewardName "Wolfgang WAGNER" ;
+               rdfs:label "Wolfgang WAGNER" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_29
+:ECVSteward_29 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "Vienna University of Technology, Austria" ;
+               :stewardName "Wouter DORIGO" ;
+               rdfs:label "Wouter DORIGO" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_30
+:ECVSteward_30 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "European Commission, Joint Research Centre, Institute for Environment and Sustainability" ;
+               :stewardName "Greet Maenhout" ;
+               rdfs:label "Greet Maenhout" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_31
+:ECVSteward_31 rdf:type owl:NamedIndividual ,
+                        :ECVSteward ;
+               :stewardAffiliation "Integrated Carbon Observation System (ICOS) European Research Infrastructure Consortium (ERIC), Finland" ;
+               :stewardName "Werner Kutsch" ;
+               rdfs:label "Werner Kutsch" .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward_32
+:ECVSteward_32 rdf:type owl:NamedIndividual .
+
+
 ###  http://purl.org/eiffo/ecv#EarthRadiationBudgetECV1
 :EarthRadiationBudgetECV1 rdf:type owl:NamedIndividual ,
                                    :ECV ;
@@ -1985,6 +3126,63 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                           :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-uaa-earth-radiation-budget_hover.png?hxQxe_rDseDjf2CZ3y45QZKgEjXvcMR_=" ;
                           :ecvName "Earth Radiation Budget" ;
                           rdfs:label "Earth Radiation Budget" .
+
+
+###  http://purl.org/eiffo/ecv#EvaporationFromLandECV1
+:EvaporationFromLandECV1 rdf:type owl:NamedIndividual ,
+                                  :ECV ;
+                         :hasDataSource :DS_005 ,
+                                        :DS_087 ,
+                                        :DS_088 ,
+                                        :DS_089 ,
+                                        :DS_090 ,
+                                        :DS_091 ;
+                         :hasDomain :BiosphereDomain1 ;
+                         :hasECVProduct :ECVProduct_078 ,
+                                        :ECVProduct_079 ;
+                         :hasECVSteward :ECVSteward_24 ;
+                         :hasScientificArea :ScientificArea_01 ;
+                         :ecvDescription "Terrestrial evaporation is an important process in the global water cycle. It acts like an air conditioner for the surface, as it absorbs radiation (latent heat) that otherwise would be used to warm up the atmosphere (sensible heat). At the same time, water vapour acts as a greenhouse gas by trapping radiation in the lower atmosphere. Evaporation acts as a climate change diagnostic, being very sensitive to changes in atmospheric composition and the Earth's radiation balance. Moreover, it plays a crucial role in dampening the intensification of drought and heatwave events, it is a pivotal variable for agriculture that determines the needs for irrigation, and it constrains human water management" ;
+                         :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/evaporation_ecv_factsheet_201905.pdf?Heo_iRDx9gv0C_mN2BBN5WBWSJJDkeJJ" ;
+                         :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/inline-images/evaporation-from-land-39-neg.png?6F2gapGqdYndwVUqAMu_0VibC_TgTPcr=" ;
+                         :ecvName "Evaporation from Land" ;
+                         rdfs:label "Evaporation from Land" .
+
+
+###  http://purl.org/eiffo/ecv#FAPARECV1
+:FAPARECV1 rdf:type owl:NamedIndividual ,
+                    :ECV ;
+           :hasDataSource :DS_006 ,
+                          :DS_086 ;
+           :hasDomain :BiosphereDomain1 ;
+           :hasECVProduct :ECVProduct_083 ,
+                          :ECVProduct_084 ;
+           :hasECVSteward :ECVSteward_23 ;
+           :hasScientificArea :ScientificArea_06 ;
+           :ecvDescription "Solar radiation in the spectral range 400–700 nm, known as photosynthetically active radiation (PAR), provides the energy required by terrestrial vegetation to produce organic materials from mineral components. The part of this PAR that is effectively absorbed by plants is called FAPAR. FAPAR is related to, but different from, Leaf Area Index, which describes the amount of leaf material in the canopy. FAPAR plays a critical role in assessing the primary productivity of canopies, the associated fixation of atmospheric CO2 and the energy balance of the surface. Monitoring FAPAR provides information on the amount and health cycle of vegetation." ;
+           :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/fapar_ecv_factsheet_201905.pdf?mlsW_ZQ7iYLpnCwF_mpCmmHWrwm6pieX" ;
+           :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-bio-fapr_hover.png?glhRud7HjxkmQLbc1Zk5IZZ2O1374XIe=" ;
+           :ecvName "Fraction of Absorbed Photosynthetically Active Radiation (FAPAR)" ;
+           rdfs:label "Fraction of Absorbed Photosynthetically Active Radiation (FAPAR)" .
+
+
+###  http://purl.org/eiffo/ecv#FireECV1
+:FireECV1 rdf:type owl:NamedIndividual ,
+                   :ECV ;
+          :hasDataSource :DS_006 ,
+                         :DS_092 ,
+                         :DS_093 ;
+          :hasDomain <http://purl.org/eiffo/ecv#:BiosphereDomain1> ;
+          :hasECVProduct :ECVProduct_080 ,
+                         :ECVProduct_081 ,
+                         :ECVProduct_082 ;
+          :hasECVSteward :ECVSteward_25 ;
+          :hasScientificArea :ScientificArea_06 ;
+          :ecvDescription "Fires have impacts on several identified radiative forcing agents. While they can be a natural part of many ecosystems, they have a strong human  control, particularly in Tropical ecosystems. Fires contribute to the build-up of CO2 through deforestation and forest degradation, emissions from peatland fires, and alterations of fire regimes(more frequent, larger or more severe fires). They also emit CH4, and are a major source of aerosols, CO and oxides of nitrogen, thus affecting local and regional air quality. Estimates of greenhouse gas emissions due to fires are essential for realistic modelling of climate and its critical component, the global carbon cycle. Fires caused deliberately for land clearance (agriculture and ranching) or accidentally (lightning strikes and human error) are a major factor in land-cover variability and change, and hence affect fluxes of energy and water to the atmosphere" ;
+          :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/fire_ecv_factsheet_201905.pdf?32QFduC4Gpxd6tqycshmolv.SBrOFhpX" ;
+          :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-bio-fire_hover.png?qPs9dE97QTA2cdR0M7EBzyRN6a2UDHqJ=" ;
+          :ecvName "Fire" ;
+          rdfs:label "Fire" .
 
 
 ###  http://purl.org/eiffo/ecv#GlaciersECV1
@@ -2041,6 +3239,10 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                     :domainName "Hydrosphere" .
 
 
+###  http://purl.org/eiffo/ecv#HydrsphereDomain1
+:HydrsphereDomain1 rdf:type owl:NamedIndividual .
+
+
 ###  http://purl.org/eiffo/ecv#IceSheetsAndShelvesECV1
 :IceSheetsAndShelvesECV1 rdf:type owl:NamedIndividual ,
                                   :ECV ;
@@ -2093,11 +3295,69 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
            rdfs:label "Lakes" .
 
 
+###  http://purl.org/eiffo/ecv#LandCoverECV1
+:LandCoverECV1 rdf:type owl:NamedIndividual ,
+                        :ECV ;
+               :hasDataSource :DS_006 ,
+                              :DS_094 ,
+                              :DS_095 ,
+                              :DS_096 ,
+                              :DS_097 ,
+                              :DS_098 ;
+               :hasDomain :BiosphereDomain1 ;
+               :hasECVProduct :ECVProduct_085 ,
+                              :ECVProduct_086 ,
+                              :ECVProduct_087 ;
+               :hasECVSteward :ECVSteward_21 ;
+               :hasScientificArea :ScientificArea_06 ;
+               :ecvDescription "Land cover is the observed (bio)-physical cover on the Earth’s surface. It influences climate by modifying water and energy exchanges with the atmosphere and by changing greenhouse gas and aerosol sources and sinks. Land-cover conditions are inherently dynamic (i.e. seasonality) and distributions are linked to regional climatic conditions, so changes in cover can be due to climate change on a regional scale as well as directly due to human activities" ;
+               :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/landcover_ecv_factsheet_201905_0.pdf?Wxz943iIJUrEd8Y4MgtmbNIDi0YI_r9O" ;
+               :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-bio-land-cover_cover.png?kGI4yEnvEHvJMvWk5pT7gpS0OmwMknZ2=" ;
+               :ecvName "Land Cover" ;
+               rdfs:label "Land Cover" .
+
+
 ###  http://purl.org/eiffo/ecv#LandDomain1
 :LandDomain1 rdf:type owl:NamedIndividual ,
                       :LandDomain ;
              :domainLevel 1 ;
              :domainName "Land" .
+
+
+###  http://purl.org/eiffo/ecv#LandSurfaceTemperatureECV1
+:LandSurfaceTemperatureECV1 rdf:type owl:NamedIndividual ,
+                                     :ECV ;
+                            :hasDataSource :DS_006 ,
+                                           :DS_098 ,
+                                           :DS_099 ,
+                                           :DS_100 ;
+                            :hasDomain :biosphereDomain1 ;
+                            :hasECVProduct :ECVProduct_088 ;
+                            :hasECVSteward :ECVSteward_26 ;
+                            :hasScientificArea :ScientificArea_03 ;
+                            :ecvDescription "The Land Surface Temperature (LST) is the skin temperature of ground. It is mainly a product of albedo, the vegetation cover and the soil  moisture. From a climate perspective, LST is important for evaluating land surface and landatmosphere exchange processes, constraining surface energy budgets and model parameters, and providing observations of surface temperature change both  globally and in key regions." ;
+                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/landsurface_temp_ecv_factsheet_201905.pdf?ye.nmsflctTgb4iZNNmuFtYnmGzAqu2o" ;
+                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-bio-land-surface-temperature_hover.png?vrWK_225riLhRx_8OqYyYOzub_uaS_sA=" ;
+                            :ecvName "Land Surface Temperature" ;
+                            rdfs:label "Land Surface Temperature" .
+
+
+###  http://purl.org/eiffo/ecv#LeafAreaIndexECV1
+:LeafAreaIndexECV1 rdf:type owl:NamedIndividual ,
+                            :ECV ;
+                   :hasDataSource :DS_006 ,
+                                  :DS_098 ,
+                                  :DS_099 ;
+                   :hasDomain :BiosphereDomain1 ;
+                   :hasECVProduct :ECVProduct_089 ,
+                                  :ECVProduct_090 ;
+                   :hasECVSteward :ECVSteward_23 ;
+                   :hasScientificArea :ScientificArea_06 ;
+                   :ecvDescription "The Leaf Area Index (LAI) of a plant canopy or ecosystem, defined as one half of the total green leaf area per unit horizontal ground surface area, measures the area of leaf material present in the specified environment. On sloping surfaces, the leaf area should be projected to the underlying ground along the normal to the slope. This dimensionless variable varies between 0 and values of about 10 or so, depending on local conditions. It partly controls important mass and energy exchange processes, such as radiation and rain interception, as well as photosynthesis and respiration, which couple vegetation to the climate system. Hence, LAI appears as a key variable in many models describing vegetation–atmosphere interactions, particularly with respect to the carbon and water cycles." ;
+                   :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/lai_ecv_factsheet_201905.pdf?ubJ0lqt6bGJDnJ.sBrL0c1wU0mfDRqsQ" ;
+                   :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-bio-leaf-area-index_hover.png?oFsy3baIbLOpHY3AU7sWyRNlbTGVykuq=" ;
+                   :ecvName "Leaf Area Index" ;
+                   rdfs:label "Leaf Area Index" .
 
 
 ###  http://purl.org/eiffo/ecv#LightningECV1
@@ -2120,6 +3380,43 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                        :OceanDomain ;
               :domainLevel 1 ;
               :domainName "Ocean" .
+
+
+###  http://purl.org/eiffo/ecv#OceanSurfaceHeatFluxECV1
+:OceanSurfaceHeatFluxECV1 rdf:type owl:NamedIndividual ,
+                                   :ECV ;
+                          :hasDataSource :DS_006 ,
+                                         :DS_114 ,
+                                         :DS_115 ,
+                                         :DS_116 ,
+                                         :DS_117 ,
+                                         :DS_118 ;
+                          :hasDomain :PhysicalDomain1 ;
+                          :hasECVProduct :ECVProduct_104 ,
+                                         :ECVProduct_105 ,
+                                         :ECVProduct_106 ;
+                          :hasScientificArea :ScientificArea_02 ;
+                          :ecvDescription "Surface heat flux is exchange of heat, per unit area, crossing the surface between the ocean and the atmosphere. It consists of the turbulent and the radiative components. These fluxes are major contributors to the energy and moisture budgets, and are largely responsible for thermodynamic coupling the ocean and atmosphere at global and regional scales, and variability of these fluxes is in part related to large-scale variability in weather and climate patterns." ;
+                          :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ocean_surface_heat_flux_ecv_factsheet_201905.pdf?U0IZA4Wp_3dTk9fEeFmpQj3Pt552eqEl" ;
+                          :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-ocean-surface-heat-flux_hover.png?Jrp4RZwuzULFPSn7E9Dgl2YtUHdTxa_Z=" ;
+                          :ecvName "Ocean Surface Heat Flux" ;
+                          rdfs:label "Ocean Surface Heat Flux" .
+
+
+###  http://purl.org/eiffo/ecv#PermafrostECV1
+:PermafrostECV1 rdf:type owl:NamedIndividual ,
+                         :ECV ;
+                :hasDataSource :DS_078 ;
+                :hasDomain :CryosphereDomain1 ;
+                :hasECVProduct :ECVProduct_068 ,
+                               :ECVProduct_069 ;
+                :hasECVSteward :ECVSteward_20 ;
+                :hasScientificArea :ScientificArea_05 ;
+                :ecvDescription "The properties of frozen ground react sensitively to climate and environmental changes in high-latitude and high-altitude regions. This includes the temperature distribution in the permafrost layer and the depth of the overlying active layer where seasonal freezing and thawing occur. Changes in these quantities have important impacts on terrain stability, coastal erosion, surface and subsurface water, the carbon cycle and vegetation development." ;
+                :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/permafrost_ecv_factsheet_201905.pdf?g.E9WybO2xlDJVXmTENgHHExmy7m3XJe" ;
+                :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-cry-permafrost_hover.png?jNxU35JTS8Ov4D9_rOi8xWivCxdqf9x3=" ;
+                :ecvName "Permafrost" ;
+                rdfs:label "Permafrost" .
 
 
 ###  http://purl.org/eiffo/ecv#PhysicalDomain1
@@ -2880,6 +4177,440 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                  rdfs:label "Requirement for ECV Product - Ice Sheets and Ice Shelves"@en .
 
 
+###  http://purl.org/eiffo/ecv#Requirement_068
+:Requirement_068 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily to weekly" ;
+                 :requiredMeasurementUncertainty "0.1K" ;
+                 :resolution "Sufficient sites to characterise each bioclimate zone" ;
+                 rdfs:label "Requirement for ECV Product - Permafrost"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_069
+:Requirement_069 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily to weekly" ;
+                 :requiredMeasurementUncertainty "2 cm" ;
+                 :resolution "Sufficient sites to characterise each bioclimate zone" ;
+                 rdfs:label "Requirement for ECV Product - Permafrost"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_070
+:Requirement_070 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "5% (maximum error of omission and commission in snow area); location accuracy better than 1/3 IFOV with target IFOV 100 m in areas of complex terrain, 1 km elsewhere" ;
+                 :resolution "1km (100m in complex terrain" ;
+                 :stability "4% (maximum error of omission and commission in snow area); location accuracy better than 1/3 IFOV with target IFOV 100 m in areas of complex terrain, 1 km elsewhere" ;
+                 :standardsReferences "WMO (2008c) IGOS (2007), IACS/UNESC O, 2009" ;
+                 rdfs:label "Requirement for ECV Product - Snow"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_071
+:Requirement_071 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "10 mm" ;
+                 :resolution "1km (100m in complex terrain)" ;
+                 :stability "10 mm" ;
+                 :standardsReferences "WMO (2008c) IGOS (2007), IACS/UNESC O, 2009" ;
+                 rdfs:label "Requirement for ECV Product - Snow"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_072
+:Requirement_072 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "10 mm" ;
+                 :resolution "1km" ;
+                 :stability "10 mm" ;
+                 :standardsReferences "WMO (2008c) IGOS (2007), IACS/UNESC O, 2009" ;
+                 rdfs:label "Requirement for ECV Product - Snow"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_073
+:Requirement_073 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual" ;
+                 :requiredMeasurementUncertainty "< 20% error for biomass values > 50 t/ha, and 10 t/ha for biomass values ≤ 50 t/ha" ;
+                 :resolution "500m-1km (based on satellite observations of 100-200m)" ;
+                 :stability "10%" ;
+                 :standardsReferences "No agreed standards but see: GOFCGOLD (2015b); GFOI (2013)" ;
+                 rdfs:label "Requirement for ECV Product - Above-ground biomass"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_074
+:Requirement_074 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "max(5%; 0.0025)" ;
+                 :resolution "50 m" ;
+                 :stability "max(1%; 0.001)" ;
+                 rdfs:label "Requirement for ECV Product - Albedo"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_075
+:Requirement_075 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :requiredMeasurementUncertainty "max(5%; 0.0025)" ;
+                 :resolution "50 m" ;
+                 :stability "max(1%; 0.001)" ;
+                 rdfs:label "Requirement for ECV Product - Albedo"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_076
+:Requirement_076 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "max(5%; 0.0025)" ;
+                 :resolution "200/500m" ;
+                 :stability "max(1%; 0.001)" ;
+                 rdfs:label "Requirement for ECV Product - Albedo"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_077
+:Requirement_077 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :requiredMeasurementUncertainty "max(5%; 0.0025)" ;
+                 :resolution "200/500m" ;
+                 :stability "max(1%; 0.001)" ;
+                 rdfs:label "Requirement for ECV Product - Albedo"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_078
+:Requirement_078 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Sub-daily, latency of less than 1 month" ;
+                 :requiredMeasurementUncertainty "<10%" ;
+                 :resolution "Threshold 25km, goal 1km" ;
+                 :stability "Better than 1%" ;
+                 rdfs:label "Requirement for ECV Product - Evaporation from Land"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_079
+:Requirement_079 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "24 hours" ;
+                 :requiredMeasurementUncertainty "15% (error of omission and commission), compared to 30 m observations" ;
+                 :resolution "30m" ;
+                 rdfs:label "Requirement for ECV Product - Fire"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_080
+:Requirement_080 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "6 hours at all latitudes from Polar-Orbiting and 1 hour from Geostationary" ;
+                 :requiredMeasurementUncertainty "5% error of commission; 10% error of omission; Based on per-fire comparisons for fires above target threshold of 5 MW/km² equivalent integrated FRP per pixel (i.e. for a 0.5 km² pixel the target threshold would be 2.5 MW, for a 9 km² pixel it would be 45 MW)" ;
+                 :resolution "0.25-1 km (Polar); 1-3 km (Geo)" ;
+                 rdfs:label "Requirement for ECV Product - Fire"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_081
+:Requirement_081 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "6 hours at all latitudes from Polar-Orbiting and 1 hour from Geostationary" ;
+                 :requiredMeasurementUncertainty "10% integrated over pixel. Based on target detection threshold of 5 MW/km² equivalent integrated FRP per pixel (i.e. for a 0.5 km² pixel the target threshold would be 2.5 MW, for a 9 km² pixel it would be 45 MW).and with the same detection accuracy as the Active Fire Maps." ;
+                 :resolution "0.25-1 km (Polar); 1-3 km (Geo)" ;
+                 rdfs:label "Requirement for ECV Product - Fire"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_082
+:Requirement_082 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "max(10%; 0.05)" ;
+                 :resolution "200/500 m" ;
+                 :stability "max(3%; 0.02)" ;
+                 rdfs:label "Requirement for ECV Product - FAPAR"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_083
+:Requirement_083 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :requiredMeasurementUncertainty "max(10%; 0.05)" ;
+                 :resolution "50 m" ;
+                 :stability "max(3%; 0.02)" ;
+                 rdfs:label "Requirement for ECV Product - FAPAR"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_084
+:Requirement_084 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual" ;
+                 :requiredMeasurementUncertainty "15% (maximum error of omission and commission in mapping individual classes), location accuracy better than 1/3 IFOV with target IFOV 250 m" ;
+                 :resolution "250m" ;
+                 :stability "15% (maximum error of omission and commission in mapping individual classes), location accuracy better than 1/3 IFOV with target IFOV 250 m" ;
+                 :standardsReferences "No agreed standards but see GLCN (2014) and GOFCGOLD (2015a)" ;
+                 rdfs:label "Requirement for ECV Product - Land Cover"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_085
+:Requirement_085 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "5 year" ;
+                 :requiredMeasurementUncertainty "5% (maximum error of omission and commission in mapping individual classes), location accuracy better than 1/3 IFOV with target IFOV 10-20 m" ;
+                 :resolution "10 - 30m" ;
+                 :stability "5% (maximum error of omission and commission in mapping individual classes), location accuracy better than 1/3 IFOV with target IFOV 10-30 m" ;
+                 rdfs:label "Requirement for ECV Product - Land Cover"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_086
+:Requirement_086 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "1-10 years (incl. historic al data" ;
+                 :requiredMeasurementUncertainty "20% (maximum error of omission and commission in mapping individual classes), location accuracy better than 1/3 IFOV with target IFOV" ;
+                 :resolution "10-1000 m (depending on time period)" ;
+                 :stability "20% (maximum error of omission and commission in mapping individual classes), location accuracy better than 1/3 IFOV with target IFOV" ;
+                 :standardsReferences "IPCC (2006)" ;
+                 rdfs:label "Requirement for ECV Product - Land Cover"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_087
+:Requirement_087 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "3 hour" ;
+                 :requiredMeasurementUncertainty "1K " ;
+                 :resolution "1 km" ;
+                 :stability "<0.1K/decade" ;
+                 rdfs:label "Requirement for ECV Product - Land Surface Temperature"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_088
+:Requirement_088 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "max(15%)" ;
+                 :resolution "250 m" ;
+                 :stability "max(10%;0.25)" ;
+                 rdfs:label "Requirement for ECV Product - Leaf Area Index"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_089
+:Requirement_089 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "max(15%)" ;
+                 :resolution "50 m" ;
+                 :stability "max(10%;0.25)" ;
+                 rdfs:label "Requirement for ECV Product - Leaf Area Index"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_090
+:Requirement_090 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "5-10 year" ;
+                 :resolution "20 km" ;
+                 rdfs:label "Requirement for ECV Product - Soil carbon"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_091
+:Requirement_091 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "5-10 year" ;
+                 :requiredMeasurementUncertainty "10%" ;
+                 :resolution "2m vertical; 20 horizontal" ;
+                 rdfs:label "Requirement for ECV Product - Soil carbon"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_092
+:Requirement_092 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "0.04 m3/m3" ;
+                 :resolution "1-25 km" ;
+                 :stability "0.01 m3/m3/year " ;
+                 :standardsReferences "WMO (2008b)" ;
+                 rdfs:label "Requirement for ECV Product - Soil moisture"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_093
+:Requirement_093 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "90%" ;
+                 :resolution "1-25 km" ;
+                 :stability "tbd" ;
+                 rdfs:label "Requirement for ECV Product - Soil moisture"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_094
+:Requirement_094 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "0.04 m3/m3" ;
+                 :resolution "1-25 km" ;
+                 :stability "0.01 m3/m3/year " ;
+                 rdfs:label "Requirement for ECV Product - Soil moisture"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_095
+:Requirement_095 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual" ;
+                 :requiredMeasurementUncertainty "Globally 5%; Nationally 10%" ;
+                 :resolution "By country and sector" ;
+                 :standardsReferences "IPCC (2006); IPCC (2013)" ;
+                 rdfs:label "Requirement for ECV Product - Anthropogenic Greenhouse Gas Emissions"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_096
+:Requirement_096 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual" ;
+                 :requiredMeasurementUncertainty "Globally 15%; Nationally 20%" ;
+                 :resolution "By country and sector" ;
+                 :standardsReferences "IPCC (2006); IPCC (2013)" ;
+                 rdfs:label "Requirement for ECV Product - Anthropogenic Greenhouse Gas Emissions"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_097
+:Requirement_097 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual" ;
+                 :requiredMeasurementUncertainty "10%" ;
+                 :resolution "1000 - 10,000 km" ;
+                 rdfs:label "Requirement for ECV Product - Anthropogenic Greenhouse Gas Emissions"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_098
+:Requirement_098 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual" ;
+                 :requiredMeasurementUncertainty "10%" ;
+                 :resolution "100 - 1000 km" ;
+                 rdfs:label "Requirement for ECV Product - Anthropogenic Greenhouse Gas Emissions"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_099
+:Requirement_099 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "4 hourly" ;
+                 :requiredMeasurementUncertainty "1 ppm" ;
+                 :resolution "1 km" ;
+                 rdfs:label "Requirement for ECV Product - Anthropogenic Greenhouse Gas Emissions"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_100
+:Requirement_100 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual" ;
+                 :requiredMeasurementUncertainty "n/a" ;
+                 :resolution "100 km" ;
+                 :stability "n/a" ;
+                 :standardsReferences "n/a" ;
+                 rdfs:label "Requirement for ECV Product - Anthropogenic Water Use"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_101
+:Requirement_101 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Hourly to monthly" ;
+                 :requiredMeasurementUncertainty "10-15Wm-2" ;
+                 :resolution "1-25 km" ;
+                 :stability "1-2Wm-2" ;
+                 :standardsReferences "See EOV Specification at www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Ocean Surface Heat Flux"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_102
+:Requirement_102 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Weekly" ;
+                 :requiredMeasurementUncertainty "5% ice area fraction" ;
+                 :resolution "10 km to 15 km" ;
+                 :stability "5%" ;
+                 :standardsReferences "See EOV Specification Sheet www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea ice"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_103
+:Requirement_103 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Weekly" ;
+                 :requiredMeasurementUncertainty "5 km" ;
+                 :resolution "1 km to 5 km" ;
+                 :stability "unspecified" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea ice"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_104
+:Requirement_104 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Monthly" ;
+                 :requiredMeasurementUncertainty "0.1 m" ;
+                 :resolution "25 km" ;
+                 :stability "unspecified" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea ice"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_105
+:Requirement_105 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Weekly" ;
+                 :requiredMeasurementUncertainty "1 km/day" ;
+                 :resolution "5 km" ;
+                 :stability "unspecified" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea ice"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_106
+:Requirement_106 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Weekly to monthly" ;
+                 :requiredMeasurementUncertainty "2-4 mm (global mean); 1 cm over a grid mesh" ;
+                 :resolution "10-100 km" ;
+                 :stability "< 0.3 mm/yr (global mean)" ;
+                 :standardsReferences "See EOV Specifications at www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea level"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_107
+:Requirement_107 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Hourly to weekly" ;
+                 :requiredMeasurementUncertainty "1 cm (over grid mesh of 50-100 km)" ;
+                 :resolution "10 km" ;
+                 :stability "< 1 mm/yr (for grid mesh of 50- 100 km)" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea level"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_108
+:Requirement_108 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "3 hourly" ;
+                 :requiredMeasurementUncertainty "10 cm" ;
+                 :resolution "25km" ;
+                 :stability "5 cm" ;
+                 :standardsReferences "See EOV Specification at www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea state"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_109
+:Requirement_109 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Hourly to weekly" ;
+                 :requiredMeasurementUncertainty "0.02m/s" ;
+                 :resolution "1-10km" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "See EOV Specification at www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea Surface Currents"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_110
+:Requirement_110 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Hourly to monthly" ;
+                 :requiredMeasurementUncertainty "0.01 psu" ;
+                 :resolution "1-100 km" ;
+                 :stability "0.001 psu" ;
+                 :standardsReferences "See EOV Specification Sheet at www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea Surface Salinity"@en .
+
+
 ###  http://purl.org/eiffo/ecv#RiverDischargeECV1
 :RiverDischargeECV1 rdf:type owl:NamedIndividual ,
                              :ECV ;
@@ -2935,6 +4666,162 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                             :ScientificArea ;
                    :scientifiAreaName "Snow and Ice" ;
                    rdfs:label "Snow and Ice" .
+
+
+###  http://purl.org/eiffo/ecv#ScientificArea_06
+:ScientificArea_06 rdf:type owl:NamedIndividual ,
+                            :ScientificArea ;
+                   :scientifiAreaName "Biosphere" ;
+                   rdfs:label "Biosphere" .
+
+
+###  http://purl.org/eiffo/ecv#SeaIceECV1
+:SeaIceECV1 rdf:type owl:NamedIndividual ,
+                     :ECV ;
+            :hasDataSource :DS_006 ,
+                           :DS_079 ,
+                           :DS_119 ,
+                           :DS_120 ,
+                           :DS_121 ;
+            :hasDomain :PhysicalDomain1 ;
+            :hasECVProduct :ECVProduct_107 ,
+                           :ECVProduct_108 ,
+                           :ECVProduct_109 ,
+                           :ECVProduct_110 ;
+            :hasScientificArea :ScientificArea_05 ;
+            :ecvDescription "Sea ice variability is a key indicator of climate variability and change in the polar regions. The primary parameters that define the state of sea ice include: concentration, area and extent, ice type, motion, deformation, age, thickness, and volume. The presence of sea ice strongly modifies surface waves and air-sea exchanges of heat, momentum, moisture and gases. Sea ice has a significant impact on the Earth’s albedo and hence changes in Sea Ice impact the global energy budget. The properties of many water masses of the global ocean and strongly influenced determined freezing and melting processes in sea ice regions" ;
+            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/sea_ice_ecv_factsheet_201905.pdf?BfVkRzJb5R9c_9c57apA1MqwWOh7mgjc" ;
+            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-sea-ice_hover.png?I94GbO6MERbjin2ZWFxAMFYHnPBRMYFK=" ;
+            :ecvName "Sea Ice" ;
+            rdfs:label "Sea Ice" .
+
+
+###  http://purl.org/eiffo/ecv#SeaLevelECV1
+:SeaLevelECV1 rdf:type owl:NamedIndividual ,
+                       :ECV ;
+              :hasDataSource :DS_006 ,
+                             :DS_122 ,
+                             :DS_123 ,
+                             :DS_124 ;
+              :hasDomain :PhysicalDomain1 ;
+              :hasECVProduct :ECVProduct_111 ,
+                             :ECVProduct_112 ;
+              :hasScientificArea :ScientificArea_02 ;
+              :ecvDescription "Sea Level is one of the primary indicators of global climate change. Change in the global mean sea level provides a measure of the net change in ocean mass due to melting of glaciers and ice sheets, and net change in ocean volume due to thermal expansion. Sea level observations characterize inter-seasonal variability such as ENSO. On the regional scales, changes in sea level can be far larger than the globally averaged value due to changes in temperature, salinity and circulation. Along many continental margins vertical land displacement associated with crustal adjustments to past and current land ice melt also cause regional variations in apparent sea level independent of the ocean. Coastal sea level change is a major driver of societal impacts." ;
+              :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/sea_level_ecv_factsheet_201905.pdf?vCKkhH2vbEHfNaSJ3qrcSXGVuo279hHO" ;
+              :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-sea-level_hover.png?dmtPyrpZksqqis3lE3EWgx2ZUrwyEE8U=" ;
+              :ecvName "Sea Level" ;
+              rdfs:label "Sea Level" .
+
+
+###  http://purl.org/eiffo/ecv#SeaStateECV1
+:SeaStateECV1 rdf:type owl:NamedIndividual ,
+                       :ECV ;
+              :hasDataSource :DS_125 ,
+                             :DS_126 ,
+                             :DS_127 ,
+                             :DS_128 ;
+              :hasDomain :PhysicalDomain1 ;
+              :hasECVProduct :ECVProduct_113 ;
+              :hasScientificArea :ScientificArea_02 ;
+              :ecvDescription "Sea State is the characterization of wave and swell, typically in terms of height, wavelength, period, and directional wave energy flux. Waves generated by ocean surface stress evolve from wind waves to swell through nonlinear dynamical processes.. Wave characteristics are modified by bathymetry when the depth of the water is comparable to the wavelength, and by surface currents. Sea state is most well known for its impacts on marine safety, marine transport and damage to structures. It is also a substantial modifier of airsea exchanges of momentum, moisture and CO2. Waves also impact beach erosion, storm-related water damage (wave set-up contributes to storm surge), surface albedo, and transport of larva. Waves can also modify the growth or decay of sea ice." ;
+              :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/sea_state_ecv_factsheet_201905.pdf?3Iw5TjrdTweogPoyjxh98J4_bNpK7N7A" ;
+              :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-sea-state_hover.png?_IKdd1EG_Q_kfYMSrTlyZQKw_oNWtMj_=" ;
+              :ecvName "Sea State" ;
+              rdfs:label "Sea State" .
+
+
+###  http://purl.org/eiffo/ecv#SeaSurfaceCurrentsECV1
+:SeaSurfaceCurrentsECV1 rdf:type owl:NamedIndividual ,
+                                 :ECV ;
+                        :hasDataSource :DS_129 ,
+                                       :DS_130 ,
+                                       :DS_131 ;
+                        :hasDomain :PhysicalDomain1 ;
+                        :hasECVProduct :ECVProduct_114 ;
+                        :hasScientificArea :ScientificArea_02 ;
+                        :ecvDescription "The surface ocean general circulation is responsible for significant surface transport of heat, salt, passive tracers and ocean pollutants. On basin scales, surface currents and their variations are a major player in climate to weather fluctuations. The boundary currents on each side of the ocean basins transport significant amounts of heat, salt and passive tracers. Western Boundary Currents in particular transport heat and properties polwards, moderating climate. Convergences/divergences, spiralling eddies, and filaments all contribute to vertical motions and mass exchange. Surface currents impact the steepness of surface waves, and are thus important for generating accurate marine sea state forecasts." ;
+                        :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/surface_currents_ecv_factsheet_201905.pdf?gB0mXkvNJ1AczgHcLOfXG6aPLmk825Zo" ;
+                        :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-sea-surface-currents_hover.png?n6i5yTtDVuU7A2Z9Mof6dYFW09S9ChcJ=" ;
+                        :ecvName "Sea Surface Currents" ;
+                        rdfs:label "Sea Surface Currents" .
+
+
+###  http://purl.org/eiffo/ecv#SeaSurfaceSalinityECV1
+:SeaSurfaceSalinityECV1 rdf:type owl:NamedIndividual ,
+                                 :ECV ;
+                        :hasDataSource :DS_132 ,
+                                       :DS_133 ,
+                                       :DS_134 ;
+                        :hasDomain :PhysicalDomain1 ;
+                        :hasECVProduct :ECVProduct_115 ;
+                        :hasScientificArea :ScientificArea_01 ;
+                        :ecvDescription "Sea surface salinity observations contribute to monitoring the global water cycle (evaporation, precipitation and glacier and river runoff). On large scales, surface salinity can be used to infer long-term changes of the global hydrological cycle. Surface salinity, together with surface temperature, is indicative of the surface expression of ocean frontal features and eddies." ;
+                        :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/sea_surface_salinity_ecv_factsheet_201905.pdf?DqL1g_jXJL0Yk9iUVkjy8DLMwjo8KaSb" ;
+                        :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-sea-surface-salinity_hover.png?Yx68lFoFq0RLkskCZIWj1DEbRZiyoirv=" ;
+                        :ecvName "Sea Surface Salinity" ;
+                        rdfs:label "Sea Surface Salinity" .
+
+
+###  http://purl.org/eiffo/ecv#SnowECV1
+:SnowECV1 rdf:type owl:NamedIndividual ,
+                   :ECV ;
+          :hasDataSource :DS_006 ,
+                         :DS_079 ,
+                         :DS_080 ;
+          :hasDomain :CryosphereDomain1 ;
+          :hasECVProduct :ECVProduct_070 ,
+                         :ECVProduct_071 ,
+                         :ECVProduct_072 ;
+          :hasECVSteward :ECVSteward_18 ;
+          :hasScientificArea :ScientificArea_05 ;
+          :ecvDescription "Snow refers to forms of ice crystals that precipitate from the atmosphere (usually from clouds) and undergo changes on the Earth's surface. Snow cover on the ground plays a significant role in the climate system due to its high albedo, heat insulation and contribution to soil moisture and runoff, thus an important variable in monitoring climate change." ;
+          :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/snow_ecv_factsheet_201905.pdf?xCozih9hbOKlAIVRFyxUqAMGyOreHe3p" ;
+          :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-cry-snow_hover.png?oftbksnsirPF41FrlO8qlfuxDntjhwCd=" ;
+          :ecvName "Snow" ;
+          rdfs:label "Snow" .
+
+
+###  http://purl.org/eiffo/ecv#SoiCarbonECV1
+:SoiCarbonECV1 rdf:type owl:NamedIndividual ,
+                        :ECV ;
+               :hasDataSource :DS_101 ,
+                              :DS_102 ;
+               :hasDomain :BiosphereDomain1 ;
+               :hasECVProduct :ECVProduct_091 ,
+                              :ECVProduct_092 ,
+                              :ECVProduct_093 ;
+               :hasECVSteward :ECVSteward_27 ;
+               :hasScientificArea :ScientificArea_06 ;
+               :ecvDescription "Carbon in soils occurs in organic and inorganic forms. The inorganic carbon is derived from weathered bedrock, is relatively inert and constitutes little to the carbon cycle. Soil organic carbon is derived from plant and other decaying matter and is a significant part of the carbon cycle. About 10% of the atmospheric carbon cycles through soils each year. Soil organic carbon represents the largest terrestrial carbon pool, amounting to about two to three times the net size of the biomass pools. Carbon sinks may be explained by changes in above-ground biomass on seasonal to decadal timescales, but soil organic carbon stocks become significant on longer timescales, and can be a significant source at all timescales after disturbances" ;
+               :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/soil_carbon_ecv_factsheet_201905.pdf?W5HPaUt3y3U9XtvABi.JqcTybdcZyGpK" ;
+               :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-bio-soil-carbon_hover.png?tMjIzil1WfUyHPaJUkgG5Up1IwKm4fBF=" ;
+               :ecvName "Soil Carbon" ;
+               rdfs:label "Soil Carbon" .
+
+
+###  http://purl.org/eiffo/ecv#SoilMoistureECV1
+:SoilMoistureECV1 rdf:type owl:NamedIndividual ,
+                           :ECV ;
+                  :hasDataSource :DS_006 ,
+                                 :DS_086 ,
+                                 :DS_103 ,
+                                 :DS_104 ,
+                                 :DS_105 ,
+                                 :DS_106 ;
+                  :hasDomain :HydrsphereDomain1 ;
+                  :hasECVProduct :ECVProduct_094 ,
+                                 :ECVProduct_095 ,
+                                 :ECVProduct_096 ,
+                                 :ECVProduct_097 ;
+                  :hasECVSteward :ECVSteward_28 ,
+                                 :ECVSteward_29 ;
+                  :hasScientificArea :ScientificArea_01 ;
+                  :ecvDescription "Soil moisture is an important variable in land–atmosphere feedbacks at both weather and climate timescales. It plays a major role in partitioning the incoming radiation flux onto the land into fluxes of latent and sensible heat from the land to the atmosphere, and in separating precipitation into runoff, subsurface flow, and infiltration. Soil moisture is intimately involved in the feedback between climate and vegetation, as both local climate and vegetation influence soil moisture through evapotranspiration, while soil moisture is a determinant of the type and condition of vegetation in a region. Changes in soil moisture can accordingly have substantial impacts on agricultural productivity, forestry and ecosystem health." ;
+                  :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/soil_moisture_ecv_factsheet_201905.pdf?MUnJZ_2ZD9rTzk593vbxodKPpN_HTsOt" ;
+                  :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-hyd-soil-moisture_hover.png?rkVrMf7VYxFwUpne_RGVkInT7Hufamig=" ;
+                  :ecvName "Soil Moisture" ;
+                  rdfs:label "Soil Moisture" .
 
 
 ###  http://purl.org/eiffo/ecv#SurfaceDomain1
@@ -3113,6 +5000,10 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                                    rdfs:label "Upper-air Wind Speed and Direction" .
 
 
+###  http://purl.org/eiffo/ecv#biosphereDomain1
+:biosphereDomain1 rdf:type owl:NamedIndividual .
+
+
 ###  http://purl.org/eiffo/ecv#zoneECV1
 :zoneECV1 rdf:type owl:NamedIndividual ,
                    :ECV ;
@@ -3138,479 +5029,235 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
           :ecvName "Ozone" ;
           rdfs:label "Ozone" .
 
-###  http://purl.org/eiffo/ecv#ECVSteward_20
-:ECVSteward_20 rdf:type owl:NamedIndividual ,
-                      :ECVSteward ;
-             :stewardAffiliation "Institut de Géographie Alpine, Grénoble, Franc" ;
-             :stewardName "Philippe Schoeneich" ;
-             rdfs:label "Philippe Schoeneich" .
 
-
-###  http://purl.org/eiffo/ecv#DS_078
-:DS_078 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "http://gtnp.arcticportal.org/" ;
-      :dsName "Global Terrestrial Network for Permafrost (GTN-P) Database" ;
-      rdfs:label "Global Terrestrial Network for Permafrost (GTN-P) Database" .
-
-
-###  http://purl.org/eiffo/ecv#Requirement_068
-:Requirement_068 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Daily to weekly" ;
-              :requiredMeasurementUncertainty "0.1K" ;
-              :resolution "Sufficient sites to characterise each bioclimate zone" ;              
-              rdfs:label "Requirement for ECV Product - Permafrost"@en .
-
-#  http://purl.org/eiffo/ecv#Requirement_069
-:Requirement_069 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Daily to weekly" ;
-              :requiredMeasurementUncertainty "2 cm" ;
-              :resolution "Sufficient sites to characterise each bioclimate zone" ;              
-              rdfs:label "Requirement for ECV Product - Permafrost"@en .
-
-
-###  http://purl.org/eiffo/ecv#ECVProduct_068
-:ECVProduct_068 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_068 ;
-             :productDefinition "Ground temperatures measured at specified depths along profiles." ;
-             :productName "Thermal State of Permafrost" ;             
-             dc:description "ECV Product for Precipitation"@en ;
-             rdfs:label "ECV Product 68 - Permafrost"@en .
-
-
-##  http://purl.org/eiffo/ecv#ECVProduct_069
-:ECVProduct_069 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_069 ;
-             :productDefinition "Thickness of seasonally thawed ground measured in (cm)." ;
-             :productName "Active Layer Thickness" ;             
-             dc:description "ECV Product for Precipitation"@en ;
-             rdfs:label "ECV Product 69 - Permafrost"@en .
-
-
-###  http://purl.org/eiffo/ecv#PermafrostECV1
-:PermafrostECV1 rdf:type owl:NamedIndividual ,
-                                     :ECV ;
-                            :hasDataSource :DS_078 ;
-                            :hasDomain :CryosphereDomain1 ;
-                            :hasECVProduct :ECVProduct_068 ,
-                                           :ECVProduct_069 ;
-                            :hasECVSteward :ECVSteward_20 ;
-                            :hasScientificArea :ScientificArea_05 ;
-                            :ecvDescription "The properties of frozen ground react sensitively to climate and environmental changes in high-latitude and high-altitude regions. This includes the temperature distribution in the permafrost layer and the depth of the overlying active layer where seasonal freezing and thawing occur. Changes in these quantities have important impacts on terrain stability, coastal erosion, surface and subsurface water, the carbon cycle and vegetation development." ;
-                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/permafrost_ecv_factsheet_201905.pdf?g.E9WybO2xlDJVXmTENgHHExmy7m3XJe" ;
-                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-cry-permafrost_hover.png?jNxU35JTS8Ov4D9_rOi8xWivCxdqf9x3=" ;
-                           :ecvName "Permafrost" ;
-                            rdfs:label "Permafrost" . 
-
-
-###  http://purl.org/eiffo/ecv#DS_079
-:DS_079 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "http://nsidc.org/data/" ;
-      :dsName "National Snow & Ice Data Center" ;      
-      rdfs:label "National Snow & Ice Data Center" .
-
-###  http://purl.org/eiffo/ecv#DS_080
-:DS_080 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "http://www.cryoland.eu/" ;
-      :dsName "Copernicus GMES Service Snow and Land Ice" ;      
-      rdfs:label "Copernicus GMES Service Snow and Land Ice" .
-
-
-###  http://purl.org/eiffo/ecv#Requirement_070
-:Requirement_070 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Daily" ;
-              :requiredMeasurementUncertainty "5% (maximum error of omission and commission in snow area); location accuracy better than 1/3 IFOV with target IFOV 100 m in areas of complex terrain, 1 km elsewhere" ;
-              :resolution "1km (100m in complex terrain" ;
-              :stability "4% (maximum error of omission and commission in snow area); location accuracy better than 1/3 IFOV with target IFOV 100 m in areas of complex terrain, 1 km elsewhere" ;
-              :standardsReferences "WMO (2008c) IGOS (2007), IACS/UNESC O, 2009" ;
-              rdfs:label "Requirement for ECV Product - Snow"@en .
-
-
-###  http://purl.org/eiffo/ecv#Requirement_071
-:Requirement_071 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Daily" ;
-              :requiredMeasurementUncertainty "10 mm" ;
-              :resolution "1km (100m in complex terrain)" ;
-              :stability "10 mm" ;
-              :standardsReferences "WMO (2008c) IGOS (2007), IACS/UNESC O, 2009" ;
-              rdfs:label "Requirement for ECV Product - Snow"@en .
-
-###  http://purl.org/eiffo/ecv#Requirement_072
-:Requirement_072 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Daily" ;
-              :requiredMeasurementUncertainty "10 mm" ;
-              :resolution "1km" ;
-              :stability "10 mm" ;
-              :standardsReferences "WMO (2008c) IGOS (2007), IACS/UNESC O, 2009" ;
-              rdfs:label "Requirement for ECV Product - Snow"@en .
-
-
-###  http://purl.org/eiffo/ecv#ECVProduct_070
-:ECVProduct_070 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_070 ;
-             :productDefinition "Snow cover refers to the area of land covered by snow at a given time." ;
-             :productName "Area covered by snow" ;             
-             dc:description "ECV Product for Snow"@en ;
-             rdfs:label "ECV Product 70 - Snow"@en .
-
-###  http://purl.org/eiffo/ecv#ECVProduct_071
-:ECVProduct_071 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_071 ;
-             :productDefinition "Snow depth is the perpendicular distance between snowpack surface and the underlying ground." ;
-             :productName "Snow depth" ;             
-             dc:description "ECV Product for Snow"@en ;
-             rdfs:label "ECV Product 71 - Snow"@en .
-
-###  http://purl.org/eiffo/ecv#ECVProduct_072
-:ECVProduct_072 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_072 ;
-             :productDefinition "It is depth of water that result from the snowpack melting in a unit of area." ;
-             :productName "Snow water equivalent" ;             
-             dc:description "ECV Product for Snow"@en ;
-             rdfs:label "ECV Product 72 - Snow"@en .
-
-
-###  http://purl.org/eiffo/ecv#SnowECV1
-:SnowECV1 rdf:type owl:NamedIndividual ,
-                                     :ECV ;
-                            :hasDataSource :DS_079 ,
-                                           :DS_080 ,                                           
-                                           :DS_006 ;
-                            :hasDomain :CryosphereDomain1 ;
-                            :hasECVProduct :ECVProduct_079 ,
-                                           :ECVProduct_080 ,
-                                           :ECVProduct_006 ;
-                            :hasECVSteward :ECVSteward_18 ;
-                            :hasScientificArea :ScientificArea_05 ;
-                            :ecvDescription "Snow refers to forms of ice crystals that precipitate from the atmosphere (usually from clouds) and undergo changes on the Earth's surface. Snow cover on the ground plays a significant role in the climate system due to its high albedo, heat insulation and contribution to soil moisture and runoff, thus an important variable in monitoring climate change." ;
-                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/snow_ecv_factsheet_201905.pdf?xCozih9hbOKlAIVRFyxUqAMGyOreHe3p" ;
-                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-cry-snow_hover.png?oftbksnsirPF41FrlO8qlfuxDntjhwCd=" ;
-                           :ecvName "Snow" ;
-                            rdfs:label "Snow" . 
+###  http://purl.org/eiffo/ecv#:BiosphereDomain1
+<http://purl.org/eiffo/ecv#:BiosphereDomain1> rdf:type owl:NamedIndividual .
 
 
 
-###  http://purl.org/eiffo/ecv#ECVSteward_21
-:ECVSteward_21 rdf:type owl:NamedIndividual ,
-                      :ECVSteward ;
-             :stewardAffiliation "GOFC-GOLD, Wageningen University, Netherlands" ;
-             :stewardName "Martin Herold" ;
-             rdfs:label "Martin Herold" .
-
-
-###  http://purl.org/eiffo/ecv#ECVSteward_22
-:ECVSteward_22 rdf:type owl:NamedIndividual ,
-                      :ECVSteward ;
-             :stewardAffiliation "Jet Propulsion Laboratory California Institute of Technology, US" ;
-             :stewardName "Sassan Saatchi" ;
-             rdfs:label "Sassan Saatchi" .
-
-###  http://purl.org/eiffo/ecv#ScientificArea_06
-:ScientificArea_06 rdf:type owl:NamedIndividual ,
-                          :ScientificArea ;
-                 :scientifiAreaName "Biosphere" ;
-                 rdfs:label "Biosphere" .
-
-
-###  http://purl.org/eiffo/ecv#DS_081
-:DS_081 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "http://www.globbiomass.org/" ;
-      :dsName "ESA-Globbiomass" ;      
-      rdfs:label "ESA-Globbiomass" .
-
-###  http://purl.org/eiffo/ecv#DS_082
-:DS_082 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "lucid.wur.nl" ;
-      :dsName "GEOCARBON" ;      
-      rdfs:label "GEOCARBON" .
-
-###  http://purl.org/eiffo/ecv#DS_083
-:DS_083 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://www.globalforestwatch.org/" ;
-      :dsName "WRI Global Forest Watch" ;      
-      rdfs:label "WRI Global Forest Watch" .
-
-###  http://purl.org/eiffo/ecv#DS_084
-:DS_084 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://fluxnet.ornl.gov/fluxnetdb" ;
-      :dsName "FLUXNET" ;      
-      rdfs:label "FLUXNET" .
-
-###  http://purl.org/eiffo/ecv#Requirement_073
-:Requirement_073 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Annual" ;
-              :requiredMeasurementUncertainty "< 20% error for biomass values > 50 t/ha, and 10 t/ha for biomass values ≤ 50 t/ha" ;
-              :resolution "500m-1km (based on satellite observations of 100-200m)" ;
-              :stability "10%" ;
-              :standardsReferences "No agreed standards but see: GOFCGOLD (2015b); GFOI (2013)" ;
-              rdfs:label "Requirement for ECV Product - Above-ground biomass"@en .
-
-
-###  http://purl.org/eiffo/ecv#ECVProduct_073
-:ECVProduct_073 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_073 ;
-             :productDefinition "Mass of live and/or dead organic matter in terrestrial vegetation." ;
-             :productName "Maps of aboveground biomass" ;             
-             dc:description "ECV Product for Above-ground biomass"@en ;
-             rdfs:label "ECV Product 73 - Above-ground biomass"@en .
-
-
-###  http://purl.org/eiffo/ecv#AboveGroundBiomassECV1
-:AboveGroundBiomassECV1 rdf:type owl:NamedIndividual ,
-                                     :ECV ;
-                            :hasDataSource :DS_081 ,
-                                           :DS_082 ,
-                                           :DS_083 ,
-                                           :DS_084 ;
-                            :hasDomain :BiosphereDomain1 ;
-                            :hasECVProduct :ECVProduct_073 ;
-                            :hasECVSteward :ECVSteward_21 ,
-                                           :ECVSteward_22;
-                            :hasScientificArea :ScientificArea_06 ;
-                            :ecvDescription "Land cover is the observed (bio)-physical cover on the Earth’s surface. It influences climate by modifying water and energy exchanges with the atmosphere and by changing greenhouse gas and aerosol sources and sinks. Land-cover conditions are inherently dynamic (i.e. seasonality) and distributions are linked to regional climatic conditions, so changes in cover can be due to climate change on a regional scale as well as directly due to human activities" ;
-                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/biomass_ecv_factsheet_201905.pdf?UIj2pnLviZJQEYAmaNuHOB3_fWsMjQoS" ;
-                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-bio-above-ground-biomass_hover.png?9_9apKhjAgL8jiCQ0E29_w1uo_u7tE1V=" ;
-                           :ecvName "Above-ground Biomass" ;
-                            rdfs:label "Above-ground Biomass" . 
-
-
-###  http://purl.org/eiffo/ecv#ECVSteward_23
-:ECVSteward_23 rdf:type owl:NamedIndividual ,
-                      :ECVSteward ;
-             :stewardAffiliation "European Commission, Joint Research Centre, Institute for Environment and Sustainability" ;
-             :stewardName "Nadine Gobron" ;
-             rdfs:label "Nadine Gobron" .
-
-
-###  http://purl.org/eiffo/ecv#DS_085
-:DS_085 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://modis.gsfc.nasa.gov/data/dataprod/mod43.php" ;
-      :dsName "MODIS Collection 6 surface albedo" ;      
-      rdfs:label "MODIS Collection 6 surface albedo" .
-
-###  http://purl.org/eiffo/ecv#DS_086
-:DS_086 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://cds.climate.copernicus.eu/#!/home" ;
-      :dsName "Copernicus Climate Change Service (C3S) data store" ;      
-      rdfs:label "Copernicus Climate Change Service (C3S) data store" .
-
-###  http://purl.org/eiffo/ecv#Requirement_074
-:Requirement_074 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Daily" ;
-              :requiredMeasurementUncertainty "max(5%; 0.0025)" ;
-              :resolution "50 m" ;
-              :stability "max(1%; 0.001)" ;              
-              rdfs:label "Requirement for ECV Product - Albedo"@en .
-
-
-###  http://purl.org/eiffo/ecv#Requirement_075
-:Requirement_075 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;              
-              :requiredMeasurementUncertainty "max(5%; 0.0025)" ;
-              :resolution "50 m" ;
-              :stability "max(1%; 0.001)" ;              
-              rdfs:label "Requirement for ECV Product - Albedo"@en .
-
-###  http://purl.org/eiffo/ecv#Requirement_076
-:Requirement_075 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;    
-              :frequency "Daily" ;          
-              :requiredMeasurementUncertainty "max(5%; 0.0025)" ;
-              :resolution "200/500m" ;
-              :stability "max(1%; 0.001)" ;              
-              rdfs:label "Requirement for ECV Product - Albedo"@en .
-
-###  http://purl.org/eiffo/ecv#Requirement_077
-:Requirement_077 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;                          
-              :requiredMeasurementUncertainty "max(5%; 0.0025)" ;
-              :resolution "200/500m" ;
-              :stability "max(1%; 0.001)" ;              
-              rdfs:label "Requirement for ECV Product - Albedo"@en .
-
-
-###  http://purl.org/eiffo/ecv#ECVProduct_074
-:ECVProduct_074 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_074 ;
-             :productDefinition "Albedo without diffuse irradiance component." ;
-             :productName "Maps of directional hemispherical reflectance (DHR) albedo for adaptation" ;        
-             dc:description "ECV Product for Albedo"@en ;
-             rdfs:label "ECV Product 74 - albedo"@en .
-
-###  http://purl.org/eiffo/ecv#ECVProduct_075
-:ECVProduct_075 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_075 ;
-             :productDefinition "Albedo with isotropic illumination only (white-sky)" ;
-             :productName "Maps of bihemispherical reflectance (BHR) albedo for adaptation" ;        
-             dc:description "ECV Product for Albedo"@en ;
-             rdfs:label "ECV Product 75 - albedo"@en .
-
-###  http://purl.org/eiffo/ecv#ECVProduct_076
-:ECVProduct_076 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_076 ;
-             :productDefinition "Albedo without diffuse irradiance component" ;
-             :productName "Maps of DHR albedo for modelling" ;        
-             dc:description "ECV Product for Albedo"@en ;
-             rdfs:label "ECV Product 76 - albedo"@en .
-
-
-###  http://purl.org/eiffo/ecv#ECVProduct_077
-:ECVProduct_077 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_077 ;
-             :productDefinition "Albedo with isotropic illumination only (white-sky)" ;
-             :productName "Maps of BHR albedo for modelling" ;        
-             dc:description "ECV Product for Albedo"@en ;
-             rdfs:label "ECV Product 77 - albedo"@en .
-
-###  http://purl.org/eiffo/ecv#AlbedoECV1
-:AlbedoECV1 rdf:type owl:NamedIndividual ,
-                                     :ECV ;
-                            :hasDataSource :DS_085 ,
-                                           :DS_086 ,                                           
-                                           :DS_006 ;
-                            :hasDomain :BiosphereDomain1 ;
-                            :hasECVProduct :ECVProduct_074 ,
-                                           :ECVProduct_075 ,
-                                           :ECVProduct_076 ,
-                                           :ECVProduct_077 ;
-                            :hasECVSteward :ECVSteward_23 ;
-                           :hasScientificArea :ScientificArea_03 ;
-                            :ecvDescription "The land surface albedo is the ratio of the radiant flux reflected from Earth’s surface to the incident flux. It is a key forcing parameter controlling the partitioning of radiative energy between the atmospheric and surface. In the case of vegetation, a reference surface is typically defined at or near the top of the canopy and must be specified explicitly. Surface albedo depends on natural variations, highly variable in space and time as a result of terrestrial properties changes, and with illumination conditions and human activities and is a sensitive indicator of environmental vulnerability" ;
-                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/albedo_ecv_factsheet_201905.pdf?_UGkfFiOyAusFLwiLAP54ty4plAVXXf7" ;
-                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-bio-albedo_hover.png?MhkdFeueNURaJhR7YMQhLsIwgFk9AYjm=" ;
-                           :ecvName "Albedo" ;
-                            rdfs:label "Albedo" .
-
-###  http://purl.org/eiffo/ecv#ECVSteward_24
-:ECVSteward_24 rdf:type owl:NamedIndividual ,
-                      :ECVSteward ;
-             :stewardAffiliation "Ghent University, Belgium" ;
-             :stewardName "Diego Miralles" ;
-             rdfs:label "Diego Miralles" .
-
-
-###  http://purl.org/eiffo/ecv#DS_087
-:DS_087 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#DS_136
+:DS_136 rdf:type owl:NamedIndividual ,
                :DataSource ;
       :dsLink "https://opendata.dwd.de/climate_environment/GPCC/html/download_gate.html" ;
-      :dsName "Global Precipitation Climatology Centre (GPCC)" ;
-      :dsType "Gridded In Situ" ;
-      rdfs:label "Global Precipitation Climatology Centre (GPCC)" .
-
-###  http://purl.org/eiffo/ecv#DS_087
-:DS_087 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "http://www.fluxcom.org/" ;
-      :dsName "FLUXCOM" ;      
-      rdfs:label "FLUXCOM" .
+      :dsName "Environmental Research Division's Data Access Program (ERDDAP" ;      
+      rdfs:label "Environmental Research Division's Data Access Program (ERDDAP" .
 
 
-###  http://purl.org/eiffo/ecv#DS_088
-:DS_088 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://www.gleam.eu/" ;
-      :dsName "Global Land Evaporation Amsterdam Model (GLEAM)" ;      
-      rdfs:label "Global Land Evaporation Amsterdam Model (GLEAM)" .
-
-
-###  http://purl.org/eiffo/ecv#DS_089
-:DS_089 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://ladsweb.modaps.eosdis.nasa.gov/search/order/2/MOD16A2--6" ;
-      :dsName "MOD16" ;      
-      rdfs:label "MOD16" .
-
-###  http://purl.org/eiffo/ecv#DS_090
-:DS_090 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://data.csiro.au/dap/landingpage?pid=csiro:17375&v=2&d=true" ;
-      :dsName "Penman–Monteith–Leuning (PML)" ;      
-      rdfs:label "Penman–Monteith–Leuning (PML)" .
-
-
-###  http://purl.org/eiffo/ecv#DS_091
-:DS_091 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "http://www.landflux.org/Data.php" ;
-      :dsName "Priestley–Taylor, Jet Propulsion Laboratory (PT-JPL)" ;      
-      rdfs:label "Priestley–Taylor, Jet Propulsion Laboratory (PT-JPL)" .
-
-
-###  http://purl.org/eiffo/ecv#Requirement_078
-:Requirement_078 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#Requirement_111
+:Requirement_111 rdf:type owl:NamedIndividual ,
                        :ECVProductRequirement ;
-              :frequency "Sub-daily, latency of less than 1 month" ;
-              :requiredMeasurementUncertainty "<10%" ;
-              :resolution "Threshold 25km, goal 1km" ;
-              :stability "Better than 1%" ;              
-              rdfs:label "Requirement for ECV Product - Evaporation from Land"@en .
+              :frequency "hourlymonthly" ;
+              :requiredMeasurementUncertainty "0.001-4Nm-2" ;
+              :resolution "10-100km" ;
+              :stability "Not specified" ;
+              :standardsReferences "See EOV Specification at www.goosocean.org/eov" ;
+              rdfs:label "Requirement for ECV Product - Sea Surface stress"@en .
 
 
-###  http://purl.org/eiffo/ecv#ECVProduct_078
-:ECVProduct_078 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#ECVProduct_116
+:ECVProduct_116 rdf:type owl:NamedIndividual ,
                       :ECVProduct ;
-             :hasECVProducRequirement :Requirement_078 ;
-             :productDefinition "The terrestrial surface latent heat flux refers to the transfer of heat from land to atmosphere that is associated with evaporation, i.e. with the vaporisation of liquid water (transpiration, soil evaporation, or interception loss), and sublimation of ice and snow." ;
-             :productName "Latent heat flux" ;             
-             dc:description "ECV Product for Evaporation from Land"@en ;
-             rdfs:label "ECV Product 78 - Evaporation from Land"@en .
+             :hasECVProducRequirement :Requirement_111 ;
+             :productDefinition "The two-dimensional vector drag at the bottom of the atmosphere and the dynamical forcing at the top of the ocean." ;
+             :productName "Ocean Surface stress" ;             
+             dc:description "ECV Product for Sea Surface stress"@en ;
+             rdfs:label "ECV Product 116 - Sea Surface stress"@en .
 
 
-##  http://purl.org/eiffo/ecv#ECVProduct_079
-:ECVProduct_079 rdf:type owl:NamedIndividual ,
-                      :ECVProduct ;
-             :hasECVProducRequirement :Requirement_078 ;
-             :productDefinition "The terrestrial surface sensible heat flux refers to the transfer of heat that is caused by the difference in temperature between land and atmosphere." ;
-             :productName "Sensible heat flux" ;             
-             dc:description "ECV Product for Evaporation from Land"@en ;
-             rdfs:label "ECV Product 79 - Evaporation from Land"@en .
-
-
-###  http://purl.org/eiffo/ecv#EvaporationFromLandECV1
-:EvaporationFromLandECV1 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#SeaSurfaceStressECV1
+:SeaSurfaceStressECV1 rdf:type owl:NamedIndividual ,
                                      :ECV ;
-                            :hasDataSource :DS_005 ,
-                                           :DS_087 ,
-                                           :DS_088 ,
-                                           :DS_089 ,
-                                           :DS_090 ,
-                                           :DS_091 ;
-                            :hasDomain :BiosphereDomain1 ;
-                            :hasECVProduct :ECVProduct_078 ,
-                                           :ECVProduct_079 ;
-                            :hasECVSteward :ECVSteward_24 ;
+                            :hasDataSource :DS_135 ,
+                                           :DS_114 ,
+                                           :DS_136 ;
+                            :hasDomain :PhysicalDomain1 ;
+                            :hasECVProduct :ECVProduct_116 ;
+                            :hasScientificArea :ScientificArea_02 ;
+                            :ecvDescription "Ocean surface stress (OSS) is the two-dimensional vector drag at the bottom of the atmosphere and the dynamical forcing at the top of the ocean. OSS influences the air-sea exchange of energy, water and gases. OSS is important for determining the large scale momentum forcing of the ocean, and consequent ocean circulation including ocean upwelling regions. Accurate knowledge of stress  magnitudes is also essential for reliable computations of air-sea heat fluxes as well as air-sea gas exchanges and mass fluxes" ;
+                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/surface_stress_ecv_factsheet_201905.pdf?eQQDQpzCsGzres32WbqvQTKF2NSzDk5W" ;
+                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-surface-stress_hover.png?eW1Z85mENmQQLKqwwNoALj0NPWY_YWX7=" ;
+                           :ecvName "Sea Surface Stress" ;
+                            rdfs:label "ea Surface Stress" . 
+
+###  http://purl.org/eiffo/ecv#DS_137
+:DS_137 rdf:type owl:NamedIndividual ,
+               :DataSource ;
+      :dsLink "https://www.ghrsst.org/" ;
+      :dsName "Group for High Resolution Sea Surface Temperature:" ;
+      rdfs:label "Group for High Resolution Sea Surface Temperature:" .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_112
+:Requirement_112 rdf:type owl:NamedIndividual ,
+                       :ECVProductRequirement ;
+              :frequency "Hourly to weekly" ;
+              :requiredMeasurementUncertainty "0.1 K over 100 km scales" ;
+              :resolution "1-100 km" ;
+              :stability "< 0.03 K over 100 km scales" ;
+              :standardsReferences "See EOV Specification at www.goosocean.org/eov" ;
+              rdfs:label "Requirement for ECV Product - Sea Surface Temperature"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_117
+:ECVProduct_117 rdf:type owl:NamedIndividual ,
+                      :ECVProduct ;
+             :hasECVProducRequirement :Requirement_112 ;
+             :productDefinition "Radiative skin sea surface temperature, or Bulk sea surface temperature at Stated depth" ;
+             :productName "Sea Surface Temperature" ;             
+             dc:description "ECV Product for Sea Surface Temperature"@en ;
+             rdfs:label "ECV Product 117 - Sea Surface Temperature"@en .
+
+
+###  http://purl.org/eiffo/ecv#SeaSurfaceTemperatureECV1
+:SeaSurfaceTemperatureECV1 rdf:type owl:NamedIndividual ,
+                                     :ECV ;
+                            :hasDataSource :DS_137 ;
+                            :hasDomain :PhysicalDomain1 ;
+                            :hasECVProduct :ECVProduct_117 ;
+                            :hasScientificArea :ScientificArea_03 ;
+                            :ecvDescription "Sea-surface temperature (SST) is a vital component of the climate system as it exerts a major influence on the exchanges of energy, momentum and gases between the ocean and atmosphere. SST largely controls the atmospheric response to the ocean at both weather and climate time scales. Daily variations in SST can exceed 3 degrees Celsius and could alter the surface energy budget by more than 10 Wm-2 over the tropics and subtropics. Therefore, the SST and horizontal gradients in SST are also important for coupling with the atmosphere for sub-seasonal to seasonal prediction timescales. The spatial patterns of SST reveal the structure of the underlying ocean dynamics, such as, ocean fronts, eddies, coastal upwelling and exchanges between the coastal shelf and open ocean." ;
+                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/sea_surface_temp_ecv_factsheet_20190129.pdf?S1Ytg0lpZBI305EokCRPqHi_XU4TP_Db" ;
+                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-sea-surface-temp_hover.png?4Q7cBnd_y6hjC9k8a8AZEhei8ifnzrV7=" ;
+                           :ecvName "Sea Surface Temperature" ;
+                            rdfs:label "Sea Surface Temperature" . 
+
+
+###  http://purl.org/eiffo/ecv#DS_138
+:DS_138 rdf:type owl:NamedIndividual ,
+               :DataSource ;
+      :dsLink "https://www.nodc.noaa.gov/gocd/index.html" ;
+      :dsName "National Center for Environmental Information, Global Ocean Currents Database." ;
+      rdfs:label "National Center for Environmental Information, Global Ocean Currents Database." .
+
+###  http://purl.org/eiffo/ecv#Requirement_113
+:Requirement_113 rdf:type owl:NamedIndividual ,
+                       :ECVProductRequirement ;
+              :frequency "Hourly to weekly" ;
+              :requiredMeasurementUncertainty "0.02m/s" ;
+              :resolution "1-50 km" ;
+              :stability "Not specified" ;
+              :standardsReferences "See EOV Specification Sheet at www.goosocean.org/eov" ;
+              rdfs:label "Requirement for ECV Product - Sea Subsurface Currents"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_118
+:ECVProduct_118 rdf:type owl:NamedIndividual ,
+                      :ECVProduct ;
+             :hasECVProducRequirement :Requirement_113 ;
+             :productDefinition "Ocean vector motion measured with depth." ;
+             :productName "Interior currents" ;             
+             dc:description "ECV Product for Sea Subsurface Currents"@en ;
+             rdfs:label "ECV Product 118 - Sea Subsurface Currents"@en .
+
+
+###  http://purl.org/eiffo/ecv#SeaSubsurfaceCurrentsECV1
+:SeaSubsurfaceCurrentsECV1 rdf:type owl:NamedIndividual ,
+                                     :ECV ;
+                            :hasDataSource :DS_138 ;
+                            :hasDomain :PhysicalDomain1 ;
+                            :hasECVProduct :ECVProduct_118 ;
+                            :hasScientificArea :ScientificArea_02 ;
+                            :ecvDescription "Observations of subsurface ocean velocity contribute to estimates of ocean transports of mass, heat, freshwater, and other properties on local, to regional and basin to global scales. They are essential in resolving the wind and buoyancy driven ocean circulation, and the complex vertical velocity structure, for example, in the major ocean boundary currents, tides, equatorial currents, wave propagations, ocean eddies. Vertical velocity profile information can be used to estimate the order of ocean mixing using fine-scale parameterizations of turbulent dissipation by internal wave breaking. Velocity estimates can be combined in data assimilation models to provide gridded global estimates of ocean circulation at varying temporal and spatial scales." ;
+                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/subsurface_currents_ecv_factsheet_201905.pdf?SmDc1jDu11EpjxXXbsufBJc0zdyqObTA" ;
+                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ssop-subsurface-currents_hover.png?vOMl6h3sJPQlmFKigBTwOaho5u2vEb7h=" ;
+                           :ecvName "Sea Subsurface Currents" ;
+                            rdfs:label "Sea Subsurface Currents" . 
+
+
+###  http://purl.org/eiffo/ecv#DS_139
+:DS_139 rdf:type owl:NamedIndividual ,
+               :DataSource ;
+      :dsLink "https://www.nodc.noaa.gov/OC5/SELECT/dbsearch/dbsearch.html" ;
+      :dsName "National Center for Environmental Information (NCEI) - World Ocean Database" ;
+      rdfs:label "National Center for Environmental Information (NCEI) - World Ocean Database" .
+
+###  http://purl.org/eiffo/ecv#DS_140
+:DS_140 rdf:type owl:NamedIndividual ,
+               :DataSource ;
+      :dsLink "http://www.coriolis.eu.org/" ;
+      :dsName "Coriolis" ;
+      rdfs:label "Coriolis" .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_114
+:Requirement_114 rdf:type owl:NamedIndividual ,
+                       :ECVProductRequirement ;
+              :frequency "Hourly to monthly" ;
+              :requiredMeasurementUncertainty "0.01psu" ;
+              :resolution "25km/NA" ;
+              :stability "Not specified" ;
+              :standardsReferences "See EOV Specification Sheet at www.goosocean.org/eov" ;
+              rdfs:label "Requirement for ECV Product - Sea Subsurface Salinity"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_119
+:ECVProduct_119 rdf:type owl:NamedIndividual ,
+                      :ECVProduct ;
+             :hasECVProducRequirement :Requirement_114 ;
+             :productDefinition "Salinity of seawater with depth - Salinity is unitless, and is expressed with the suffix psu (practical salinity unit, PSS-78)." ;
+             :productName "Interior salinity" ;             
+             dc:description "ECV Product for Sea Subsurface Salinity"@en ;
+             rdfs:label "ECV Product 119 - Sea Subsurface Salinity"@en .
+
+
+###  http://purl.org/eiffo/ecv#SeaSubsurfaceSalinityECV1
+:SeaSubsurfaceSalinityECV1 rdf:type owl:NamedIndividual ,
+                                     :ECV ;
+                            :hasDataSource :DS_132 ,
+                                           :DS_139 ,
+                                           :DS_140 ;
+                            :hasDomain :PhysicalDomain1 ;
+                            :hasECVProduct :ECVProduct_119 ;
                             :hasScientificArea :ScientificArea_01 ;
-                            :ecvDescription "Terrestrial evaporation is an important process in the global water cycle. It acts like an air conditioner for the surface, as it absorbs radiation (latent heat) that otherwise would be used to warm up the atmosphere (sensible heat). At the same time, water vapour acts as a greenhouse gas by trapping radiation in the lower atmosphere. Evaporation acts as a climate change diagnostic, being very sensitive to changes in atmospheric composition and the Earth's radiation balance. Moreover, it plays a crucial role in dampening the intensification of drought and heatwave events, it is a pivotal variable for agriculture that determines the needs for irrigation, and it constrains human water management" ;
-                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/evaporation_ecv_factsheet_201905.pdf?Heo_iRDx9gv0C_mN2BBN5WBWSJJDkeJJ" ;
-                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/inline-images/evaporation-from-land-39-neg.png?6F2gapGqdYndwVUqAMu_0VibC_TgTPcr=" ;
-                           :ecvName "Evaporation from Land" ;
-                            rdfs:label "Evaporation from Land" . 
+                            :ecvDescription "The global sub-surface salinity observing system is vital for closure of the global hydrological cycle, estimates of oceanic evaporation and precipitation, and halosteric component of sea level change. Subsurface salinity are required to calculate in situ density and ocean freshwater transports, respectively, and coincident subsurface observations of salinity, temperature and pressure provide an estimate of the ocean geostrophic velocity. In addition, subsurface salinity is used to derive large-scale gridded climate products including ocean velocity, mixed-layer depth, density stratification, sea level and indirect subsurface ocean mixing used in many weather and climate applications." ;
+                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/subsurface_salinity_ecv_factsheet_201905.pdf?ZQ_xjVo9gLTO33MqMPbhgv1yA5grZdKJ" ;
+                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ssop-subsurface-salinity_hover.png?TY20JPiikEWUPyvDB5CDKm65goddf7dq=" ;
+                           :ecvName "Sea Subsurface Salinity" ;
+                            rdfs:label "Sea Subsurface Salinity" . 
 
 
+###  http://purl.org/eiffo/ecv#DS_141
+:DS_141 rdf:type owl:NamedIndividual ,
+               :DataSource ;
+      :dsLink "http://www.iquod.org" ;
+      :dsName "International Quality-controlled Ocean Database (IQuOD)" ;
+      rdfs:label "International Quality-controlled Ocean Database (IQuOD)" .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_115
+:Requirement_115 rdf:type owl:NamedIndividual ,
+                       :ECVProductRequirement ;
+              :frequency "Hourly to monthly" ;
+              :requiredMeasurementUncertainty "0.01 K" ;
+              :resolution "1-10 km" ;
+              :stability "Not specified" ;
+              :standardsReferences "See EOV Specification Sheet at www.goosocean.org/eov" ;
+              rdfs:label "Requirement for ECV Product - Sea Subsurface Temperature"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_120
+:ECVProduct_120 rdf:type owl:NamedIndividual ,
+                      :ECVProduct ;
+             :hasECVProducRequirement :Requirement_115 ;
+             :productDefinition "Seawater temperature measured with depth (Degrees celsius/kelvin)" ;
+             :productName "Interior Temperature" ;             
+             dc:description "ECV Product for Sea Subsurface Temperature"@en ;
+             rdfs:label "ECV Product 120 - Sea Subsurface Temperature"@en .
+
+
+###  http://purl.org/eiffo/ecv#SeaSubsurfaceTemperatureECV1
+:SeaSubsurfaceTemperatureECV1 rdf:type owl:NamedIndividual ,
+                                     :ECV ;
+                            :hasDataSource :DS_132 ,
+                                           :DS_140 ,
+                                           :DS_141 ;
+                            :hasDomain :PhysicalDomain1 ;
+                            :hasECVProduct :ECVProduct_120 ;
+                            :hasScientificArea :ScientificArea_03 ;
+                            :ecvDescription "Subsurface temperature is a fundamental variable that is required to monitor variability and change in the physical environment of the ocean, energy flows, climate patterns and sea level. Many other physical variables are derived from subsurface salinity, including subsurface density, geostrophic ciculation, heat transport and steric sea level. Heat uptake by the global ocean accounts for more than 90% of the excess heat trapped in the Earth system in the pas few decades. This ocean heat uptake helps to mitigate surface warming but, in turn, increases the global ocean volume through thermal expansion, and thus results in global-mean sea-level rise, accounting for about one third of the increase observed over the past few decades" ;
+                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/subsurface_temperature_ecv_factsheet_201905_0.pdf?1mPqnE5j8ya_IAlOmQmAkHAdyjGTNa88" ;
+                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ssop-subsurface-temp_hover.png?SpogNHshZlFFK8QjWtIZa6WWbdaQ1ngs=" ;
+                           :ecvName "Sea Subsurface Temperature" ;
+                            rdfs:label "Sea Subsurface Temperature" . 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
