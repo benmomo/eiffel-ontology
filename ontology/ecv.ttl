@@ -1710,6 +1710,166 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
         rdfs:label "Physical Oceanography Distributed Active Archive Center (PO.DAAC) - Sea surface stress" .
 
 
+###  http://purl.org/eiffo/ecv#DS_136
+:DS_136 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://opendata.dwd.de/climate_environment/GPCC/html/download_gate.html" ;
+        :dsName "Environmental Research Division's Data Access Program (ERDDAP" ;
+        rdfs:label "Environmental Research Division's Data Access Program (ERDDAP" .
+
+
+###  http://purl.org/eiffo/ecv#DS_137
+:DS_137 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.ghrsst.org/" ;
+        :dsName "Group for High Resolution Sea Surface Temperature:" ;
+        rdfs:label "Group for High Resolution Sea Surface Temperature:" .
+
+
+###  http://purl.org/eiffo/ecv#DS_138
+:DS_138 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.nodc.noaa.gov/gocd/index.html" ;
+        :dsName "National Center for Environmental Information, Global Ocean Currents Database." ;
+        rdfs:label "National Center for Environmental Information, Global Ocean Currents Database." .
+
+
+###  http://purl.org/eiffo/ecv#DS_139
+:DS_139 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.nodc.noaa.gov/OC5/SELECT/dbsearch/dbsearch.html" ;
+        :dsName "National Center for Environmental Information (NCEI) - World Ocean Database" ;
+        rdfs:label "National Center for Environmental Information (NCEI) - World Ocean Database" .
+
+
+###  http://purl.org/eiffo/ecv#DS_140
+:DS_140 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.coriolis.eu.org/" ;
+        :dsName "Coriolis" ;
+        rdfs:label "Coriolis" .
+
+
+###  http://purl.org/eiffo/ecv#DS_141
+:DS_141 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.iquod.org" ;
+        :dsName "International Quality-controlled Ocean Database (IQuOD)" ;
+        rdfs:label "International Quality-controlled Ocean Database (IQuOD)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_142
+:DS_142 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://glodap.info/" ;
+        :dsName "Global Ocean Data Analysis Project (GLODAPv2)" ;
+        rdfs:label "Global Ocean Data Analysis Project (GLODAPv2)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_143
+:DS_143 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://cchdo.ucsd.edu/" ;
+        :dsName "CLIVAR and Carbon Hydrographic Data Office (CCHDO)" ;
+        rdfs:label "CLIVAR and Carbon Hydrographic Data Office (CCHDO)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_144
+:DS_144 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.socat.info/" ;
+        :dsName "Surface Ocean CO2 Atlas (SOCAT)" ;
+        rdfs:label "Surface Ocean CO2 Atlas (SOCAT)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_145
+:DS_145 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.nodc.noaa.gov/ocads/" ;
+        :dsName "National Centers for Environmental Information Ocean Carbon Data System (NCEI OCADS)" ;
+        rdfs:label "National Centers for Environmental Information Ocean Carbon Data System (NCEI OCADS)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_146
+:DS_146 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.nodc.noaa.gov/ocads/oceans/LDEO_Underway_Database/" ;
+        :dsName "Lamont-Doherty Earth Observatory (LDEO) Climatology" ;
+        rdfs:label "Lamont-Doherty Earth Observatory (LDEO) Climatology" .
+
+
+###  http://purl.org/eiffo/ecv#DS_147
+:DS_147 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://memento.geomar.de/" ;
+        :dsName "MarinE MethanE and NiTrous Oxide (MEMENTO) database" ;
+        rdfs:label "MarinE MethanE and NiTrous Oxide (MEMENTO) database" .
+
+
+###  http://purl.org/eiffo/ecv#DS_148
+:DS_148 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://biogeochemical-argo.org/data-access.php" ;
+        :dsName "Biogeochemical Argo Global Data Assembly Centres" ;
+        rdfs:label "Biogeochemical Argo Global Data Assembly Centres" .
+
+
+###  http://purl.org/eiffo/ecv#DS_149
+:DS_149 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://oceandata.sci.gsfc.nasa.gov/" ;
+        :dsName "Ocean Biology Processing Group (OBPG)" ;
+        rdfs:label "Ocean Biology Processing Group (OBPG)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_150
+:DS_150 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.oceancolour.org/" ;
+        :dsName "Ocean Colour Climate Change Initiative (OC-CCI)" ;
+        rdfs:label "Ocean Colour Climate Change Initiative (OC-CCI)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_151
+:DS_151 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.oceansites.org/data/index.html" ;
+        :dsName "OceanSITES Global Data Assembly Centres" ;
+        rdfs:label "OceanSITES Global Data Assembly Centres" .
+
+
+###  http://purl.org/eiffo/ecv#DS_152
+:DS_152 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.pangaea.de/" ;
+        :dsName "PANGAEA" ;
+        rdfs:label "PANGAEA" .
+
+
+###  http://purl.org/eiffo/ecv#DS_153
+:DS_153 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://my.usgs.gov/gcmp/program/show/936502" ;
+        :dsName "Global Coral Reef Monitoring Network (GCRMN)" ;
+        rdfs:label "Global Coral Reef Monitoring Network (GCRMN)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_154
+:DS_154 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "https://www.aims.gov.au/docs/data/data.html" ;
+        :dsName "Australian Institute of Marine Science (AIMS)" ;
+        rdfs:label "Australian Institute of Marine Science (AIMS)" .
+
+
+###  http://purl.org/eiffo/ecv#DS_155
+:DS_155 rdf:type owl:NamedIndividual ,
+                 :DataSource ;
+        :dsLink "http://www.iobis.org/" ;
+        :dsName "Ocean Biogeographic Information System (OBIS)" ;
+        rdfs:label "Ocean Biogeographic Information System (OBIS)" .
+
+
 ###  http://purl.org/eiffo/ecv#ECVProduct_001
 :ECVProduct_001 rdf:type owl:NamedIndividual ,
                          :ECVProduct ;
@@ -2852,6 +3012,226 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                 rdfs:label "ECV Product 115 - Sea Surface Salinity"@en .
 
 
+###  http://purl.org/eiffo/ecv#ECVProduct_116
+:ECVProduct_116 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "The two-dimensional vector drag at the bottom of the atmosphere and the dynamical forcing at the top of the ocean." ;
+                :productName "Ocean Surface stress" ;
+                dc:description "ECV Product for Sea Surface stress"@en ;
+                :hasECVProducRequirement :Requirement_111 ;
+                rdfs:label "ECV Product 116 - Sea Surface stress"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_117
+:ECVProduct_117 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Radiative skin sea surface temperature, or Bulk sea surface temperature at Stated depth" ;
+                :productName "Sea Surface Temperature" ;
+                dc:description "ECV Product for Sea Surface Temperature"@en ;
+                :hasECVProducRequirement :Requirement_112 ;
+                rdfs:label "ECV Product 117 - Sea Surface Temperature"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_118
+:ECVProduct_118 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Ocean vector motion measured with depth." ;
+                :productName "Interior currents" ;
+                dc:description "ECV Product for Sea Subsurface Currents"@en ;
+                :hasECVProducRequirement :Requirement_113 ;
+                rdfs:label "ECV Product 118 - Sea Subsurface Currents"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_119
+:ECVProduct_119 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Salinity of seawater with depth - Salinity is unitless, and is expressed with the suffix psu (practical salinity unit, PSS-78)." ;
+                :productName "Interior salinity" ;
+                dc:description "ECV Product for Sea Subsurface Salinity"@en ;
+                :hasECVProducRequirement :Requirement_114 ;
+                rdfs:label "ECV Product 119 - Sea Subsurface Salinity"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_120
+:ECVProduct_120 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Seawater temperature measured with depth (Degrees celsius/kelvin)" ;
+                :productName "Interior Temperature" ;
+                dc:description "ECV Product for Sea Subsurface Temperature"@en ;
+                :hasECVProducRequirement :Requirement_115 ;
+                rdfs:label "ECV Product 120 - Sea Subsurface Temperature"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_121
+:ECVProduct_121 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Interior ocean carbon storage, calculated from at least two of Dissolved Inorganic Carbon, Total Alkalinity or pH. [mol C kg-1]" ;
+                :productName "Interior ocean carbon storage. At least 2 of: Dissolved Inorganic Carbon (DIC), Total Alkalinity (TA) or pH" ;
+                dc:description "ECV Product for Inorganic carbon"@en ;
+                :hasECVProducRequirement :Requirement_116 ;
+                rdfs:label "ECV Product 121 - Inorganic carbon"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_122
+:ECVProduct_122 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Surface ocean partial pressure of CO2 [μatm]" ;
+                :productName "pCO2 (to provide Air-sea flux of CO2)" ;
+                dc:description "ECV Product for Inorganic carbon"@en ;
+                :hasECVProducRequirement :Requirement_117 ;
+                rdfs:label "ECV Product 122 - Inorganic carbon"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_123
+:ECVProduct_123 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of N2O gas in the water column [nmol kg–1]" ;
+                :productName "Interior Ocean N2O" ;
+                dc:description "ECV Product for Nitrous oxide"@en ;
+                :hasECVProducRequirement :Requirement_118 ;
+                rdfs:label "ECV Product 123 - Nitrous oxide"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_124
+:ECVProduct_124 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Amount of N2O per area per year [μmol m–2 yr–1]" ;
+                :productName "N2O Air-Sea Flux" ;
+                dc:description "ECV Product for Nitrous oxide"@en ;
+                :hasECVProducRequirement :Requirement_119 ;
+                rdfs:label "ECV Product 124 - Nitrous oxide"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_125
+:ECVProduct_125 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of silicate in the water column [μmol kg-1]" ;
+                :productName "Interior Ocean Concentrations of Silicate" ;
+                dc:description "ECV Product for Nutrients"@en ;
+                :hasECVProducRequirement :Requirement_120 ;
+                rdfs:label "ECV Product 125 - Nutrients"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_126
+:ECVProduct_126 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of phosphate in the water column [μmol kg-1]" ;
+                :productName "Phosphate" ;
+                dc:description "ECV Product for Nutrients"@en ;
+                :hasECVProducRequirement :Requirement_121 ;
+                rdfs:label "ECV Product 126 - Nutrients"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_127
+:ECVProduct_127 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of nitrate in the water column [μmol kg-1]" ;
+                :productName "Nitrate" ;
+                dc:description "ECV Product for Nutrients"@en ;
+                :hasECVProducRequirement :Requirement_122 ;
+                rdfs:label "ECV Product 127 - Nutrients"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_128
+:ECVProduct_128 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Amount of light emanating from within the ocean" ;
+                :productName "Water Leaving Radiance" ;
+                dc:description "ECV Product for Ocean Colour"@en ;
+                :hasECVProducRequirement :Requirement_123 ;
+                rdfs:label "ECV Product 124 - Ocean Colour"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_129
+:ECVProduct_129 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of chlorophyll-a pigment in the surface water [µg l-1]" ;
+                :productName "Chlorophyll-a Concentration" ;
+                dc:description "ECV Product for Ocean Colour"@en ;
+                :hasECVProducRequirement :Requirement_124 ;
+                rdfs:label "ECV Product 129 - Ocean Colour"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_130
+:ECVProduct_130 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of dissolved oxygen in the water column [μmol kg-1]" ;
+                :productName "Interior Ocean Oxygen Concentration" ;
+                dc:description "ECV Product for Oxygen"@en ;
+                :hasECVProducRequirement :Requirement_125 ;
+                rdfs:label "ECV Product 130 - Oxygen"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_131
+:ECVProduct_131 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of CFC-12 gas in the water column [pmol kg-1]" ;
+                :productName "Interior Ocean CFC-12" ;
+                dc:description "ECV Product for Transient tracers"@en ;
+                :hasECVProducRequirement :Requirement_126 ;
+                rdfs:label "ECV Product 131 - Transient tracers"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_132
+:ECVProduct_132 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of CFC-11 gas in the water column [pmol kg-1]" ;
+                :productName "Interior Ocean CFC-11" ;
+                dc:description "ECV Product for Transient tracers"@en ;
+                :hasECVProducRequirement :Requirement_126 ;
+                rdfs:label "ECV Product 132 - Transient tracers"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_133
+:ECVProduct_133 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of SF6 gas in the water column [fmol kg-1]" ;
+                :productName "Interior Ocean SF6" ;
+                dc:description "ECV Product for Transient tracers"@en ;
+                :hasECVProducRequirement :Requirement_126 ;
+                rdfs:label "ECV Product 133 - Transient tracers"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_134
+:ECVProduct_134 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of Tritium gas in the water column [TU (tritium units)]" ;
+                :productName "Interior Ocean Tritium" ;
+                dc:description "ECV Product for Transient tracers"@en ;
+                :hasECVProducRequirement :Requirement_127 ;
+                rdfs:label "ECV Product 134 - Transient tracers"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_135
+:ECVProduct_135 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of δ3 He gas in the water column [δ3He]" ;
+                :productName "Interior Ocean 3He" ;
+                dc:description "ECV Product for Transient tracers"@en ;
+                :hasECVProducRequirement :Requirement_128 ;
+                rdfs:label "ECV Product 135 - Transient tracers"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_136
+:ECVProduct_136 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of 14C in the water column [Δ14C]" ;
+                :productName "Interior Ocean 14C" ;
+                dc:description "ECV Product for Transient tracers"@en ;
+                :hasECVProducRequirement :Requirement_129 ;
+                rdfs:label "ECV Product 136 - Transient tracers"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_137
+:ECVProduct_137 rdf:type owl:NamedIndividual ,
+                         :ECVProduct ;
+                :productDefinition "Concentration of 39-Argon gas in the water column [39Ar pm (percent modern)]" ;
+                :productName "Interior Ocean 39Ar" ;
+                dc:description "ECV Product for Transient tracers"@en ;
+                :hasECVProducRequirement :Requirement_129 ;
+                rdfs:label "ECV Product 137 - Transient tracers"@en .
+
+
 ###  http://purl.org/eiffo/ecv#ECVProduct_14
 :ECVProduct_14 rdf:type owl:NamedIndividual ,
                         :ECVProduct ;
@@ -3269,6 +3649,25 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                          rdfs:label "Ice Sheets and Ice Shelves" .
 
 
+###  http://purl.org/eiffo/ecv#InorganicCarbonECV1
+:InorganicCarbonECV1 rdf:type owl:NamedIndividual ,
+                              :ECV ;
+                     :hasDataSource :DS_142 ,
+                                    :DS_143 ,
+                                    :DS_144 ,
+                                    :DS_145 ,
+                                    :DS_146 ;
+                     :hasDomain :BiogeochemicalDomain1 ;
+                     :hasECVProduct :ECVProduct_121 ,
+                                    :ECVProduct_122 ;
+                     :hasScientificArea :ScientificArea_04 ;
+                     :ecvDescription "The ocean is a major component of the global carbon cycle, absorbing enormous quantities of carbon in natural cycles driven by the ocean circulation, biogeochemistry and biology. Since seawater has very high capacity for absorbing carbon, the ocean has an inhibitory effect on the atmospheric accumulation of carbon dioxide and related greenhouse effect. The net ocean carbon uptake depends significantly on chemical and biological activity, and therefore it varies due to changing oceanic conditions and ecosystem composition. The chemical pathways of the inorganic carbon in the ocean mean that this uptake causes a decline in ocean pH, also known as ocean acidification." ;
+                     :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/inorganic_carbon_ecv_factsheet_201905_0.pdf?AXPpwstoujVzHNH3r067O_OOOusMA.dY" ;
+                     :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-obgc-inorganic-carbon_hover.png?EoIHlWEECP6wwWpY7_gjBGm_qDzDDHNP=" ;
+                     :ecvName "Inorganic Carbon" ;
+                     rdfs:label "Inorganic Carbon" .
+
+
 ###  http://purl.org/eiffo/ecv#LakesECV1
 :LakesECV1 rdf:type owl:NamedIndividual ,
                     :ECV ;
@@ -3375,6 +3774,58 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                rdfs:label "Lightning" .
 
 
+###  http://purl.org/eiffo/ecv#NitrousOxideECV1
+:NitrousOxideECV1 rdf:type owl:NamedIndividual ,
+                           :ECV ;
+                  :hasDataSource :DS_147 ;
+                  :hasDomain :BiogeochemicalDomain1 ;
+                  :hasECVProduct :ECVProduct_123 ,
+                                 :ECVProduct_124 ;
+                  :hasECVSteward :ECVSteward_01 ;
+                  :hasScientificArea :ScientificArea_04 ;
+                  :ecvDescription "Nitrous oxide (N2O) is an important climate-relevant trace gas in the Earth’s atmosphere. In the troposphere it acts as a strong greenhouse gas and in the stratosphere it acts as an ozone depleting substance because it is the precursor of ozone depleting nitric oxide radicals. The ocean - including its coastal areas such as continental shelves, estuaries and upwelling areas - contribute about 30% to the atmospheric N2O budget." ;
+                  :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/nitrious_oxide_ecv_factsheet_201905.pdf?.e7Y1RAIc3XbKg6Kmhw1kOy_DTA5MrdX" ;
+                  :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-obgc-nitrous-oxide_hover.png?foiwG3dBWcUBd7mvSXzpFRLaLHlL_z72=" ;
+                  :ecvName "Nitrous Oxide" ;
+                  rdfs:label "Nitrous Oxide" .
+
+
+###  http://purl.org/eiffo/ecv#NutrientsECV1
+:NutrientsECV1 rdf:type owl:NamedIndividual ,
+                        :ECV ;
+               :hasDataSource :DS_142 ,
+                              :DS_143 ,
+                              :DS_145 ,
+                              :DS_148 ;
+               :hasDomain :BiogeochemicalDomain1 ;
+               :hasECVProduct :ECVProduct_125 ,
+                              :ECVProduct_126 ,
+                              :ECVProduct_127 ;
+               :hasScientificArea :ScientificArea_06 ;
+               :ecvDescription "TNutrients are essential for ocean life. Nutrient data provide important biogeochemical information, and provide essential links between physical climate variability and ecosystem variability. They can provide additional information on ocean mixing and climate related phenomena such as changes in primary and export production (nutrient transports regulate new production which is correlated with export production), eutrophication and shifts in phytoplankton community composition. Therefore it is necessary to develop accurate observations of trends in dissolved nutrients in both upper- and deep-ocean waters" ;
+               :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/nutrients_ecv_factsheet_201905.pdf?jhG5gPd3VJteXSVKY.6Eypf7jX5_CaA0" ;
+               :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-obgc-nutrients_hover.png?rgxXtKhOa0rYTwyfzBHN5_cdd52L4KRd=" ;
+               :ecvName "Nutrients" ;
+               rdfs:label "Nutrients" .
+
+
+###  http://purl.org/eiffo/ecv#OceanColourECV1
+:OceanColourECV1 rdf:type owl:NamedIndividual ,
+                          :ECV ;
+                 :hasDataSource :DS_006 ,
+                                :DS_149 ,
+                                :DS_150 ;
+                 :hasDomain :BiogeochemicalDomain1 ;
+                 :hasECVProduct :ECVProduct_128 ,
+                                :ECVProduct_129 ;
+                 :hasScientificArea :ScientificArea_06 ;
+                 :ecvDescription "Ocean colour is the radiance emanating from the ocean normalized by the irradiance illuminating the ocean. Products derived from ocean colour  remote sensing (OCRS) contain information on the ocean albedo and information on the constituents of the seawater, in particular, phytoplankton pigments such as chlorophyll-a. OCRS products are used to assess ocean ecosystem health and  productivity, and the role of the oceans in the global carbon cycle, to manage living marine resources, and to quantify the impacts of climate variability and change" ;
+                 :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ocean_color_ecv_factsheet_201905.pdf?kqAtd9_BLCiJZha0D_HGTxwJTE3O_TSM" ;
+                 :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-obgc-ocean-colour_hover.png?n4QA_lepQuB38_jSH_FH9_GC8_pDTEjL=" ;
+                 :ecvName "Ocean Colour" ;
+                 rdfs:label "Ocean Colour" .
+
+
 ###  http://purl.org/eiffo/ecv#OceanDomain1
 :OceanDomain1 rdf:type owl:NamedIndividual ,
                        :OceanDomain ;
@@ -3401,6 +3852,23 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                           :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-ocean-surface-heat-flux_hover.png?Jrp4RZwuzULFPSn7E9Dgl2YtUHdTxa_Z=" ;
                           :ecvName "Ocean Surface Heat Flux" ;
                           rdfs:label "Ocean Surface Heat Flux" .
+
+
+###  http://purl.org/eiffo/ecv#OxygenECV1
+:OxygenECV1 rdf:type owl:NamedIndividual ,
+                     :ECV ;
+            :hasDataSource :DS_142 ,
+                           :DS_143 ,
+                           :DS_148 ,
+                           :DS_151 ;
+            :hasDomain :BiogeochemicalDomain1 ;
+            :hasECVProduct :ECVProduct_130 ;
+            :hasScientificArea :ScientificArea_06 ;
+            :ecvDescription "Oxygen (O2) is essential for nearly all multicellular life. Subsurface oxygen concentrations reflect a balance between supply through circulation and ventilation and consumption by respiratory processes. Changes in either of these processes is susceptible to lead to changes in O2 distribution. A global ocean O2 observing network will act as a sensitive early warning system for trends that climate change is causing. Ocean deoxygenation (decline in O2 concentration) is under way in part because of ocean warming and increased stratification, but also because of increased nutrient loads in the coastal ocean. Deoxygenation has been largely under the radar to most people including policy advisers and decision makers. Yet it is deoxygenation that will have profound implications not just for ecosystems but also for communities and economies that depend on a healthy ocean." ;
+            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/oxygen_ecv_factsheet_201905.pdf?vyv07Jk0AWqm5GtLgQYOmsS5W58b1Z48" ;
+            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-obgc-oxygen_hover.png?tfRkpMS5BKHjzTm49fmy7b5I_7q1uacu=" ;
+            :ecvName "Oxygen" ;
+            rdfs:label "Oxygen" .
 
 
 ###  http://purl.org/eiffo/ecv#PermafrostECV1
@@ -4611,6 +5079,218 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                  rdfs:label "Requirement for ECV Product - Sea Surface Salinity"@en .
 
 
+###  http://purl.org/eiffo/ecv#Requirement_111
+:Requirement_111 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "hourlymonthly" ;
+                 :requiredMeasurementUncertainty "0.001-4Nm-2" ;
+                 :resolution "10-100km" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "See EOV Specification at www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea Surface stress"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_112
+:Requirement_112 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Hourly to weekly" ;
+                 :requiredMeasurementUncertainty "0.1 K over 100 km scales" ;
+                 :resolution "1-100 km" ;
+                 :stability "< 0.03 K over 100 km scales" ;
+                 :standardsReferences "See EOV Specification at www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea Surface Temperature"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_113
+:Requirement_113 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Hourly to weekly" ;
+                 :requiredMeasurementUncertainty "0.02m/s" ;
+                 :resolution "1-50 km" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "See EOV Specification Sheet at www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea Subsurface Currents"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_114
+:Requirement_114 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Hourly to monthly" ;
+                 :requiredMeasurementUncertainty "0.01psu" ;
+                 :resolution "25km/NA" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "See EOV Specification Sheet at www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea Subsurface Salinity"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_115
+:Requirement_115 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Hourly to monthly" ;
+                 :requiredMeasurementUncertainty "0.01 K" ;
+                 :resolution "1-10 km" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "See EOV Specification Sheet at www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Sea Subsurface Temperature"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_116
+:Requirement_116 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "decadal" ;
+                 :requiredMeasurementUncertainty "TA/DIC ±2 μmol kg-1M; pH ±0.005" ;
+                 :resolution "Every 20°" ;
+                 rdfs:label "Requirement for ECV Product - Inorganic carbon"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_117
+:Requirement_117 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Weekly to decadal" ;
+                 :requiredMeasurementUncertainty "±2 μatm" ;
+                 :resolution "Every 10°, (Denser in the coastal domain, surface)" ;
+                 rdfs:label "Requirement for ECV Product - Inorganic carbon"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_118
+:Requirement_118 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual to decadal" ;
+                 :requiredMeasurementUncertainty "discrete samples: ~±5%;" ;
+                 :resolution "Every 20°" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "See EOV Specification Sheets: www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Nitrous oxide"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_119
+:Requirement_119 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual to decadal" ;
+                 :requiredMeasurementUncertainty "cont. sampling: <±1%" ;
+                 :resolution "Every 20°" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Nitrous oxide"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_120
+:Requirement_120 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Decadal" ;
+                 :requiredMeasurementUncertainty "±0.1 μmo" ;
+                 :resolution "Every 20°" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "See EOV Specification Sheets: www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Nutrients"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_121
+:Requirement_121 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Decadal" ;
+                 :requiredMeasurementUncertainty "±0.05 μmo" ;
+                 :resolution "Every 20°" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Nutrients"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_122
+:Requirement_122 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Decadal" ;
+                 :requiredMeasurementUncertainty "±0.03 μmo" ;
+                 :resolution "Every 20°" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Nutrients"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_123
+:Requirement_123 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Daily" ;
+                 :requiredMeasurementUncertainty "5% (blue & green wavelengths)" ;
+                 :resolution "4 km" ;
+                 :stability "0.50%" ;
+                 :standardsReferences "See EOV Specification Sheets: www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Ocean Colour"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_124
+:Requirement_124 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Weekly averages" ;
+                 :requiredMeasurementUncertainty "30%" ;
+                 :resolution "4 km" ;
+                 :stability "3%" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Ocean Colour"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_125
+:Requirement_125 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Weekly to Decadal" ;
+                 :requiredMeasurementUncertainty "0.5 μmol kg-1–2 μmol kg-1" ;
+                 :resolution "3-20° degrees" ;
+                 :stability "Not specified" ;
+                 :standardsReferences "See EOV Specification Sheets: www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Oxygen"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_126
+:Requirement_126 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual to decadal" ;
+                 :requiredMeasurementUncertainty "±1%" ;
+                 :resolution "Every 20°" ;
+                 :stability "Annual to decadal" ;
+                 :standardsReferences "See EOV Specification Sheets: www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Transient tracers"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_127
+:Requirement_127 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual to decadal" ;
+                 :requiredMeasurementUncertainty "±0.5%, 0.005 TU" ;
+                 :resolution "Every 20°" ;
+                 :stability "Annual to decadal" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Transient tracers"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_128
+:Requirement_128 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual to decadal" ;
+                 :requiredMeasurementUncertainty "δ3He ±0.15%" ;
+                 :resolution "Every 20°" ;
+                 :stability "Annual to decadal" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Transient tracers"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_129
+:Requirement_129 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 :frequency "Annual to decadal" ;
+                 :requiredMeasurementUncertainty "14C ±0.4%" ;
+                 :resolution "Every 20°" ;
+                 :stability "Annual to decadal" ;
+                 :standardsReferences "www.goosocean.org/eov" ;
+                 rdfs:label "Requirement for ECV Product - Transient tracers"@en .
+
+
+###  http://purl.org/eiffo/ecv#Requirement_130
+:Requirement_130 rdf:type owl:NamedIndividual ,
+                          :ECVProductRequirement ;
+                 rdfs:comment "Requirements under assessment by GOOS Biology & Ecosystems Panel (as of 2018)" ;
+                 rdfs:label "Requirement for ECV Product - Marine Habitat Properties"@en .
+
+
 ###  http://purl.org/eiffo/ecv#RiverDischargeECV1
 :RiverDischargeECV1 rdf:type owl:NamedIndividual ,
                              :ECV ;
@@ -4731,6 +5411,52 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
               rdfs:label "Sea State" .
 
 
+###  http://purl.org/eiffo/ecv#SeaSubsurfaceCurrentsECV1
+:SeaSubsurfaceCurrentsECV1 rdf:type owl:NamedIndividual ,
+                                    :ECV ;
+                           :hasDataSource :DS_138 ;
+                           :hasDomain :PhysicalDomain1 ;
+                           :hasECVProduct :ECVProduct_118 ;
+                           :hasScientificArea :ScientificArea_02 ;
+                           :ecvDescription "Observations of subsurface ocean velocity contribute to estimates of ocean transports of mass, heat, freshwater, and other properties on local, to regional and basin to global scales. They are essential in resolving the wind and buoyancy driven ocean circulation, and the complex vertical velocity structure, for example, in the major ocean boundary currents, tides, equatorial currents, wave propagations, ocean eddies. Vertical velocity profile information can be used to estimate the order of ocean mixing using fine-scale parameterizations of turbulent dissipation by internal wave breaking. Velocity estimates can be combined in data assimilation models to provide gridded global estimates of ocean circulation at varying temporal and spatial scales." ;
+                           :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/subsurface_currents_ecv_factsheet_201905.pdf?SmDc1jDu11EpjxXXbsufBJc0zdyqObTA" ;
+                           :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ssop-subsurface-currents_hover.png?vOMl6h3sJPQlmFKigBTwOaho5u2vEb7h=" ;
+                           :ecvName "Sea Subsurface Currents" ;
+                           rdfs:label "Sea Subsurface Currents" .
+
+
+###  http://purl.org/eiffo/ecv#SeaSubsurfaceSalinityECV1
+:SeaSubsurfaceSalinityECV1 rdf:type owl:NamedIndividual ,
+                                    :ECV ;
+                           :hasDataSource :DS_132 ,
+                                          :DS_139 ,
+                                          :DS_140 ;
+                           :hasDomain :PhysicalDomain1 ;
+                           :hasECVProduct :ECVProduct_119 ;
+                           :hasScientificArea :ScientificArea_01 ;
+                           :ecvDescription "The global sub-surface salinity observing system is vital for closure of the global hydrological cycle, estimates of oceanic evaporation and precipitation, and halosteric component of sea level change. Subsurface salinity are required to calculate in situ density and ocean freshwater transports, respectively, and coincident subsurface observations of salinity, temperature and pressure provide an estimate of the ocean geostrophic velocity. In addition, subsurface salinity is used to derive large-scale gridded climate products including ocean velocity, mixed-layer depth, density stratification, sea level and indirect subsurface ocean mixing used in many weather and climate applications." ;
+                           :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/subsurface_salinity_ecv_factsheet_201905.pdf?ZQ_xjVo9gLTO33MqMPbhgv1yA5grZdKJ" ;
+                           :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ssop-subsurface-salinity_hover.png?TY20JPiikEWUPyvDB5CDKm65goddf7dq=" ;
+                           :ecvName "Sea Subsurface Salinity" ;
+                           rdfs:label "Sea Subsurface Salinity" .
+
+
+###  http://purl.org/eiffo/ecv#SeaSubsurfaceTemperatureECV1
+:SeaSubsurfaceTemperatureECV1 rdf:type owl:NamedIndividual ,
+                                       :ECV ;
+                              :hasDataSource :DS_132 ,
+                                             :DS_140 ,
+                                             :DS_141 ;
+                              :hasDomain :PhysicalDomain1 ;
+                              :hasECVProduct :ECVProduct_120 ;
+                              :hasScientificArea :ScientificArea_03 ;
+                              :ecvDescription "Subsurface temperature is a fundamental variable that is required to monitor variability and change in the physical environment of the ocean, energy flows, climate patterns and sea level. Many other physical variables are derived from subsurface salinity, including subsurface density, geostrophic ciculation, heat transport and steric sea level. Heat uptake by the global ocean accounts for more than 90% of the excess heat trapped in the Earth system in the pas few decades. This ocean heat uptake helps to mitigate surface warming but, in turn, increases the global ocean volume through thermal expansion, and thus results in global-mean sea-level rise, accounting for about one third of the increase observed over the past few decades" ;
+                              :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/subsurface_temperature_ecv_factsheet_201905_0.pdf?1mPqnE5j8ya_IAlOmQmAkHAdyjGTNa88" ;
+                              :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ssop-subsurface-temp_hover.png?SpogNHshZlFFK8QjWtIZa6WWbdaQ1ngs=" ;
+                              :ecvName "Sea Subsurface Temperature" ;
+                              rdfs:label "Sea Subsurface Temperature" .
+
+
 ###  http://purl.org/eiffo/ecv#SeaSurfaceCurrentsECV1
 :SeaSurfaceCurrentsECV1 rdf:type owl:NamedIndividual ,
                                  :ECV ;
@@ -4761,6 +5487,36 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                         :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-sea-surface-salinity_hover.png?Yx68lFoFq0RLkskCZIWj1DEbRZiyoirv=" ;
                         :ecvName "Sea Surface Salinity" ;
                         rdfs:label "Sea Surface Salinity" .
+
+
+###  http://purl.org/eiffo/ecv#SeaSurfaceStressECV1
+:SeaSurfaceStressECV1 rdf:type owl:NamedIndividual ,
+                               :ECV ;
+                      :hasDataSource :DS_114 ,
+                                     :DS_135 ,
+                                     :DS_136 ;
+                      :hasDomain :PhysicalDomain1 ;
+                      :hasECVProduct :ECVProduct_116 ;
+                      :hasScientificArea :ScientificArea_02 ;
+                      :ecvDescription "Ocean surface stress (OSS) is the two-dimensional vector drag at the bottom of the atmosphere and the dynamical forcing at the top of the ocean. OSS influences the air-sea exchange of energy, water and gases. OSS is important for determining the large scale momentum forcing of the ocean, and consequent ocean circulation including ocean upwelling regions. Accurate knowledge of stress  magnitudes is also essential for reliable computations of air-sea heat fluxes as well as air-sea gas exchanges and mass fluxes" ;
+                      :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/surface_stress_ecv_factsheet_201905.pdf?eQQDQpzCsGzres32WbqvQTKF2NSzDk5W" ;
+                      :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-surface-stress_hover.png?eW1Z85mENmQQLKqwwNoALj0NPWY_YWX7=" ;
+                      :ecvName "Sea Surface Stress" ;
+                      rdfs:label "ea Surface Stress" .
+
+
+###  http://purl.org/eiffo/ecv#SeaSurfaceTemperatureECV1
+:SeaSurfaceTemperatureECV1 rdf:type owl:NamedIndividual ,
+                                    :ECV ;
+                           :hasDataSource :DS_137 ;
+                           :hasDomain :PhysicalDomain1 ;
+                           :hasECVProduct :ECVProduct_117 ;
+                           :hasScientificArea :ScientificArea_03 ;
+                           :ecvDescription "Sea-surface temperature (SST) is a vital component of the climate system as it exerts a major influence on the exchanges of energy, momentum and gases between the ocean and atmosphere. SST largely controls the atmospheric response to the ocean at both weather and climate time scales. Daily variations in SST can exceed 3 degrees Celsius and could alter the surface energy budget by more than 10 Wm-2 over the tropics and subtropics. Therefore, the SST and horizontal gradients in SST are also important for coupling with the atmosphere for sub-seasonal to seasonal prediction timescales. The spatial patterns of SST reveal the structure of the underlying ocean dynamics, such as, ocean fronts, eddies, coastal upwelling and exchanges between the coastal shelf and open ocean." ;
+                           :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/sea_surface_temp_ecv_factsheet_20190129.pdf?S1Ytg0lpZBI305EokCRPqHi_XU4TP_Db" ;
+                           :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-sea-surface-temp_hover.png?4Q7cBnd_y6hjC9k8a8AZEhei8ifnzrV7=" ;
+                           :ecvName "Sea Surface Temperature" ;
+                           rdfs:label "Sea Surface Temperature" .
 
 
 ###  http://purl.org/eiffo/ecv#SnowECV1
@@ -4922,6 +5678,29 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
                                   rdfs:label "Surface Wind Speed and Direction" .
 
 
+###  http://purl.org/eiffo/ecv#TransientTracersECV1
+:TransientTracersECV1 rdf:type owl:NamedIndividual ,
+                               :ECV ;
+                      :hasDataSource :DS_142 ,
+                                     :DS_143 ,
+                                     :DS_145 ,
+                                     :DS_152 ;
+                      :hasDomain :BiogeochemicalDomain1 ;
+                      :hasECVProduct :ECVProduct_131 ,
+                                     :ECVProduct_132 ,
+                                     :ECVProduct_133 ,
+                                     :ECVProduct_134 ,
+                                     :ECVProduct_135 ,
+                                     :ECVProduct_136 ,
+                                     :ECVProduct_137 ;
+                      :hasScientificArea :ScientificArea_04 ;
+                      :ecvDescription "Transient tracers are man-made chemical compounds released to the atmosphere at known quantities that can be used in the ocean to quantify ventilation, transit time distribution and transport time-scales. Measurement of transient tracers in the subsurface ocean thus provides information on the time-scales since the ocean was ventilated, i.e. in contact with the atmosphere. A combination of these tracers provide the means to constrain the transit time distribution (TTD) of a water-mass that allows inference of concentrations or fates of other transient compounds, such as anthropogenic carbon or nitrous oxide" ;
+                      :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/transient_tracers_ecv_factsheet_201905.pdf?rqSxfSBYavTEihnZmCTFndcrTrbeQyal" ;
+                      :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-obgc-transient-tracers_hover.png?YJ3BLD5f9rH8GRc6NtwS6FstpPRpbd_S=" ;
+                      :ecvName "Transient Tracers" ;
+                      rdfs:label "Transient Tracers" .
+
+
 ###  http://purl.org/eiffo/ecv#UpperAirDomain1
 :UpperAirDomain1 rdf:type owl:NamedIndividual ,
                           :UpperAirDomain ;
@@ -5034,230 +5813,131 @@ More information can be found at https://public.wmo.int/en/programmes/global-cli
 <http://purl.org/eiffo/ecv#:BiosphereDomain1> rdf:type owl:NamedIndividual .
 
 
-
-###  http://purl.org/eiffo/ecv#DS_136
-:DS_136 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://opendata.dwd.de/climate_environment/GPCC/html/download_gate.html" ;
-      :dsName "Environmental Research Division's Data Access Program (ERDDAP" ;      
-      rdfs:label "Environmental Research Division's Data Access Program (ERDDAP" .
-
-
-###  http://purl.org/eiffo/ecv#Requirement_111
-:Requirement_111 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "hourlymonthly" ;
-              :requiredMeasurementUncertainty "0.001-4Nm-2" ;
-              :resolution "10-100km" ;
-              :stability "Not specified" ;
-              :standardsReferences "See EOV Specification at www.goosocean.org/eov" ;
-              rdfs:label "Requirement for ECV Product - Sea Surface stress"@en .
-
-
-###  http://purl.org/eiffo/ecv#ECVProduct_116
-:ECVProduct_116 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#ECVProduct_138
+:ECVProduct_138 rdf:type owl:NamedIndividual ,
                       :ECVProduct ;
-             :hasECVProducRequirement :Requirement_111 ;
-             :productDefinition "The two-dimensional vector drag at the bottom of the atmosphere and the dynamical forcing at the top of the ocean." ;
-             :productName "Ocean Surface stress" ;             
-             dc:description "ECV Product for Sea Surface stress"@en ;
-             rdfs:label "ECV Product 116 - Sea Surface stress"@en .
+             :hasECVProducRequirement :Requirement_130 ;
+             :productDefinition "Cover: live cover (% / m2) Composition: % coverage per species / m2" ;
+             :productName "Coral Reefs" ;             
+             dc:description "ECV Product for Precipitation"@en ;
+             rdfs:label "ECV Product 138 - Marine Habitat Properties"@en .
 
-
-###  http://purl.org/eiffo/ecv#SeaSurfaceStressECV1
-:SeaSurfaceStressECV1 rdf:type owl:NamedIndividual ,
-                                     :ECV ;
-                            :hasDataSource :DS_135 ,
-                                           :DS_114 ,
-                                           :DS_136 ;
-                            :hasDomain :PhysicalDomain1 ;
-                            :hasECVProduct :ECVProduct_116 ;
-                            :hasScientificArea :ScientificArea_02 ;
-                            :ecvDescription "Ocean surface stress (OSS) is the two-dimensional vector drag at the bottom of the atmosphere and the dynamical forcing at the top of the ocean. OSS influences the air-sea exchange of energy, water and gases. OSS is important for determining the large scale momentum forcing of the ocean, and consequent ocean circulation including ocean upwelling regions. Accurate knowledge of stress  magnitudes is also essential for reliable computations of air-sea heat fluxes as well as air-sea gas exchanges and mass fluxes" ;
-                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/surface_stress_ecv_factsheet_201905.pdf?eQQDQpzCsGzres32WbqvQTKF2NSzDk5W" ;
-                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-surface-stress_hover.png?eW1Z85mENmQQLKqwwNoALj0NPWY_YWX7=" ;
-                           :ecvName "Sea Surface Stress" ;
-                            rdfs:label "ea Surface Stress" . 
-
-###  http://purl.org/eiffo/ecv#DS_137
-:DS_137 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://www.ghrsst.org/" ;
-      :dsName "Group for High Resolution Sea Surface Temperature:" ;
-      rdfs:label "Group for High Resolution Sea Surface Temperature:" .
-
-
-###  http://purl.org/eiffo/ecv#Requirement_112
-:Requirement_112 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Hourly to weekly" ;
-              :requiredMeasurementUncertainty "0.1 K over 100 km scales" ;
-              :resolution "1-100 km" ;
-              :stability "< 0.03 K over 100 km scales" ;
-              :standardsReferences "See EOV Specification at www.goosocean.org/eov" ;
-              rdfs:label "Requirement for ECV Product - Sea Surface Temperature"@en .
-
-
-###  http://purl.org/eiffo/ecv#ECVProduct_117
-:ECVProduct_117 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#ECVProduct_139
+:ECVProduct_139 rdf:type owl:NamedIndividual ,
                       :ECVProduct ;
-             :hasECVProducRequirement :Requirement_112 ;
-             :productDefinition "Radiative skin sea surface temperature, or Bulk sea surface temperature at Stated depth" ;
-             :productName "Sea Surface Temperature" ;             
-             dc:description "ECV Product for Sea Surface Temperature"@en ;
-             rdfs:label "ECV Product 117 - Sea Surface Temperature"@en .
+             :hasECVProducRequirement :Requirement_130 ;
+             :productDefinition "Cover: live cover (% / m2) Composition: % coverage per species / m2" ;
+             :productName "Mangrove Forests" ;             
+             dc:description "ECV Product for Precipitation"@en ;
+             rdfs:label "ECV Product 139 - Marine Habitat Properties"@en .
 
 
-###  http://purl.org/eiffo/ecv#SeaSurfaceTemperatureECV1
-:SeaSurfaceTemperatureECV1 rdf:type owl:NamedIndividual ,
-                                     :ECV ;
-                            :hasDataSource :DS_137 ;
-                            :hasDomain :PhysicalDomain1 ;
-                            :hasECVProduct :ECVProduct_117 ;
-                            :hasScientificArea :ScientificArea_03 ;
-                            :ecvDescription "Sea-surface temperature (SST) is a vital component of the climate system as it exerts a major influence on the exchanges of energy, momentum and gases between the ocean and atmosphere. SST largely controls the atmospheric response to the ocean at both weather and climate time scales. Daily variations in SST can exceed 3 degrees Celsius and could alter the surface energy budget by more than 10 Wm-2 over the tropics and subtropics. Therefore, the SST and horizontal gradients in SST are also important for coupling with the atmosphere for sub-seasonal to seasonal prediction timescales. The spatial patterns of SST reveal the structure of the underlying ocean dynamics, such as, ocean fronts, eddies, coastal upwelling and exchanges between the coastal shelf and open ocean." ;
-                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/sea_surface_temp_ecv_factsheet_20190129.pdf?S1Ytg0lpZBI305EokCRPqHi_XU4TP_Db" ;
-                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-sop-sea-surface-temp_hover.png?4Q7cBnd_y6hjC9k8a8AZEhei8ifnzrV7=" ;
-                           :ecvName "Sea Surface Temperature" ;
-                            rdfs:label "Sea Surface Temperature" . 
-
-
-###  http://purl.org/eiffo/ecv#DS_138
-:DS_138 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://www.nodc.noaa.gov/gocd/index.html" ;
-      :dsName "National Center for Environmental Information, Global Ocean Currents Database." ;
-      rdfs:label "National Center for Environmental Information, Global Ocean Currents Database." .
-
-###  http://purl.org/eiffo/ecv#Requirement_113
-:Requirement_113 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Hourly to weekly" ;
-              :requiredMeasurementUncertainty "0.02m/s" ;
-              :resolution "1-50 km" ;
-              :stability "Not specified" ;
-              :standardsReferences "See EOV Specification Sheet at www.goosocean.org/eov" ;
-              rdfs:label "Requirement for ECV Product - Sea Subsurface Currents"@en .
-
-
-###  http://purl.org/eiffo/ecv#ECVProduct_118
-:ECVProduct_118 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#ECVProduct_140
+:ECVProduct_140 rdf:type owl:NamedIndividual ,
                       :ECVProduct ;
-             :hasECVProducRequirement :Requirement_113 ;
-             :productDefinition "Ocean vector motion measured with depth." ;
-             :productName "Interior currents" ;             
-             dc:description "ECV Product for Sea Subsurface Currents"@en ;
-             rdfs:label "ECV Product 118 - Sea Subsurface Currents"@en .
+             :hasECVProducRequirement :Requirement_130 ;
+             :productDefinition "Cover: live cover (% / m2) Composition: % coverage per species / m2" ;
+             :productName "Seagrass Beds" ;             
+             dc:description "ECV Product for Precipitation"@en ;
+             rdfs:label "ECV Product 140 - Marine Habitat Properties"@en .
 
-
-###  http://purl.org/eiffo/ecv#SeaSubsurfaceCurrentsECV1
-:SeaSubsurfaceCurrentsECV1 rdf:type owl:NamedIndividual ,
-                                     :ECV ;
-                            :hasDataSource :DS_138 ;
-                            :hasDomain :PhysicalDomain1 ;
-                            :hasECVProduct :ECVProduct_118 ;
-                            :hasScientificArea :ScientificArea_02 ;
-                            :ecvDescription "Observations of subsurface ocean velocity contribute to estimates of ocean transports of mass, heat, freshwater, and other properties on local, to regional and basin to global scales. They are essential in resolving the wind and buoyancy driven ocean circulation, and the complex vertical velocity structure, for example, in the major ocean boundary currents, tides, equatorial currents, wave propagations, ocean eddies. Vertical velocity profile information can be used to estimate the order of ocean mixing using fine-scale parameterizations of turbulent dissipation by internal wave breaking. Velocity estimates can be combined in data assimilation models to provide gridded global estimates of ocean circulation at varying temporal and spatial scales." ;
-                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/subsurface_currents_ecv_factsheet_201905.pdf?SmDc1jDu11EpjxXXbsufBJc0zdyqObTA" ;
-                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ssop-subsurface-currents_hover.png?vOMl6h3sJPQlmFKigBTwOaho5u2vEb7h=" ;
-                           :ecvName "Sea Subsurface Currents" ;
-                            rdfs:label "Sea Subsurface Currents" . 
-
-
-###  http://purl.org/eiffo/ecv#DS_139
-:DS_139 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "https://www.nodc.noaa.gov/OC5/SELECT/dbsearch/dbsearch.html" ;
-      :dsName "National Center for Environmental Information (NCEI) - World Ocean Database" ;
-      rdfs:label "National Center for Environmental Information (NCEI) - World Ocean Database" .
-
-###  http://purl.org/eiffo/ecv#DS_140
-:DS_140 rdf:type owl:NamedIndividual ,
-               :DataSource ;
-      :dsLink "http://www.coriolis.eu.org/" ;
-      :dsName "Coriolis" ;
-      rdfs:label "Coriolis" .
-
-
-###  http://purl.org/eiffo/ecv#Requirement_114
-:Requirement_114 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Hourly to monthly" ;
-              :requiredMeasurementUncertainty "0.01psu" ;
-              :resolution "25km/NA" ;
-              :stability "Not specified" ;
-              :standardsReferences "See EOV Specification Sheet at www.goosocean.org/eov" ;
-              rdfs:label "Requirement for ECV Product - Sea Subsurface Salinity"@en .
-
-
-###  http://purl.org/eiffo/ecv#ECVProduct_119
-:ECVProduct_119 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#ECVProduct_141
+:ECVProduct_141 rdf:type owl:NamedIndividual ,
                       :ECVProduct ;
-             :hasECVProducRequirement :Requirement_114 ;
-             :productDefinition "Salinity of seawater with depth - Salinity is unitless, and is expressed with the suffix psu (practical salinity unit, PSS-78)." ;
-             :productName "Interior salinity" ;             
-             dc:description "ECV Product for Sea Subsurface Salinity"@en ;
-             rdfs:label "ECV Product 119 - Sea Subsurface Salinity"@en .
+             :hasECVProducRequirement :Requirement_130 ;
+             :productDefinition "Cover: live cover (% / m2) Composition: % coverage per species / m2" ;
+             :productName "Macroalgal Communities" ;             
+             dc:description "ECV Product for Precipitation"@en ;
+             rdfs:label "ECV Product 140 - Marine Habitat Properties"@en .
 
 
-###  http://purl.org/eiffo/ecv#SeaSubsurfaceSalinityECV1
-:SeaSubsurfaceSalinityECV1 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#MarineHabitattECV1
+:arineHabitattECV1 rdf:type owl:NamedIndividual ,
                                      :ECV ;
-                            :hasDataSource :DS_132 ,
-                                           :DS_139 ,
-                                           :DS_140 ;
-                            :hasDomain :PhysicalDomain1 ;
-                            :hasECVProduct :ECVProduct_119 ;
-                            :hasScientificArea :ScientificArea_01 ;
-                            :ecvDescription "The global sub-surface salinity observing system is vital for closure of the global hydrological cycle, estimates of oceanic evaporation and precipitation, and halosteric component of sea level change. Subsurface salinity are required to calculate in situ density and ocean freshwater transports, respectively, and coincident subsurface observations of salinity, temperature and pressure provide an estimate of the ocean geostrophic velocity. In addition, subsurface salinity is used to derive large-scale gridded climate products including ocean velocity, mixed-layer depth, density stratification, sea level and indirect subsurface ocean mixing used in many weather and climate applications." ;
-                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/subsurface_salinity_ecv_factsheet_201905.pdf?ZQ_xjVo9gLTO33MqMPbhgv1yA5grZdKJ" ;
-                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ssop-subsurface-salinity_hover.png?TY20JPiikEWUPyvDB5CDKm65goddf7dq=" ;
-                           :ecvName "Sea Subsurface Salinity" ;
-                            rdfs:label "Sea Subsurface Salinity" . 
+                            :hasDataSource :DS_153 ,
+                                           :DS_154 ,
+                                           :DS_155 ;
+                            :hasDomain :BiologicalEcosystemsDomain1 ;
+                            :hasECVProduct :ECVProduct_138 ,
+                                           :ECVProduct_139 ,
+                                           :ECVProduct_140 ,
+                                           :ECVProduct_141 ;
+                            :hasScientificArea :ScientificArea_06 ;
+                            :ecvDescription "Marine coastal regions are amongst the most productive systems of the planet, yet they are undergoing rapid transformations in response to intensifying human activities and global change. Regime shifts, abrupt transitions between alternative states, are increasingly observed in a wide range of coastal systems, including coral reefs, macroalgal forests, seagrasses and mangroves. These nonlinear responses to deteriorating environmental conditions often result in considerable loss of ecosystem functions and services." ;
+                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/marine_habitats_ecv_factsheet_201905_0.pdf?E.lDlonmVRHY.1woVGugVlvEuGGwA7Hy" ;
+                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-obe-marine-habitat_hover.png?xEEiYGqYwmvpTFdwjAYQAS4lid5y0E8N=" ;
+                           :ecvName "Marine Habitat Properties" ;
+                            rdfs:label "Marine Habitat Properties" . 
 
 
-###  http://purl.org/eiffo/ecv#DS_141
-:DS_141 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#DS_156
+:DS_156 rdf:type owl:NamedIndividual ,
                :DataSource ;
-      :dsLink "http://www.iquod.org" ;
-      :dsName "International Quality-controlled Ocean Database (IQuOD)" ;
-      rdfs:label "International Quality-controlled Ocean Database (IQuOD)" .
+      :dsLink "https://www.cprsurvey.org/data/our-data/" ;
+      :dsName "Continuous Plankton Recorder Survey (CPR)" ;
+      rdfs:label "Continuous Plankton Recorder Survey (CPR)" .
 
 
-###  http://purl.org/eiffo/ecv#Requirement_115
-:Requirement_115 rdf:type owl:NamedIndividual ,
-                       :ECVProductRequirement ;
-              :frequency "Hourly to monthly" ;
-              :requiredMeasurementUncertainty "0.01 K" ;
-              :resolution "1-10 km" ;
-              :stability "Not specified" ;
-              :standardsReferences "See EOV Specification Sheet at www.goosocean.org/eov" ;
-              rdfs:label "Requirement for ECV Product - Sea Subsurface Temperature"@en .
+###  http://purl.org/eiffo/ecv#DS_157
+:DS_157 rdf:type owl:NamedIndividual ,
+               :DataSource ;
+      :dsLink "https://igmets.net/" ;
+      :dsName "International Group for Marine Ecological Time Series" ;
+      rdfs:label "International Group for Marine Ecological Time Series" .
 
 
-###  http://purl.org/eiffo/ecv#ECVProduct_120
-:ECVProduct_120 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#DS_158
+:DS_158 rdf:type owl:NamedIndividual ,
+               :DataSource ;
+      :dsLink "https://www.st.nmfs.noaa.gov/copepod/time-series/index-pts.html" ;
+      :dsName "Phytoplankton Time Series" ;
+      rdfs:label "Phytoplankton Time Series" .
+
+###  http://purl.org/eiffo/ecv#DS_159
+:DS_159 rdf:type owl:NamedIndividual ,
+               :DataSource ;
+      :dsLink "http://www.go-ship.org/DataDirect.html" ;
+      :dsName "Global Ocean Ship-based Hydrographic Investigations Program (GO-SHIP)" ;
+      rdfs:label "Global Ocean Ship-based Hydrographic Investigations Program (GO-SHIP)" .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct_142
+:ECVProduct_142 rdf:type owl:NamedIndividual ,
                       :ECVProduct ;
-             :hasECVProducRequirement :Requirement_115 ;
-             :productDefinition "Seawater temperature measured with depth (Degrees celsius/kelvin)" ;
-             :productName "Interior Temperature" ;             
-             dc:description "ECV Product for Sea Subsurface Temperature"@en ;
-             rdfs:label "ECV Product 120 - Sea Subsurface Temperature"@en .
+             :hasECVProducRequirement :Requirement_130 ;
+             :productDefinition "Diversity: # species per unit sample; Biomass: weight by volume (mg/l)" ;
+             :productName "Phytoplankton" ;             
+             dc:description "ECV Product for Plankton"@en ;
+             rdfs:label "ECV Product 142 - Plankton"@en .
 
 
-###  http://purl.org/eiffo/ecv#SeaSubsurfaceTemperatureECV1
-:SeaSubsurfaceTemperatureECV1 rdf:type owl:NamedIndividual ,
+###  http://purl.org/eiffo/ecv#ECVProduct_143
+:ECVProduct_143 rdf:type owl:NamedIndividual ,
+                      :ECVProduct ;
+             :hasECVProducRequirement :Requirement_130 ;
+             :productDefinition "Diversity: # species per unit sample; Biomass: weight by volume (mg/l)" ;
+             :productName "Zootoplankton" ;             
+             dc:description "ECV Product for Plankton"@en ;
+             rdfs:label "ECV Product 143 - Plankton"@en .
+
+
+###  http://purl.org/eiffo/ecv#PlanktonECV1
+:PlanktonECV1 rdf:type owl:NamedIndividual ,
                                      :ECV ;
-                            :hasDataSource :DS_132 ,
-                                           :DS_140 ,
-                                           :DS_141 ;
-                            :hasDomain :PhysicalDomain1 ;
-                            :hasECVProduct :ECVProduct_120 ;
-                            :hasScientificArea :ScientificArea_03 ;
-                            :ecvDescription "Subsurface temperature is a fundamental variable that is required to monitor variability and change in the physical environment of the ocean, energy flows, climate patterns and sea level. Many other physical variables are derived from subsurface salinity, including subsurface density, geostrophic ciculation, heat transport and steric sea level. Heat uptake by the global ocean accounts for more than 90% of the excess heat trapped in the Earth system in the pas few decades. This ocean heat uptake helps to mitigate surface warming but, in turn, increases the global ocean volume through thermal expansion, and thus results in global-mean sea-level rise, accounting for about one third of the increase observed over the past few decades" ;
-                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/subsurface_temperature_ecv_factsheet_201905_0.pdf?1mPqnE5j8ya_IAlOmQmAkHAdyjGTNa88" ;
-                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-ssop-subsurface-temp_hover.png?SpogNHshZlFFK8QjWtIZa6WWbdaQ1ngs=" ;
-                           :ecvName "Sea Subsurface Temperature" ;
-                            rdfs:label "Sea Subsurface Temperature" . 
+                            :hasDataSource :DS_156 ,
+                                           :DS_157 ,
+                                           :DS_158 ,
+                                           :DS_155 ,
+                                           :DS_159 ,
+                                           :DS_151 ;
+                            :hasDomain :BiologicalEcosystemsDomain1 ;
+                            :hasECVProduct :ECVProduct_142 ,
+                                           :ECVProduct_143 ;
+                            :hasScientificArea :ScientificArea_06 ;
+                            :ecvDescription "Plankton are at the base of the marine food web and generally not fished by humans. Changes in the plankton will have impacts on the rest of the marine ecosystem including on the carbon cycle, living marine resources used by humans and threatened marine species including apex predators. Climate variability significantly impacts plankton in the ocean, both the microflora (phytoplankton) and the microfauna (zooplankton), over both short and long timescales." ;
+                            :ecvFactsheetLink "https://ane4bf-datap1.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/plankton_ecv_factsheet_201905.pdf?0I5qqa_9IgGlTMr_AaZFXOYWNCEz3uFl" ;
+                            :ecvIconLink "https://ane4bf-datat.s3.eu-west-1.amazonaws.com/wmod8_climatedata/s3fs-public/ico-obe-plankton_hover.png?O8ROTtWCy8ic0o90T2PYvgsPWGGFT_2y=" ;
+                           :ecvName "Plankton" ;
+                            rdfs:label "Plankton" . 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
