@@ -1,0 +1,41 @@
+version: "2.0"
+
+services:
+ eiffo-frontend:  
+  image: benmomo/eiffo-frontendr:0.0.1
+  container_name: eiffo-frontend 
+  ports:
+     - "80:80"  
+     - "443:443"    
+  links:
+     - eiffo-backend-webvowl
+            
+ 
+ eiffo-backend-webvowl:  
+  image: benmomo/eiffo-backend-webvowlr:0.0.1
+  container_name: eiffo-backend-webvowl  
+  ports:
+     - "4040:8080"
+   
+ 
+ eiffo-backend-fuseki:  
+  image: benmomo/eiffo-backend-fusekir:0.0.1
+  container_name: eiffo-backend-fuseki 
+  environment:
+     - ADMIN_PASSWORD=eiffel
+  ports:
+     - "3030:3030"
+      
+
+ eiffo-backend-api:
+  image: benmomo/eiffo-backend-apir:0.0.1 
+  container_name: eiffo-backend-api  
+  environment:
+      # Authorization with Header of type 'ApiKey <APIKEY>' (default ApiKey eiffel)
+     - APIKEY=eiffel      
+     - SPARQL_SRV=http://eiffo-backend-fuseki:3030/eiffel 
+  ports:
+     - "8080:8080"
+  links:
+     - eiffo-backend-fuseki
+ 
