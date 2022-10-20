@@ -1,0 +1,3230 @@
+@prefix : <http://purl.org/eiffo/eotaxonomy#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdg: <http://metadata.un.org/sdg/ontology> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core> .
+@prefix schema: <http://schema.org/> .
+@base <http:/purl.org/eiffo/eotaxonomy> .
+
+<http:/purl.org/eiffo/eotaxonomy> rdf:type owl:Ontology ;
+                                   dc:creator "Benjamin Molina"@en ;
+                                   dc:date "2022"@en ;
+                                   dc:description "The EIFFEL ontology intends to help while searching for EO services and EO datasets or collections. In doing that, it makes use of the EO taxonomy, which was drafted as a document, but not ported into a formal file. Though it could have been integrated directly in the EIFFEL ontology, it was desgined in a modular way, so that it can be extended and reused independently."@en ;
+                                   dc:language "en"@en ;
+                                   dc:rights "The EO taxonomy is available under the Creative Commons Attribution 4.0 Unported license; see http://creativecommons.org/licenses/by/4.0/. In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). Proper Attribution: Simply include the statement \"This work is based on the EO taxonomy, developed by  Benjamin Molina  from the EO taxonomy documented by EARSC (https://earsc-portal.eu/display/EOwiki/EO+Taxonomy), used by the EIFFEL project and available at https://purl.org/eiffo/eotaxonomy\""@en ;
+                                   dc:title "EO (EARSC) taxonomy"@en ;
+                                   rdfs:label "EO Taxonomy translated from the EARSC document to be used in the EIFFEL project"@en ;
+                                   rdfs:seeAlso "EIFFEL project  (https://www.eiffel4climate.eu/),  and EO taxonomy (https://earsc-portal.eu/display/EOwiki/EO+Taxonomy)"@en ;
+                                   owl:versionInfo "0.1"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+dc:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/corealtLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/eiffo/eotaxonomy#coversSector
+:coversSector rdf:type owl:ObjectProperty ;
+              rdfs:domain :UserGroup ;
+              rdfs:range :Sector .
+
+
+###  http://purl.org/eiffo/eotaxonomy#fromArea
+:fromArea rdf:type owl:ObjectProperty ;
+          rdfs:domain :EOService ;
+          rdfs:range :Area ;
+          rdfs:label "fromArea"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#fromDomain
+:fromDomain rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf skos:broader ;
+            owl:inverseOf :hasArea ;
+            rdfs:domain :Area ;
+            rdfs:range :Domain ;
+            rdfs:label "fromDomain"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#fromMarket
+:fromMarket rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf skos:broader ;
+            owl:inverseOf :hasSector ;
+            rdfs:domain :Sector ;
+            rdfs:range :Market ;
+            rdfs:label "fromMarket"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#fromSector
+:fromSector rdf:type owl:ObjectProperty ;
+            rdfs:domain :EOService ;
+            rdfs:range :Sector .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasAlignedCopernicusService
+:hasAlignedCopernicusService rdf:type owl:ObjectProperty ;
+                             rdfs:domain :Domain ;
+                             rdfs:range :CopernicusService .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasArea
+:hasArea rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf skos:narrower ;
+         rdfs:domain :Domain ;
+         rdfs:range :Area ;
+         rdfs:label "hasArea"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasDIKW
+:hasDIKW rdf:type owl:ObjectProperty ;
+         rdfs:domain :UserNeed ;
+         rdfs:range :DIKW .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasDomain
+:hasDomain rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf skos:narrower ;
+           rdfs:domain :ThematicView ;
+           rdfs:range :Domain ;
+           rdfs:label "hasDomain"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasEONeed
+:hasEONeed rdf:type owl:ObjectProperty ;
+           rdfs:domain :UserGroup ;
+           rdfs:range :EONeed .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasMarket
+:hasMarket rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf skos:narrower ;
+           rdfs:domain :MarketView ;
+           rdfs:range :Market ;
+           rdfs:label "hasMarket"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasSector
+:hasSector rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf skos:narrower ;
+           rdfs:domain :Market ;
+           rdfs:range :Sector ;
+           rdfs:label "hasSector"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasService
+:hasService rdf:type owl:ObjectProperty ;
+            rdfs:domain :Area ,
+                        :Sector ;
+            rdfs:range :EOService ;
+            rdfs:label "hasService"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasUserGroup
+:hasUserGroup rdf:type owl:ObjectProperty ;
+              rdfs:domain :Sector ;
+              rdfs:range :UserGroup .
+
+
+###  http://purl.org/eiffo/eotaxonomy#usesParameter
+:usesParameter rdf:type owl:ObjectProperty ;
+               rdfs:domain :EOApplication ;
+               rdfs:range :Parameter ;
+               rdfs:label "usesParameter"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#usesProduct
+:usesProduct rdf:type owl:ObjectProperty ;
+             rdfs:domain :EOApplication ;
+             rdfs:range :Product ;
+             rdfs:label "usesProduct"@en .
+
+
+###  http://www.w3.org/2004/02/skos/corebroader
+skos:broader rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/corenarrower
+skos:narrower rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/eiffo/eotaxonomy#areaKeyWords
+:areaKeyWords rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Area ;
+              rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#areaName
+:areaName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Area ;
+          rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#cApplicationAreas
+:cApplicationAreas rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :CopernicusService ;
+                   rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#cName
+:cName rdf:type owl:DatatypeProperty ;
+       rdfs:domain :CopernicusService ;
+       rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#cShortName
+:cShortName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :CopernicusService ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#dikwDescription
+:dikwDescription rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :DIKW ;
+                 rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#dikwName
+:dikwName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :DIKW ;
+          rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#dikwQuestion
+:dikwQuestion rdf:type owl:DatatypeProperty ;
+              rdfs:domain :DIKW ;
+              rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#domainName
+:domainName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Domain ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#eoNeedDescription
+:eoNeedDescription rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EONeed ;
+                   rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#eoServDescription
+:eoServDescription rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EOService ;
+                   rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#eoServType
+:eoServType rdf:type owl:DatatypeProperty ;
+            rdfs:domain :EOService ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#marketName
+:marketName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Market ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#relatedAreaAction
+:relatedAreaAction rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EOService ;
+                   rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#sectorName
+:sectorName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Sector ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#thematicLevel
+:thematicLevel rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Area ,
+                           :Domain ,
+                           :EOService ;
+               rdfs:range xsd:integer .
+
+
+###  http://purl.org/eiffo/eotaxonomy#unAddedValue
+:unAddedValue rdf:type owl:DatatypeProperty ;
+              rdfs:domain :UserNeed ;
+              rdfs:range xsd:integer .
+
+
+###  http://purl.org/eiffo/eotaxonomy#unBloomTax
+:unBloomTax rdf:type owl:DatatypeProperty ;
+            rdfs:domain :UserNeed ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#unDefinition
+:unDefinition rdf:type owl:DatatypeProperty ;
+              rdfs:domain :UserNeed ;
+              rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#unName
+:unName rdf:type owl:DatatypeProperty ;
+        rdfs:domain :UserNeed ;
+        rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#unSynomyn
+:unSynomyn rdf:type owl:DatatypeProperty ;
+           rdfs:domain :UserNeed ;
+           rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#usDescription
+:usDescription rdf:type owl:DatatypeProperty ;
+               rdfs:domain :UserGroup ;
+               rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#usName
+:usName rdf:type owl:DatatypeProperty ;
+        rdfs:domain :UserGroup ;
+        rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#viewDescription
+:viewDescription rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :View ;
+                 rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#viewName
+:viewName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :View ;
+          rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#viewVersion
+:viewVersion rdf:type owl:DatatypeProperty ;
+             rdfs:domain :View ;
+             rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#viewYear
+:viewYear rdf:type owl:DatatypeProperty ;
+          rdfs:domain :View ;
+          rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/eiffo/eotaxonomy#Area
+:Area rdf:type owl:Class ;
+      rdfs:subClassOf :Segment ;
+      dc:description """Classifies concepts in greater detail. e.g. different segments. The upgrade in 2020 proposes 31 areas compared with the 25 in the previous taxonomy.
+The value thematicLevel is 2 for all instances of this class""" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CopernicusService
+:CopernicusService rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/eotaxonomy#DIKW
+:DIKW rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Domain
+:Domain rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+        dc:description "According to the EO taxonomy, this is a single block of knowledge (big category of objects). It is the largest conceptual category (typically nouns) covering all known areas of EO services from the supplier’s point of view. The EARSC taxonomy contains 6 classes. Sometimes Domain class is also called Thematic class. The value thematicLevel is 1 for all individuals of this class" ;
+        rdfs:label "Domain" ;
+        skos:altLabel "Thematic" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ECV
+:ECV rdf:type owl:Class ;
+     rdfs:subClassOf :EssentialVariable ;
+     dc:description """As for WMO (World Meteorological Organization), an ECV is a physical, chemical or biological variable or a group of linked variables that critically contributes to the characterization of Earth’ s climate.
+ECV datasets provide the empirical evidence needed to understand and predict the evolution of climate, to guide mitigation and adaptation measures, to assess risks and enable attribution of climate events to underlying causes, and to underpin climate services.
+ECVs are observed according to the GCOS Climate Monitoring Principles.
+More information can be found at https://public.wmo.int/en/programmes/global-climate-observing-system/essential-climate-variables"""@en ;
+     rdfs:label "EssentialClimateVariable"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOApplication
+:EOApplication rdf:type owl:Class ;
+               rdfs:subClassOf :EOService ;
+               dc:description "The value thematicLevel is 4 for all individuals of this class" ;
+               rdfs:label "EOApplication"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed
+:EONeed rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+        rdfs:label "EONeed" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService
+:EOService rdf:type owl:Class ;
+           rdfs:subClassOf schema:Service ,
+                           <http://www.w3.org/2004/02/skos/core#Concept> ;
+           dc:description "EO services (sometimes considered applications by service providers) propose an action or a sequence of actions (specific events appropriate in a given situation, e.g., “assess the environmental impact of farming”. For example, it unifies major entities such as environment, agriculture or deeper in granularity such as crops. The range today covers more than 80 services. The range as for 2020 covers more than 80 services. The v alue thematiclevel is 3 for all instances of this class"@en ;
+           rdfs:label "EOService"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EssentialVariable
+:EssentialVariable rdf:type owl:Class ;
+                   rdfs:subClassOf :Parameter .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Market
+:Market rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/eotaxonomy#MarketView
+:MarketView rdf:type owl:Class ;
+            rdfs:subClassOf :View ;
+            dc:description """According to the EO taxonomy, the market (user) view:
+-Structures the market from the customer point of view
+- Is based on customer segmentation
+-Identifies the type of organisation that fits into each one
+-Helps associate types of users with their requirements
+
+ Moreover, the market (user) view is organized:
+- By Market – Services are grouped Into 8 main markets, 
+- By Sectors – Each market is split into a number of more specific sectors corresponding to specific niches within that market to which the services apply’.There are 26 sectors in total.
+- By sector composition - examples are given of the types of organisation that make up the market sector e.g. users in managed living resources refer to human activities exploiting natural organic resources. This helps define the sector and its EO-related needs."""@en ;
+            rdfs:label "MarketView"@en ;
+            <http://www.w3.org/2004/02/skos/core#altLabel> "UserView" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Parameter
+:Parameter rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Product
+:Product rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+         rdfs:label "Product"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Provider
+:Provider rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+          dc:description "A provider is an entity providing either services, collections or datasets related to Earth Observation (EO). It is based on the 'Organization' entity from schema.org"@en ;
+          rdfs:label "Proveedor"@es ,
+                     "Provider"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Sector
+:Sector rdf:type owl:Class ;
+        rdfs:subClassOf :Segment .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Segment
+:Segment rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+         dc:description """An Earth Observation segment is way of classifying the different services by sectors in the EO arenna, according to a specific taxonomy.
+This ontology follows the EO Taxonomy drafted by EARSC, which provides a market (user) view as well as a thematic (provider) view.
+More information about the EO taxonomy can be found at https://earsc-portal.eu/display/EOwiki/EO+Taxonomy"""@en ;
+         rdfs:label "Earth Observation Segment"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ThematicView
+:ThematicView rdf:type owl:Class ;
+              rdfs:subClassOf :View ;
+              dc:description """According to the EO taxonomy, the market (user) view:
+-Structure of the EO domain from a technical approach
+-Based on an expertise view
+-Seek to gather EO services into groups
+-Add meaning & insight to each service
+
+ Moreover, the market (user) view is organized:
+- By Domains – Services are grouped Into 8 main domains, 
+- By Areas – Each domain is split into a number of more specific areas corresponding to specific groups within that domain to which the services apply’.There are 26 sectors in total."""@en ,
+                             """According tot he EO taxonmy, the Thematic(provider)  view:
+-Structure of the EO domain from a technical approach
+-Based on an expertise view -Seek to gather EO services into groups
+-Add meaning & insight to each service
+
+Moreover, it is organized:
+
+- Into 6 main Domains (or classes) - This refers to the various applications of EO technologies and stems from the different scientific schools from which different approaches have developed.
+- By Areas - These Domains are then split into 32 thematic segments (or Areas) below that showing specialisations within those field,
+- By service descriptions and keywords – a non-exhaustive list of keywords are provided for each Area that help to define that Area. These keywords are presented in relation to a fixed set of verbs that describe the action undertaken in the service, e.g. monitor, detect, track, assess."""@en ;
+              rdfs:label "ThematicView"@en ;
+              <http://www.w3.org/2004/02/skos/core#altLabel> "ProviderView" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UserGroup
+:UserGroup rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+           rdfs:label "UserGroup" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UserNeed
+:UserNeed rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/eotaxonomy#View
+:View rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+      dc:description """An Earth Observation view is way of classifying the different services by sectors in the EO arenna, according to a specific taxonomy.
+This ontology follows the EO Taxonomy drafted by EARSC, which provides a market (user) view as well as a thematic (provider) view.
+More information about the EO taxonomy can be found at https://earsc-portal.eu/display/EOwiki/EO+Taxonomy"""@en ;
+      rdfs:label "View"@en .
+
+
+###  http://schema.org/Service
+schema:Service rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/eiffo/eotaxonomy#AgricultureFieldsArea
+:AgricultureFieldsArea rdf:type owl:NamedIndividual ,
+                                :Area ;
+                       :fromDomain :LandDomain ;
+                       :areaKeyWords "… includes monitoring of information on the physical configuration of the surface and any change of that surface over time such as monitor fields, mange crops, farm management, tillage scheduling (soil treatment), irrigation scheduling (know when and how much), pest and disease alarm (early warning system for pest and disease infection risks), crop growth monitoring (define a different crop management zones or detect field problems such as pest infestation or soil nutrients deficiencies), improve crop yield estimation (estimate field productivity, make better financial decisions, improve income, insight of market opportunities and solve some modern agriculture problems), and comprehensive crop monitoring and modelling systems. Land variables which affect crops (along with a host of weather and climatic variables) include; land cover, surface soil moisture, dry matter productivity, surface temperature, a fraction of absorbed photosynthetically active radiation (FAPAR), normalised difference vegetation index (NDVI), leaf area index (LAI), a fraction of green vegetation cover (FCOVER), and weed or pest infestations." ;
+                       :areaName "Agriculture (fields)" ;
+                       :thematicLevel 2 ;
+                       rdfs:label "Agriculture (fields)"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#AgricultureSector
+:AgricultureSector rdf:type owl:NamedIndividual ,
+                            :Sector ;
+                   :fromMarket :ManagedLivingResourcesMarket ;
+                   :hasUserGroup :AgricultureSector ;
+                   :sectorName "Agriculture" ;
+                   rdfs:label "Agriculture"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#AtmosphereAndClimateChangeDomain
+:AtmosphereAndClimateChangeDomain rdf:type owl:NamedIndividual ,
+                                           :Domain ;
+                                  :hasAlignedCopernicusService :CopernicusService_01 ,
+                                                               :CopernicusService_02 ;
+                                  :hasArea :AtmosphereArea ,
+                                           :ClimateChangeArea ,
+                                           :MetereologyArea ;
+                                  :domainName "Atmosphere and Climate Change" ;
+                                  :thematicLevel 1 ;
+                                  dc:description """The atmosphere and climate domain encompass all atmosphere and climate change focused services/applications which assess, monitor, forecast and provide timely, continuous and independent data (e.g. emissions, climate forcing, greenhouse gases, reactive gases, O3, solar UV radiation, aerosols…) which affect temperature, air quality and the transmission of solar radiation. These services/applications closely monitor each of the Earth's different subsystems and help to better understand and evaluate the impact of climate change and
+its impacts on the atmosphere, meteorology or hydrological cycles."""@en ;
+                                  rdfs:label "Atmosphere and Climate Change"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#AtmosphereArea
+:AtmosphereArea rdf:type owl:NamedIndividual ,
+                         :Area ;
+                :fromDomain :AtmosphereAndClimateChangeDomain ;
+                :areaKeyWords "…quality-controlled information related to air composition, pollution and health, solar energy, greenhouse gases (GHG) emissions and climate forcing’s." ;
+                :domainName "Atmosphere" ;
+                :thematicLevel 2 ;
+                rdfs:label "Atmosphere"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#BioDiversityAndLandEcosystemArea
+:BioDiversityAndLandEcosystemArea rdf:type owl:NamedIndividual ,
+                                           :Area ;
+                                  :fromDomain :LandDomain ;
+                                  :areaKeyWords "…data assimilation techniques to combine satellite observations of the land surface with radiative transfer and other physical models to provide best estimates of biophysical parameters, improving understanding of ecosystems and ecosystems and assessing vulnerability, etc." ;
+                                  :areaName "BioDiversity and Land Ecosystem" ;
+                                  :thematicLevel 2 ;
+                                  rdfs:label "BioDiversity and Land Ecosystem"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#BiodiversityAndMarineEcosystemArea
+:BiodiversityAndMarineEcosystemArea rdf:type owl:NamedIndividual ,
+                                             :Area ;
+                                    :fromDomain :MarineAndOceanDomain ;
+                                    :areaKeyWords "… monitoring and improving the understanding of the complexity of the global marine ecosystem (physical, chemical, biological and ecological processes) through critical observations in the health of and changes to marine biodiversity." ;
+                                    :areaName "Biodiversity and Marine Ecosystem" ;
+                                    :thematicLevel 2 ;
+                                    rdfs:label "Biodiversity and Marine Ecosystem"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#BuiltEnvironmentAndHumanFactorsDomain
+:BuiltEnvironmentAndHumanFactorsDomain rdf:type owl:NamedIndividual ,
+                                                :Domain ;
+                                       :hasAlignedCopernicusService :CopernicusService_03 ;
+                                       :hasArea :InfrastructureArea ,
+                                                :TransportNetworksArea ,
+                                                :UrbanAreasArea ,
+                                                :WasteArea ;
+                                       :domainName "Built environment and human factors" ;
+                                       :thematicLevel 1 ;
+                                       dc:description "The urban environment domain covers applications/services addressing all planning, modelling, monitoring and understanding of urban environments and infrastructure. These can include identification of new structures, ground movement, movement of structures, land cover/land use, and identification of urban water bodies and be applied to a range of applications such as transport networks or energy provision, or waste monitoring."@en ;
+                                       rdfs:label "Built environment and human factors"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CitizensAndSocietyMarket
+:CitizensAndSocietyMarket rdf:type owl:NamedIndividual ,
+                                   :Market ;
+                          :hasSector :ConsumerSolutionsSector ,
+                                     :EducationTrainingAndResearchSector ,
+                                     :LeisureSector ;
+                          :marketName "Citizens & Society" ;
+                          dc:description "Citizens and society in general use and engage with EO services through mobile devices, social media platforms and apps. We also categorize in this section the users in education, research and training providing knowledge and learning outcomes"@en ;
+                          rdfs:label "Citizens & Society"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ClimateChangeArea
+:ClimateChangeArea rdf:type owl:NamedIndividual ,
+                            :Area ;
+                   :fromDomain :AtmosphereAndClimateChangeDomain ;
+                   :areaKeyWords "…long-term datasets (also linked to weather forecasts) on key indicators of climate change systematically generated and preserved to better understand climate change and associated adaptation and mitigation measures and risk management (i.e., large-scale ecological response to global climate change such greening of the Arctic). The assessment of climatic variations may persist over decades or more. This is measured through geophysical quantity/quantities associated with climate variations and change as well as the impact of climate change onto Earth (time series analysis, anomaly detection, missing data reconstruction, forecasting). Climate change is triggering factors on geohazards or direct effect for many land and ocean processes." ;
+                   :domainName "Climate Change" ;
+                   :thematicLevel 2 ;
+                   rdfs:label "Climate Change"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CoastalArea
+:CoastalArea rdf:type owl:NamedIndividual ,
+                      :Area ;
+             :fromDomain :MarineAndOceanDomain ;
+             :areaKeyWords "…coastal mapping (i.e. on land) represents an integrated approach in relation to environmental monitoring, incorporating such fields as urban development and coastal wetland loss, land-use cover and change, wetland mapping, coastal geomorphology (barometric pressure, on/off-shore wind, the slope of beach), maritime safety and security issues (hazard, disaster). The coastal zone (water ecosystem) may cover water depth-bathymetry and water optical properties, waterbody nutrients / productivity (chlorophyll-a concentration), littoral and subtidal habitat (mangroves, coral reefs, seagrass canopy density), erosion and sedimentation mapping, long time series of ocean colour products including uncertainties estimates or health issues such as algal bloom detection… Can be closely related to marine, land and inland water monitoring products." ;
+             :areaName "Coastal" ;
+             :thematicLevel 2 ;
+             rdfs:label "Coastal"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CommunicationsAndConnectivitySector
+:CommunicationsAndConnectivitySector rdf:type owl:NamedIndividual ,
+                                              :Sector ;
+                                     :fromMarket :InfrastructureAndTransportMarket ;
+                                     :hasUserGroup :USG_CommunicationsAndConnectivity ;
+                                     :sectorName "Communications & connectivity" ;
+                                     rdfs:label "Communications & connectivity"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ConstructionSector
+:ConstructionSector rdf:type owl:NamedIndividual ,
+                             :Sector ;
+                    :fromMarket :InfrastructureAndTransportMarket ;
+                    :hasUserGroup :USG_Construction ;
+                    :sectorName "Construction" ;
+                    rdfs:label "Construction"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ConsumerSolutionsSector
+:ConsumerSolutionsSector rdf:type owl:NamedIndividual ,
+                                  :Sector ;
+                         :fromMarket :CitizensAndSocietyMarket ;
+                         :hasUserGroup :USG_ConsumerSolutions ;
+                         :sectorName "Consumer solutions" ;
+                         rdfs:label "Consumer solutions"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CopernicusService_01
+:CopernicusService_01 rdf:type owl:NamedIndividual ,
+                               :CopernicusService ;
+                      :cApplicationAreas " (i)air quality and atmospheric composition, (ii)ozone layer and ultra-violet radiation, (iii)emissions and surface fluxes, (iv)solar radiation, (v)climate forcing" ;
+                      :cName "Copernicus Atmosphere Monitoring Service" ;
+                      :cShortName "CAMS" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CopernicusService_02
+:CopernicusService_02 rdf:type owl:NamedIndividual ,
+                               :CopernicusService ;
+                      :cApplicationAreas "support adaptation and mitigation policies by providing consistent and authoritative information about climate change (assessment of climate change impacts, risk management, sustainable human iterations within the environment…)" ;
+                      :cName "Copernicus Climate Change Service" ;
+                      :cShortName "C3S" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CopernicusService_03
+:CopernicusService_03 rdf:type owl:NamedIndividual ,
+                               :CopernicusService ;
+                      :cApplicationAreas "(i)systematic monitoring of biophysical parameters, (ii)land cover and land use mapping, (iii)thematic hot-spot mapping, (iv)imagery and reference data" ;
+                      :cName "Copernicus Land Monitoring Service" ;
+                      :cShortName "CLMS" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CopernicusService_04
+:CopernicusService_04 rdf:type owl:NamedIndividual ,
+                               :CopernicusService ;
+                      :cApplicationAreas "(i)a mapping component; (e.g. as digital or printed map outputs), (ii)an early warning component (The European Flood Awareness System (EFAS), The European Forest Fire Information System (EFFIS), The European Drought Observatory (EDO), Global Flood Awareness System (GloFAS), Global Wildfire Information System (GWIS) and Global Drought Observatory (GDO) …" ;
+                      :cName "Copernicus Emergency Management Service" ;
+                      :cShortName "CEMS" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CopernicusService_05
+:CopernicusService_05 rdf:type owl:NamedIndividual ,
+                               :CopernicusService ;
+                      :cApplicationAreas "(i)Marine safety, (ii)Marine resources, (iii)Coastal and marine environment, (iv)Weather, seasonal forecasting and climate" ;
+                      :cName "Copernicus Marine Environment Monitoring Service" ;
+                      :cShortName "CMEMS" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CopernicusService_06
+:CopernicusService_06 rdf:type owl:NamedIndividual ,
+                               :CopernicusService ;
+                      :cApplicationAreas "(i) crisis prevention, preparedness and response (ii)border surveillance, (iii) Maritime surveillance (iv) Support to EU External Action" ;
+                      :cName "Copernicus security service(s)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CriticalAssetsArea
+:CriticalAssetsArea rdf:type owl:NamedIndividual ,
+                             :Area ;
+                    :fromDomain :SecurityAndSafetyDomain ;
+                    :areaKeyWords "… monitoring environmental and man-made risks to assets, such identify failure for dams, pipeline networks, roads, nuclear power stations by helping on decisions about assets through the analysis of remotely sensed imagery and data to reduce the cost of monitoring and predicting land use change and environmental risk. Needs assessments for response, recovery and reconstruction areas are also important." ;
+                    :areaName "Critical Assets" ;
+                    :thematicLevel 2 ;
+                    rdfs:label "Critical Assets"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CustomsAndBorderArea
+:CustomsAndBorderArea rdf:type owl:NamedIndividual ,
+                               :Area ;
+                      :fromDomain :SecurityAndSafetyDomain ;
+                      :areaKeyWords "…basic maps (digital, paper, using both EO and non-EO sources), crisis and damage mapping, situation maps, refugee/IDP support maps, thematic maps, communication reporting, alert services." ;
+                      :areaName "Customas and Border (migration)" ;
+                      :thematicLevel 2 ;
+                      rdfs:label "Customas and Border (migration)"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CustomsAndBordersArea
+:CustomsAndBordersArea rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/eiffo/eotaxonomy#DIKW_Data
+:DIKW_Data rdf:type owl:NamedIndividual ,
+                    :DIKW ;
+           :dikwDescription "Refers to geospatial data content, including its quality and usability. How the data is consistently (temporally/geographically) collected and how it is “made” with a certain the level of accuracy and confidence (spatial, temporal and spectral resolution). The validation and uncertainty assessment is a crucial requirement from the end-user perspective of a satellite data product. For the 'land' domain it was defined the validation of data as 'the process of evaluating (by independent means) the accuracy of satellite-derived land products and quantifying their uncertainties by analytical comparison with reference data'" ;
+           :dikwName "Data & Information" ;
+           :dikwQuestion "What data?" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#DIKW_Knowledge
+:DIKW_Knowledge rdf:type owl:NamedIndividual ,
+                         :DIKW ;
+                :dikwDescription "Final or intermediate users request the information be structured in some meaningful way so as to convey facilitate decision making. The data are represented in such a way, e.g. accessing and integrating the defined data layers to  produce geospatial information, developing data models as to allow a justifiable belief in the user, through which decisions can be made." ;
+                :dikwName "Knowledge" ;
+                :dikwQuestion "How and what type of access?" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#DIKW_Wisdom
+:DIKW_Wisdom rdf:type owl:NamedIndividual ,
+                      :DIKW ;
+             :dikwDescription "It is related to the user of the information products derived from the data (as well as data models) across vertical markets but also amongst key user communities. The wisdom generated through the EO data service provision is the justifiable belief in the state of the world, based on the knowledge generated from the data, from which sound decisions can be made." ;
+             :dikwName "Wisdom" ;
+             :dikwQuestion "Why the user needs that information?" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#DefenceAndSecurityMarket
+:DefenceAndSecurityMarket rdf:type owl:NamedIndividual ,
+                                   :Market ;
+                          :hasSector :EmergencyAndSocialProtectionSector ,
+                                     :HumanitarianOperationsSector ,
+                                     :SecurityDefenceAndMilitarySector ;
+                          :marketName "Defence & Security" ;
+                          dc:description """Users in defence and security work in the field of military, emergency and social protection and define, collect, analyse information to provide intelligence & safety (monitor events, improve response and drive resilience).
+Some examples are activities under Humanitarian response such as border control organisations, police and rescue forces, coast guards, civil protection, military services, and intelligence services which can use EO services to detect and monitor high risk areas produced naturally or by humans, monitor border incursions or maritime movements"""@en ;
+                          rdfs:label "Defence & Security"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#DisastersAndGeohazardsDomain
+:DisastersAndGeohazardsDomain rdf:type owl:NamedIndividual ,
+                                       :Domain ;
+                              :hasAlignedCopernicusService :CopernicusService_04 ;
+                              :hasArea :EarthquakesArea ,
+                                       :FiresArea ,
+                                       :FloodsArea ,
+                                       :LandslidesArea ,
+                                       :MultiHazardArea ,
+                                       :VolcanosArea ;
+                              :domainName "Disasters & Geohazards" ;
+                              :thematicLevel 1 ;
+                              dc:description "The disasters & geohazards domain provides information for an emergency response concerning to different types of disasters. It includes a wide array of EO services for the mapping, monitoring of geohazards and how cascading impacts of disasters can affect the security of every citizen. These tools can be applied to a range of disasters/hazards such as landslides, volcanoes, fires, earthquakes and cascading hazards. Other types of disasters such as ground subsidence, tsunamis, cyclones/hurricanes may be tackled under the land/marine/atmosphere domain respectively. Such EO services help on the improvement of crisis management, risk reduction including early warning  systems for mitigation of disasters and emergency response, re-establishing services after such events and planning tools to help in understanding emerging problems that may be critical in the mid-term. Services in this domain typically consider the Sendai Framework for Disaster Risk Reduction44 with the priorities for action; understanding, governance, reduction for resilience, preparedness for effective response, recovery, rehabilitation and reconstruction.."@en ;
+                              rdfs:label "Disasters & Geohazards"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_001
+:EONeed_001 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "forecast production yield and monitor variability in crop development" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_002
+:EONeed_002 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "support usual farm management / operations providing highly accurate customized consultation to any farmer and for any kind of crop, from the smallest to the largest scale" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_003
+:EONeed_003 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "calculate the correct amount (savings) of fertiliser, water or pesticides" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_004
+:EONeed_004 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "more informed decision-making on crop type and land use, savings on seed through optimising seed density during planting (vegetation- Index Crop-Insurance)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_005
+:EONeed_005 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "implement a crop production index to build an insurance product" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_006
+:EONeed_006 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "evaluate farm solvency & trade on commodities stock exchange" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_007
+:EONeed_007 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "monitor farming deforestation impact and delineate field boundaries" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_008
+:EONeed_008 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assess losses based on actual damage extent in the field overall monitor several stages in the value chain to make better-informed decisions in planning, planting and growing the new crops" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_009
+:EONeed_009 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "improve fisheries economic activity boosting their income, making the fishing experience easier, safer, and  more sustainable, assessing fish shoals, catch optimisation & understanding the impact, overfishing, livestock monitoring/management, etc" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_010
+:EONeed_010 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "detect patterns of illegal behaviour at sea (illegal fishing, narco-traffic, immigration, maritime pollution, piracy);" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_011
+:EONeed_011 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "establish historical forest area changes and implement forest monitoring solutions" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_012
+:EONeed_012 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "verify the impact of and compliance with no-deforestation policies and transform the industry towards sustainable practices (sustainable management of forest)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_013
+:EONeed_013 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "set-up reducing emissions from deforestation and forest degradation (REDD+ national strategy and support final users in obtaining certificates and carbon credits) (REDD+ MRV (monitoring, reporting and verification))" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_014
+:EONeed_014 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "perform cost-effective and accurate forest inventory, at national or local scales" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_015
+:EONeed_015 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "conservation and enhancement of forest carbon stocks, baseline mapping and stock change" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_016
+:EONeed_016 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "damage assessment" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_017
+:EONeed_017 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "successful management of renewable resources as the selection and development of exploration areas" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_018
+:EONeed_018 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "detection and quantification of renewable energy potentials" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_019
+:EONeed_019 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "solar radiance data for renewable energy project planning, and nowcasting for extreme weather events" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_020
+:EONeed_020 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assess environmental impact assessment for industrial permitting and monitoring purposes" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_021
+:EONeed_021 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "aspects of energy planning, production, and distribution within bioenergy and thermal power, wind, solar, renewable energy and energy-efficient heating and cooling solutions" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_022
+:EONeed_022 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assessments and monitoring of environmental impacts related to energy exploration, extraction, transportation and consumption" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_023
+:EONeed_023 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "establishment of an environmental baseline, or snapshot, for planning and design" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_024
+:EONeed_024 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "monitoring conditions over time (via change detection, feature mapping or geophysical parameter measurement) to understand environmental impacts and trends" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_025
+:EONeed_025 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "hazard assessment (risk assessment and post-event analysis, including operational and situational awareness)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_026
+:EONeed_026 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "oil spill and pollution monitoring" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_027
+:EONeed_027 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assess pack ice and icebergs, and internal wave/soliton mapping to help mitigate potential risks posed to offshore activities" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_028
+:EONeed_028 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "improved representation of the subsurface, optimize field development and achieve more efficient oil and gas production" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_029
+:EONeed_029 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "challenges focus on lifecycle phases of the mineral extraction: areas of poor coupling, baseline historic mapping of environment and ecosystems, continuous monitoring of changes throughout the lifecycle, engineering geological evaluation, facility siting, pipeline routing and roads, identification of adverse terrain for trafficability, infrastructure monitoring, land motion relating to fault lines or other causes, lithological discrimination, mapping geological features, monitoring of assets, natural hazard risk analysis, reservoir management, risk assessment, structural interpretation, support to surveying crews for planning surveys and H&S, terrain evaluation and geo-morphology characterisation" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_030
+:EONeed_030 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "on-site field data and calibration information" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_031
+:EONeed_031 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "change detection and time series analysis" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_032
+:EONeed_032 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "risk management and environmental impact analysis" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_033
+:EONeed_033 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "geological mapping, mining management" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_034
+:EONeed_034 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "selection and development of exploration areas, detection and mapping of illegal mining activities, or monitoring assets" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_035
+:EONeed_035 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assessments of key infrastructure changes and construction developments" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_036
+:EONeed_036 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "continuous mapping and monitoring of critical infrastructures across multi-site project" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_037
+:EONeed_037 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "continuous monitoring to detect encroachment events, including intentional damage to infrastructure or a threat to staff safety" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_038
+:EONeed_038 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "engineering development, planning, monitoring and controlling of infrastructure solutions at all levels of scale and complexity to optimize the processes and results" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_039
+:EONeed_039 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "demand and suitability analysis" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_040
+:EONeed_040 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assess the environmental impact of human activities (detect land movement, subsidence, heave, and monitor land-use statistics)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_041
+:EONeed_041 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "intelligence on the location, extent, magnitude and evolution of deformation" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_042
+:EONeed_042 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "monitoring electrification planning, renewable energy resource assessment, distributed generation, grid operation and reliability, and disaster risk reduction and recovery efforts" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_043
+:EONeed_043 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "identify risk hotspots on and around the rights-of-way and mitigate risk by monitoring vegetation around power lines" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_044
+:EONeed_044 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "improve the safety and reliability of their network" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_045
+:EONeed_045 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "understand and plan tree trimming cycles and verify vegetation maintenance completion. Reduce the risks of power outages, asset damage, and other economic losses, as well as environmental and safety hazards from storms or wildfires" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_046
+:EONeed_046 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "improve access to reliable electricity and resilience infrastructure, incorporate renewable energy into the electric sector, and improve energy governance" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_047
+:EONeed_047 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "dynamic water availability and change monitoring, water demand and usage assessments" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_048
+:EONeed_048 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "support operations of communications networks through information to set up infrastructure settlement networks and coverage" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_049
+:EONeed_049 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assessing changes to urban/rural areas, and mapping line of sight visibility" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_050
+:EONeed_050 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "corridor assessments and route / network planning" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_051
+:EONeed_051 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "reliable maps for transportation management systems to guide decision-making, determine how/where to engage across large supply chains in transport and logistics (rail, roads, highways)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_052
+:EONeed_052 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assess and monitor high-risk areas by providing more information on geological hazards along with rail and road networks" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_053
+:EONeed_053 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "contribute to more efficient marine operations and further development of the Blue economy2 comprising all the activities related to oceans, seas and coasts, that cover established sectors (e.g. exploitation and preservation; aquaculture, fisheries, water quality, coastal tourism, maritime transport, etc.) and new ones, e.g. blue bioeconomy and biotechnology, coastal and environmental protection, etc" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_054
+:EONeed_054 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "weather monitoring for vessel detection and identification" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_055
+:EONeed_055 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "policy objectives such (bath water quality, integrated coastal marine directive, marine strategy framework directive, UNEP regional seas" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_056
+:EONeed_056 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "forecast of weather conditions over a particular environment such as coastlines (safety of tourists and holidaymakers through operational weather observations and providing a picture of changing circumstances, natural features and their characteristics" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_057
+:EONeed_057 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "validate the assessment of resorts, evaluation of conditions for safety for outside activities (biological reserves areas (cannoping), improved mapping for tourists with classification and other advanced automated processing technologies" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_058
+:EONeed_058 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "cultural heritage, displacement monitoring (detection of slow movements and structural failures of historical buildings and structures and of terrain in the surrounding areas)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_059
+:EONeed_059 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assessment of land use change (e.g. pollution in rivers and lakes)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_060
+:EONeed_060 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "detection and monitoring of hazard-prone locations, including vulnerability assessment" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_061
+:EONeed_061 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "better management of risk exposure, assessment (capital/risk) to natural disasters such as hurricanes, earthquakes, and floods" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_062
+:EONeed_062 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "key analytics reports and alerts of risks (such identification of risk)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_063
+:EONeed_063 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assess situations for predictive analysis or risks on a property basis" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_064
+:EONeed_064 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "leverage geospatial intelligence to take management decisions leading to reduced costs on, e.g. new location selection, practices or processes through e.g. implementing dashboards to integrate and visualize spatial variables & information such as reliable NRT data, stores and localized areas, identification of public segments of interest, location of establishments, billboards and their influence on online advertising, customer dynamics, study of competitors, price strategy design etc" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_065
+:EONeed_065 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "bringing together images, videos, and visualisations from the Earth onto known platforms (digital, print, radio, television) to inform society on the ecosystems, environments, emergency, risk and safety of people or socioeconomical impact" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_066
+:EONeed_066 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assist with data processing and enhancements, and provide a range of specialist analysis ready data solutions to help final users maximize intelligence from imagery" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_067
+:EONeed_067 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "basemap data for radio network analysis" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_068
+:EONeed_068 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "baseline inventories for site suitability studies, city infrastructure monitoring, information on green urban areas and peri-urban ecosystems" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_069
+:EONeed_069 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "estimate distribution of the population, economic activity, property ownership and valuation, land use/ land cover inventories" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_070
+:EONeed_070 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "sustainable cities and communities creating places where the environments enhance liveability and quality of life" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_071
+:EONeed_071 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "classification tools using administrative vector data as reference for supervised image classification" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_072
+:EONeed_072 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "map and assess urban adaptation to climate change, environmental/socio-economical characterization and map green urban areas in and around cities" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_073
+:EONeed_073 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "map risk of land change and ground deformation and its temporal evolution" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_074
+:EONeed_074 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "water and sanitation planning to support water related infrastructure projects and waste management" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_075
+:EONeed_075 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "inventories of informal settlements, integrating different data streams into the map-based products (cadastral maps for land administration and mapping)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_076
+:EONeed_076 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "mapping of building footprints and building blocks as well as classification of building/infrastructure types" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_077
+:EONeed_077 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "optimize planned routes for transport and infrastructure, and when combined with mapping solutions, can help mitigate the impact of natural hazards whilst minimizing project costs" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_078
+:EONeed_078 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "interactive analysis, simulation and visualisation tools for urban policy implementation" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_079
+:EONeed_079 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "socio-economic and demographic analysis and impact assessment, facility planning" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_080
+:EONeed_080 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "mapping disaster areas for situation awareness and detecting sensitive risk areas" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_081
+:EONeed_081 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "economic and social vulnerability assessment to natural hazards and climate change (monitoring, action and adaptation)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_082
+:EONeed_082 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assess loss (€/m2) mostly for assets combined with in-situ data" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_083
+:EONeed_083 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "defence mission (naval forces): intelligence, support to troops, manoeuvres, support to aerial operations, interception of suspicions activities (assist with trapping/catching traffickers in the act)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_084
+:EONeed_084 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "support the detection of illegal or irregular activity and to make land /maritime operations safer and more efficient (situational awareness), overall citizens’ security" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_085
+:EONeed_085 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "improve emergency response and assessing pressures on populations and migration, monitor & tracking displacement population and humanitarian movement and camps" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_086
+:EONeed_086 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assessment and support to aid actors dealing with hazard assessment (risk assessment and post-event analysis), including operational and situational awareness as well as those involved in recovery, disaster risk reduction and preparedness activities" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_087
+:EONeed_087 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "disaster resilience and assessing geo-hazard vulnerability of cities & critical infrastructures" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_088
+:EONeed_088 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "reach actionable information to send the right people and supplies to the most vulnerable sites" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_089
+:EONeed_089 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "assist with the preservation of the natural environment such as reservoirs, inland water monitoring, water  management systems (hydrological, hydrogeological maps, water point)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_090
+:EONeed_090 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "solutions that safeguard the environment such as environmental impact assessment, strategic environmental consultancy, sustainability, waste & resources" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_091
+:EONeed_091 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "resilient & sustainable ecosystems including continuous monitoring of ecosystems such as wetlands" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_092
+:EONeed_092 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "site-specific field conditions as well as import phenological timing events, which helps to make predictions on air quality, which impacts on the health of citizens" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_093
+:EONeed_093 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "pandemics highlight the need for a comprehensive and integrated approach to human health. Enhancing environmental health through better air quality, water and sanitation, waste management, along with efforts to safeguard biodiversity, will reduce the vulnerability of communities to pandemics and thus improve overall societal wellbeing and resilience" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_094
+:EONeed_094 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "disaster resilience and assessing extreme weather" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_095
+:EONeed_095 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "monitor, understand, evaluate and assess the impact of the climate change" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_096
+:EONeed_096 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "prediction of conditions of atmosphere reliable weather forecasts" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_097
+:EONeed_097 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "mitigation actions preventing/reducing the emission of greenhouse gases into the atmosphere" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_098
+:EONeed_098 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "climate change data modelling (aerosol, biomass, cloud, fire, greenhouse gases (GHG), glaciers, ice-sheets, land cover, land surface temperature, ocean colour, ozone, permafrost, salinity, sea ice, sea level, sea state, soil moisture, snow, sea surface temperature (SST), water vapour" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_099
+:EONeed_099 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "renewable energy production prediction, all kinds of commodities market trading, inventory management" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_100
+:EONeed_100 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "adoption by society of mobile devices, social media platforms, internet connectivity, Internet of Things (IoT), machine learning, portable and low-cost sensors to interact and visualise scientific research for their interest" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_101
+:EONeed_101 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "citizen interest on particular environments and ecosystems such as beach area estimation, (understand and check protected areas where sports may be regulated), wind, water depth, water salinity, etc" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_102
+:EONeed_102 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "information on textures and landscapes for video games, such as flight simulators, augmented reality, 3D" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_103
+:EONeed_103 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "through environmental research, academics make discoveries that impact on environmental and social outcomes" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_104
+:EONeed_104 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "enabling the education and research community to find and consume EO services, data access, processing tools, analytics, etc for their research field" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_105
+:EONeed_105 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "growing the awareness of EO services in researchers in disparate fields leading to new use cases" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed_106
+:EONeed_106 rdf:type owl:NamedIndividual ,
+                     :EONeed ;
+            :eoNeedDescription "promoting the use of EO in schools to foster innovative thinking and ideation of the applications and services of tomorrow" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_001
+:EOService_001 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :AtmosphereArea ;
+               :eoServDescription "Pollution and greenhouse gas emission monitoring. Measuring atmospheric concentrations and characterizing the micrometeorology or using atmospheric dispersion models to back-calculate the emission rates that gave the concentrations observed. Air quality/pollution source maps (CH4, CO2, NO2 & SO2, Particulate Matter, maps of average pollutant flux PM2.5, PM10)." ;
+               :eoServType "Monitor and forecast air quality & emissions (fluxes)" ;
+               :relatedAreaAction "Monitor the atmosphere" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_002
+:EOService_002 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :AtmosphereArea ;
+               :eoServDescription "Monitoring present conditions and forecasting the distribution (transportation), for a few days ahead, of both anthropogenic and naturally occurring key greenhouse gases (GHG) like carbon dioxide (CO2), methane (CH4), or reactive gases such as nitrogen dioxide (NO2), sulphur dioxide (SO2), ozone (O3), etc" ;
+               :eoServType "Monitor atmosphere composition" ;
+               :relatedAreaAction "Monitor the atmosphere" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_003
+:EOService_003 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :AtmosphereArea ;
+               :eoServDescription "While the solar radiation impacting the top of the atmosphere can be well modelled, the solar radiation arriving at the surface is dependent on the atmospheric transmission and turbidity and aerosol optical depth. Forecasting and risk assessment amount of solar (sunlight) radiation which reaches the surface of the planet (UV, radiation measures, models)." ;
+               :eoServType "Forecasting sunlight exposure" ;
+               :relatedAreaAction "Monitor the atmosphere" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_004
+:EOService_004 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :ClimateChangeArea ;
+               :eoServDescription "Measuring carbon stocks, especially aboveground biomass and providing an overview of a range of approaches that have been developed and used to map biomass across a diverse set of conditions and geographic areas (quantifying stem volume and carbon stock changes). It also includes historical climate data" ;
+               :eoServType "Assess changes in the carbon balance" ;
+               :relatedAreaAction "Monitor climate change" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_005
+:EOService_005 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :ClimateChangeArea ;
+               :eoServDescription "Assess current and future vulnerability to climate change including variability caused by a perturbation of the climate system and associated atmospheric composition (aerosol, ozone and greenhouse gases) driven by human activities). The radiative forcing measures the imbalance in the surface solar irradiance and is a useful predictor of globally averaged temperature change" ;
+               :eoServType "Assess climate change risk & climate forcing" ;
+               :relatedAreaAction "Monitor climate change" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_006
+:EOService_006 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :MetereologyArea ;
+               :eoServDescription "Monitor and forecast weather conditions such as temperature, storms, precipitation, heat waves and tropical cyclones – as well as other hazards influenced by weather, like floods or dispersion of atmospheric or marine pollution." ;
+               :eoServType "Forecast the weather" ;
+               :relatedAreaAction "Forecast the weather (meteo)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_007
+:EOService_007 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :UrbanAreasArea ;
+               :eoServDescription "Observation, identification, mapping, assessment and monitoring of urban areas and their dynamics at a range of spatial and temporal resolutions. Digital imaging processing methods such basic thresholding, unsupervised classification or products such urban heat island, impervious surfaces, land use change (residential, commercial, other), building density (3D city modelling), high photovoltaic penetration at the urban scale." ;
+               :eoServType "Monitor urban areas" ;
+               :relatedAreaAction "Monitor the built environment" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_008
+:EOService_008 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :UrbanAreasArea ;
+               :eoServDescription "Understanding human settlements on the outskirts and near rural areas. Mapping and evolution characterization of human interactions (environmental, population and habitat fragmentation, soil sealing and socio-economic) of rural areas and surroundings, urban sprawl, green urban areas." ;
+               :eoServType "Monitor urban surroundings" ;
+               :relatedAreaAction "Monitor the built environment" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_009
+:EOService_009 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :UrbanAreasArea ;
+               :eoServDescription "Monitor green and blue urban areas (in relation to urban form, energy use and carbon emissions). It is about the estimation of urban energy fluxes at a neighbourhood scale (urban energy balance) using land cover, Digital Surface Models (DSM), surface roughness parameters (such as plan area index, frontal area index, roughness length and zero-displacement height), urban ecosystem restoration, urban heat island effect, green corridors, garden monitors." ;
+               :eoServType "Monitor urban green and blue areas" ;
+               :relatedAreaAction "Monitor the built environment" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_010
+:EOService_010 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :UrbanAreasArea ;
+               :eoServDescription "Construction site surveying and progress mapping, comprising surrounding ground as well as displacements of key components of such structures. There is a need for Near Real Time (NRT) data delivery and measuring stress" ;
+               :eoServType "Monitor construction and buildings" ;
+               :relatedAreaAction "Monitor the built environment" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_011
+:EOService_011 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :InfrastructureArea ;
+               :eoServDescription "Assess structural integrity of the infrastructure, site suitability and vulnerability. Connection with disaster risk reduction (emergency response, recovery, rehabilitation and reconstruction)." ;
+               :eoServType "Assess damage from industrial accidents" ;
+               :relatedAreaAction "Monitor infrastructure & installations" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_012
+:EOService_012 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :InfrastructureArea ;
+               :eoServDescription "Industrial activity assessment, monitoring of functional planning zones, exploit correlation with industrial activity to improve the model of subsurface, site suitability and vulnerability, land cover, infrastructure, dyke monitoring, emergency airport planning, etc" ;
+               :eoServType "Asses infrastructure monitoring" ;
+               :relatedAreaAction "Monitor infrastructure & installations" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_013
+:EOService_013 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :InfrastructureArea ;
+               :eoServDescription "Urban solar mapping and understanding the basic characteristics of solar radiation over specific monitoring locations including estimating the variability of solar radiation for site selection and grid data/operators. Solar monitoring services use time series, Direct Normal Irradiance (DNI), Diffuse Horizontal Irradiance (DHI) and Global Horizontal Irradiance (GHI), shadow mask" ;
+               :eoServType "Map and monitor solar energy (solar farms)" ;
+               :relatedAreaAction "Monitor infrastructure & installations" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_014
+:EOService_014 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :InfrastructureArea ;
+               :eoServDescription "Understand where wind farms can be sited most cost-effectively and monitor and map wind energy fields (design and operation), wind roses, wind speed & direction" ;
+               :eoServType "Map and monitor energy (wind farms)" ;
+               :relatedAreaAction "Monitor infrastructure & installations" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_015
+:EOService_015 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :InfrastructureArea ;
+               :eoServDescription "Hydrological network mapping (drainage navigation erosion) including hydropower grid monitoring and resource assessment. Water resource (reservoirs) monitoring, hydrological modelling and flood forecasting and mapping (dams)." ;
+               :eoServType "Map and monitor hydroelectric energy" ;
+               :relatedAreaAction "Monitor infrastructure & installations" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_016
+:EOService_016 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :TransportNetworksArea ;
+               :eoServDescription "Landscape visibility mapping and analysis, including spatial planning, terrain mapping (DTMs), land surface, map transmission and land routes." ;
+               :eoServType "Map line of sight visibility (land surface)" ;
+               :relatedAreaAction "Monitor transport networks" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_017
+:EOService_017 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :TransportNetworksArea ;
+               :eoServDescription "Transportation systems, interdependencies and industrial progress planning including site, soft ground and network mapping, highway environmental monitoring and assessment, identification of road or track for logistics planning" ;
+               :eoServType "Map and monitor transport networks" ;
+               :relatedAreaAction "Monitor transport networks" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_018
+:EOService_018 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :WasteArea ;
+               :eoServDescription "Identifying illegal dumping and waste management and disposal for law enforcement. Landfills and dump sites emit large quantities of methane, quantify the emissions from these large sites in a single snapshot (maps) and do it frequently, surface and subsurface soil contamination monitoring, Land use/Land cover (LU/LC) maps which depict the physical characteristics of the surface, dry matter productivity, migration of pollutants and imperviousness land surface are parameters needed for this service." ;
+               :eoServType "Monitor land pollution and waste management" ;
+               :relatedAreaAction "Monitor waste" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_019
+:EOService_019 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :FloodsArea ;
+               :eoServDescription "Map and assess the extent of the flooding event (floods map, exposure), floodplain mapping, flood risk dynamic assessment and management of water buffer areas (overflow). Measure a variety of physical and biological parameters (incl. turbidity levels) in aquatic ecosystems over small and large areas. Products look into the flood impact and extent in phases such as early warning (early/quick/rapid detection), response and recovery monitoring" ;
+               :eoServType "Map and assess flooding" ;
+               :relatedAreaAction "Assess disasters & geohazards (emergency)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_020
+:EOService_020 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :LandslidesArea ;
+               :eoServDescription "Mapping, monitoring, early warning (quick/rapid detection) and assessment of trigger events, unstable areas (rainfall influence) such as landslides (dynamic risk damage, slope instability, subsidence detection, fault and discontinuity maps (vector or raster), ground deformation and motion). Associated services include support for the evacuation of areas prone to collapse or the identification of suitable areas for urban replacement" ;
+               :eoServType "Forecast and assess landslides" ;
+               :relatedAreaAction "Assess disasters & geohazards (emergency)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_021
+:EOService_021 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :VolcanosArea ;
+               :eoServDescription "Assess ground deformation associated with volcanoes, seismic activity, volcanic eruptions (pre-eruptive, sin-eruptive, gas emissions, atmospheric ash, dispersion, heat flux). Rapid damage estimation (prevention), earthquake damage extent (loss adjuster dispatch). Impact on land cover and landscape (changes). Early warning (quick/rapid detection) and tracking of unrest / eruptive activity using satellite data in support of hazards mitigation activities. Map of the recent lava flows." ;
+               :eoServType "Assess and monitor volcanic activities" ;
+               :relatedAreaAction "Assess disasters & geohazards (emergency)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_022
+:EOService_022 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :FiresArea ;
+               :eoServDescription "Use optical data to detect and monitor the heat emitted by the fires [forest fire risk (extent, burnt scars) under rapid damage estimation, fire weather index74 damage, fire protection, rapid damage estimation (prevention, insurance)]. Impact on global atmospheric emissions, with biomass burning to contribute to the risk on human health (besides direct effects, PM2.5, PM10 health impacts) and also to global budgets of greenhouse gases (GHG) like carbon dioxide etc. Monitoring of risk prevention factors [early warning (early/quick/rapid detection)] and issuing alerts for high risk locations." ;
+               :eoServType "Detect and monitor wildfires" ;
+               :relatedAreaAction "Assess disasters & geohazards (emergency)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_023
+:EOService_023 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :EarthquakesArea ;
+               :eoServDescription "Mapping and monitoring of seismic exposure (e.g. population distribution and density in high-seismic-hazard areas). Earthquake disaster prevention, early warning (early/quick/rapid detection), recovery (reconstruction monitoring, residual risk assessment, dynamic risk assessment, information, damage). Extracting background information on seismic, inter-seismic deformations, slip rates & active faults, stress transfer on faults, rapid damage estimation (prevention), change detection and preliminary damage map earthquake damage extent (loss adjuster dispatch)." ;
+               :eoServType "Assess damage from earthquakes" ;
+               :relatedAreaAction "Assess disasters & geohazards (emergency)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_024
+:EOService_024 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :EarthquakesArea ,
+                         :FiresArea ,
+                         :FloodsArea ,
+                         :LandslidesArea ,
+                         :VolcanosArea ;
+               :eoServDescription "Assess overall disaster risk maps in an appropriate format by using space, in-situ and location-based disaster risk information, vulnerability, capacity, exposure, hazard characteristics and their possible sequential effects at the relevant social and spatial scale on ecosystems, in line with national circumstances. Products will include disaster recovery maps and rapid mapping for crises, humanitarian aid maps (population density, infrastructure, logistical information), vulnerability assessment, damage assessment. Important to note the Sendai Framework for Disaster Risk Reduction 2015-2030" ;
+               :eoServType "Map disaster areas and multi hazard assessment" ;
+               :relatedAreaAction "Assess disasters & geohazards (emergency)" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_025
+:EOService_025 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :AgricultureFieldsArea ;
+               :eoServDescription "Assess how yields and production are evolving and how agricultural activities are impacting the environment (i.e. the monitoring of farmproduced dust and particulate matter, polluted runoff, etc)." ;
+               :eoServType "Assess environmental impact of farming" ;
+               :relatedAreaAction "Monitor agriculture" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_026
+:EOService_026 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :AgricultureFieldsArea ;
+               :eoServDescription "Protect crops from extreme weather events (hailstorms, lightning and extreme temperatures) using early warning systems. Accurately and repeatedly assess current and historic losses for crop insurance, identify the plant growth stage, warning-service loss assessment, food-security, impact" ;
+               :eoServType "Assess crop damage due to storms" ;
+               :relatedAreaAction "Monitor agriculture" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_027
+:EOService_027 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :AgricultureFieldsArea ;
+               :eoServDescription "Map agricultural areas and crop health production (disease and stress). The vegetation indices are used to understand the amount of farmland in stressed conditions taking as inputs weather forecasts or climate factors, and being used in harvest predictions, agricultural forecasts, monitoring terrain for irrigation or the use of fertilisers" ;
+               :eoServType "Assess and monitor crop disease and stress" ;
+               :relatedAreaAction "Monitor agriculture" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_028
+:EOService_028 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :AgricultureFieldsArea ;
+               :eoServDescription "Monitor and forecast specific crop types i.e. predicting certain crop characteristics on a day-by-day basis after a planting date, near-realtime data which helps make day-to-day farming decisions, to assess crop status, and predict how changes in the plant growth stage will affect crop acreage and yield harvest (inventories / statistics), crop types (extent, growth, health, stress), land surface and temperature. Seasonal forecasts with adaptive decisions such as (choosing crop varieties, crop–grazing balancing, commodity trading and food emergency preparedness, return on investment (nutrients & fertilisation monitoring))." ;
+               :eoServType "Monitor and forecast crop yields" ;
+               :relatedAreaAction "Monitor agriculture" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_029
+:EOService_029 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :AgricultureFieldsArea ;
+               :eoServDescription "Crop planting area monitoring, crop area information acquisition, multi-temporal data and multi-spectral time series are two major aspects for improving crop identification accuracy and illicit crops, estimates, cultivation patterns, hyperspectral thematic crop type mapping." ;
+               :eoServType "Detect illegal or undesired crops" ;
+               :relatedAreaAction "Monitor agriculture" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_030
+:EOService_030 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :ForestsArea ;
+               :eoServDescription "Assessment and monitoring of forest biomass (above-ground, deforestation, reforestation, afforestation and degradation). Time series analysis of forest loss, disturbance index, carbon emissions, greenhouse gas (GHG) emissions, disturbance, measurement reporting and verification (MRV), Reducing Emissions from Deforestation and Forest Degradation (REDD+)." ;
+               :eoServType "Assess deforestation / forest degradation" ;
+               :relatedAreaAction "Monitor the forest" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_031
+:EOService_031 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :ForestsArea ;
+               :eoServDescription "Assessing and managing damaged timber due to events such as storms, fires, insect damage etc. Elaboration of impact maps including sudden changes in forest stock volume, pest infestations modelling, ice and snow damages, etc" ;
+               :eoServType "Assess forest damage due to storms or insects" ;
+               :relatedAreaAction "Monitor the forest" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_032
+:EOService_032 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :ForestsArea ;
+               :eoServDescription "Mapping forest and classifying forest type/cover change (classification/capacity) such as biomass (diversity, health, height, volume stress, location, extent), tree cover density (canopy coverage) and tree species, tree height and diameter), growth predictions, harvesting analysis (timber volume, inventory, clear cuts, accreditation and certification), forest condition mapping, time series, change detection monitoring of moist, etc" ;
+               :eoServType "Assess, monitor & manage forest resources" ;
+               :relatedAreaAction "Monitor the forest" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_033
+:EOService_033 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :ForestsArea ;
+               :eoServDescription "Assess changes in the forestry and tree line (fragmentation, capacity, location, extent and tree cover density, atmospheric deposition and GHG emissions, transboundary atmospheric pollution, climate change effects on forestry, etc.)." ,
+                                  "Detect and identify illicit logging, change-detection, forest cover, forest types, biomass, density, etc" ;
+               :eoServType "Assess environmental impact of forestry" ,
+                           "Detect illegal forest activities" ;
+               :relatedAreaAction "Monitor the forest" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_034
+:EOService_034 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :ForestsArea ;
+               :eoServDescription "Monitor carbon balance, carbon tracking, global carbon stocks, greenhouse gas emissions from deforestation and forest degradation, land use, land use change and forestry (LULUCF). Support to the UN Framework Convention on Climate Change, REDD+." ;
+               :eoServType "Monitor & assess forest carbon content" ;
+               :relatedAreaAction "Monitor the forest" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_035
+:EOService_035 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :InlandWatersArea ;
+               :eoServDescription "Provides qualitative and quantitative information (e.g. time series and/or/of maps) concerning inland water quality, regarding chlorophyll content (algal blooms), suspended matter (turbidity, suspended sediment concentrations), and the water body (surface water extent, water quality, pollution, temperature, volume, level, alkaline water, evaporation, surface temperature) for permanent, ephemeral, inland water bodies" ;
+               :eoServType "Assess and monitor water bodies" ;
+               :relatedAreaAction "Monitor bodies of inland water" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_036
+:EOService_036 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :InlandWatersArea ;
+               :eoServDescription "Water bodies monitoring and assessment, surface water dynamics, wetland ecosystem extent, water quality, ecosystem service mapping (e.g. carbon sequestration, flood regulation)." ;
+               :eoServType "Assess and monitor wetlands" ;
+               :relatedAreaAction "Monitor bodies of inland water" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_037
+:EOService_037 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :InlandWatersArea ;
+               :eoServDescription "Assess water run-off (water quantity), hydrological network and catchment areas (water catchment), hydrological simulations, run-off season, groundwater, integrated water management, soil moisture as relevant on the threshold runoff response in a small headwater catchment." ;
+               :eoServType "Assess groundwater and run-off" ;
+               :relatedAreaAction "Monitor bodies of inland water" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_038
+:EOService_038 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :SnowAndIceArea ;
+               :eoServDescription "Long term monitoring of glacial variations especially at the glacier margins and terminus location. Mapping and charting fluctuation, ice caps, landslides, etc. or measuring parameters such as ice thickness, surface ice velocities, and changes in surface elevation over time" ;
+               :eoServType "Detect changes in glaciers" ;
+               :relatedAreaAction "Monitor snow & ice" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_039
+:EOService_039 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :SnowAndIceArea ;
+               :eoServDescription "Monitoring snow cover area extent (depth, temperature), fractional snow cover, snow water equivalent and snow mass" ;
+               :eoServType "Monitor and assessment snow cover" ;
+               :relatedAreaAction "Monitor snow & ice" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_040
+:EOService_040 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :SnowAndIceArea ;
+               :eoServDescription "Monitor grounded and floating ice covers on shallow water and lakes (ice cover concentration, extent and phenology, inland ice, ice sheets, thickness, freezing period, melting period, land fast ice, ice/lake extent, snow/ice surface temperature)." ;
+               :eoServType "Monitor ice on rivers and lakes" ;
+               :relatedAreaAction "Monitor snow & ice" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_041
+:EOService_041 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :BioDiversityAndLandEcosystemArea ;
+               :eoServDescription "Assessment of the ecosystem condition and pressure mapping of biodiversity with critical habitat maps, monitoring wildlife corridors, linear features (hedges and boundaries), soil moisture, vegetation indices (e.g., normalized difference vegetation index (NDVI), greenness and biomass, leaf area index (LAI), estimation of stem volume, etc." ;
+               :eoServType "Assess land ecosystems and biodiversity" ;
+               :relatedAreaAction "Assess land ecosystems" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_042
+:EOService_042 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :BioDiversityAndLandEcosystemArea ;
+               :eoServDescription "Monitoring anthropogenic impact on land resources; LU/LC, productivity, Soil Organic Carbon (SOC), burnt area mapping, Forest & wooded land, Cropland, Pasture (improved grassland), Wetland, Settlements (villages, urban), Cropland/ grazing land management, Long-term cultivated; improved pasture, unimproved pasture, new set aside, old set aside, wetland/paddy, shifting agriculture, abandoned/degraded, etc" ;
+               :eoServType "Assess environmental impact of human activities" ;
+               :relatedAreaAction "Assess land ecosystems" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_043
+:EOService_043 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :LandUseLandCoverArea ;
+               :eoServDescription "Monitoring Land Use (LU) and Land Cover Change (LC) is the measure available to monitor pressures on terrestrial ecosystems and biodiversity; mapping surface imperviousness, canopy structure phenology, etc., its classification and change detection (accuracy assessment procedures), Land Use, Land Use Change, and Forestry (LULUCF) reporting, land use studies, baseline map, etc" ;
+               :eoServType "Monitor land use and land use change" ;
+               :relatedAreaAction "Monitor land use" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_044
+:EOService_044 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :LandUseLandCoverArea ;
+               :eoServDescription "Monitor and address various impacts of mining and hydrocarbons extraction studying environmental changes like acid mine drainage, illegal surface mining supporting law enforcement and allowing the regulatory agencies helping to avoid or minimize the adverse effects of illegal mining. These activities monitor the progression of disturbance caused by illegal mining, identifying and tracking reclamation sites, and assessing land use and land cover changes" ;
+               :eoServType "Detect illegal mining activities" ;
+               :relatedAreaAction "Monitor land use" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_045
+:EOService_045 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :LandUseLandCoverArea ;
+               :eoServDescription "Measure land use statistics and land accounting (land administration, baseline map, land use studies and statistics; life populations, human settlement patterns, impact of drought on agricultural production, impact of loss of agricultural land on production, pollution caused by use of fertilizers/ pesticides, threats to wildlife due to habitat destruction, land evaluation for agriculture, areas at risk to land degradation, remedial measures to counter inappropriate land management, soil sealing). Monitoring human–environmental interactions such as landscape changes e.g. land use land cover (LULC), soil and terrain forms, surface hydrology (including shallow lakes, rivers, marshes and swamps) as well as ecological services (conservation), anthropogenic usage and land take (urban planning and management), land accounting and land administration, land use studies and statistics (use, parcels), cadastral" ;
+               :eoServType "Assess land accounting (land value, ownership, type use)" ;
+               :relatedAreaAction "Monitor land use" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_046
+:EOService_046 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :LandUseLandCoverArea ;
+               :eoServDescription "Monitoring terrain surrounding infrastructure such as railways, pipeline and high voltage power line corridors. Major products to support this service are vegetation condition index (VCI), ancillary data, risk identification layer, prioritization layer" ;
+               :eoServType "Monitor vegetation encroachment" ;
+               :relatedAreaAction "Monitor land use" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_047
+:EOService_047 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :LandUseLandCoverArea ;
+               :eoServDescription "A range of direct and indirect measurements to monitor pressures on land cover which is changing over time. Land cover assessment includes mapping from wide coverage (land cover and use) to locally or regionally focussed (habitat mapping). High-resolution Layers (characterization & classification), soil sealing, arid areas, wet areas, erosion potential, LCCS (Land Cover Classification System), imperviousness (e.g. CORINE land cover inventory)." ;
+               :eoServType "Monitor land cover and detect change assessment" ;
+               :relatedAreaAction "Monitor land use" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_048
+:EOService_048 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :TopographyAndMotionArea ;
+               :eoServDescription "Surface deformation maps and profiles elevation data products such: Digital Elevation Models (DEMs), Digital Surface Model (DSM), Digital Terrain Model (DTM), terrain roughness measure, slope stability (curvature, aspect), etc" ;
+               :eoServType "Baseline mapping" ;
+               :relatedAreaAction "Monitor topography and motion" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_049
+:EOService_049 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :TopographyAndMotionArea ;
+               :eoServDescription "Measure ground and infrastructure displacements (change detection monitor), surface movement (sand dunes, pipeline routes, corridor status, soil erosion) or landslides and subsidence" ;
+               :eoServType "Measure & detect land surface change" ;
+               :relatedAreaAction "Monitor topography and motion" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_050
+:EOService_050 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :TopographyAndMotionArea ;
+               :eoServDescription "Monitor coastal land cover, coastline, shoreline change and coastal morphology (coastal terrain models), including pollution by oil, litter etc." ;
+               :eoServType "Monitor coastal land cover" ;
+               :relatedAreaAction "Monitor topography and motion" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_051
+:EOService_051 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :TopographyAndMotionArea ;
+               :eoServDescription "Detect reservoir compartmentalization & optimization, permafrost zone stability, ground displacement: fault identification, reactivation & discontinuities, uplift, subsidence, heave, thawing, landslides, earthquakes" ;
+               :eoServType "Detect and monitor ground movement" ;
+               :relatedAreaAction "Monitor topography and motion" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_052
+:EOService_052 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :GeologyArea ;
+               :eoServDescription "Detect and map features extraction, near surface features, lithology features, linear disturbance features (faults & discontinuities)." ;
+               :eoServType "Map geological features" ;
+               :relatedAreaAction "Extract information about subsurface geology" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_053
+:EOService_053 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :GeologyArea ;
+               :eoServDescription "Map seismic (survey, coupling, logistics), gravity-seafloor classification maps, onshore seismic survey operations (hydrocarbon exploration), satellite derived bathymetry products (water depth, water clarity - turbidity)." ;
+               :eoServType "Map seismic survey operations" ;
+               :relatedAreaAction "Extract information about subsurface geology" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_054
+:EOService_054 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :GeologyArea ;
+               :eoServDescription "Monitoring the environmental impacts of mineral resources exploitation (ground surface), illegal activities, recovering abandoned sites, mine waste mapping and monitoring (erosion, land subsistence, biodiversity/habitat loss, destruction & disturbance of ecosystems)." ;
+               :eoServType "Monitor mineral extraction" ;
+               :relatedAreaAction "Extract information about subsurface geology" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_055
+:EOService_055 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :GeologyArea ;
+               :eoServDescription "Identification of hydrocarbon seepage (oil seeps) detection (near surface geology: faults, fractures, unconformities or carrier beds) as indicators of petroleum charge" ;
+               :eoServType "Identify hydrocarbon seeps in soil" ;
+               :relatedAreaAction "Extract information about subsurface geology" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_056
+:EOService_056 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :MetoceanArea ;
+               :eoServDescription "Ocean water forecasting including ocean dynamics and circulation: tides and ocean currents (surface current models for tides), sea level, sea surface salinity (internal waves, eddies and frontal areas), upwelling, sea state, etc" ;
+               :eoServType "Forecast and monitor current movement and drift" ;
+               :relatedAreaAction "Meteocean" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_057
+:EOService_057 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :MetoceanArea ;
+               :eoServDescription "Wind resource mapping, derived winds (speed, direction, stress) and waves (current veins, swell-maps, sea surface height), wave exposure (fetch, averaged directional wind speed and bathymetry). The sea surface roughness is impacted by wind (waves) and rain cells." ;
+               :eoServType "Forecast and monitor ocean winds and waves" ;
+               :relatedAreaAction "Meteocean" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_058
+:EOService_058 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :MetoceanArea ;
+               :eoServDescription "Forecasting extreme waves / tsunami, inundation forecasting (flow depth distribution), vulnerability maps, bathymetry, current velocity." ;
+               :eoServType "Forecast and map large waves" ;
+               :relatedAreaAction "Meteocean" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_059
+:EOService_059 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :MetoceanArea ;
+               :eoServDescription "Monitoring atmospheric front, local weather phenomena, cloud structure, winds and waves, sea-surface temperature and seasurface height" ;
+               :eoServType "Detect and monitor hurricanes and typhoons" ;
+               :relatedAreaAction "Meteocean" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_060
+:EOService_060 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :MetoceanArea ;
+               :eoServDescription "Monitor (changes in) sea level, physical characteristics such as gravity, currents, temperature and salinity, ocean circulation (currents and eddies at the edges of holes and bumps), seasonal or inter-annual variations, or even longer periods (long-term rise in sea level), hindcasting" ;
+               :eoServType "Monitor ocean level and surface" ;
+               :relatedAreaAction "Meteocean" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_061
+:EOService_061 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CoastalArea ;
+               :eoServDescription "Satellite derived bathymetry mapping and charting. Surveying shallow waters" ;
+               :eoServType "Monitor water depth or charting" ;
+               :relatedAreaAction "Monitor coastal areas" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_062
+:EOService_062 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CoastalArea ;
+               :eoServDescription "Essential environmental monitoring and management in aquatic ecosystems focus on rivers (inland waters, watershed) and lagoon/estuary-coastal region-ocean/Sea. Research projects now aiming to harmonise monitoring approaches across different water bodies." ;
+               :eoServType "Monitor transitional water bodies" ;
+               :relatedAreaAction "Monitor coastal areas" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_063
+:EOService_063 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CoastalArea ;
+               :eoServDescription "Detecting and mapping suspended sediment concentrations sediment (qualitative, quantitative), turbidity (quality, quantitative), visibility, chlorophyll-a concentration, suspended sediment may be indicative of estuarine processes, resuspension or pollution" ;
+               :eoServType "Assess and monitor coastal water quality" ;
+               :relatedAreaAction "Monitor coastal areas" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_064
+:EOService_064 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CoastalArea ;
+               :eoServDescription "Assess the impact of jellyfish in human activities through ocean physics analysis maps (salinity, currents, sea level (SS hight), temperature (SST), ocean colour), ocean biogeochemistry analysis maps (ocean chlorophyll), policy objectives (marine policy, coastal management, common fisheries policy, marine strategy framework)." ;
+               :eoServType "Jellyfish prediction" ;
+               :relatedAreaAction "Monitor coastal areas" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_065
+:EOService_065 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :BiodiversityAndMarineEcosystemArea ;
+               :eoServDescription "Assessing water-related ecosystems. Water quality status (sea surface temperature (SST), transparency or turbidity, and ocean colour ocean colour composite (chl-a, transparency, swath, qualitative, quantitative), which enable eutrophication assessments and the detection of algal bloom (phytoplankton, harmful blooms - HABs), ocean productivity (carbon content, primary production)." ;
+               :eoServType "Monitor ocean quality and productivity" ;
+               :relatedAreaAction "Monitor the marine ecosystem" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_066
+:EOService_066 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :BiodiversityAndMarineEcosystemArea ;
+               :eoServDescription "Monitoring generic life marine ecosystem (algal blooms, marine mammals...), sea surface temperature, sediments, plumes, nutrients, dredging operation, coral reef health assessment (bleaching), marine non-indigenous species (NIS), etc." ;
+               :eoServType "Monitor marine habitats" ;
+               :relatedAreaAction "Monitor the marine ecosystem" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_067
+:EOService_067 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :BiodiversityAndMarineEcosystemArea ;
+               :eoServDescription "Monitoring the ocean carbonate chemistry, bio-geo-chemical cycles, ocean salinity, insitu (partial pressure of carbon dioxide in the water, dissolved inorganic carbon, alkalinity and pH)." ;
+               :eoServType "Monitor ocean acidification" ;
+               :relatedAreaAction "Monitor the marine ecosystem" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_068
+:EOService_068 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :BiodiversityAndMarineEcosystemArea ;
+               :eoServDescription "Sargassum detection for seasonal planning (estimate drift and eventual landings on the coasts), Products such as drifting simulation modelling, together with weather and surface currents." ;
+               :eoServType "Monitor invasive species" ;
+               :relatedAreaAction "Monitor the marine ecosystem" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_069
+:EOService_069 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :FisheriesArea ;
+               :eoServDescription "Fish-shoal location, fish population dynamics fed by-catch reports (ERS-Electronic recording and reporting system) and catch efforts estimated from VMS (Vessel Monitoring System), collection of catch reports. Other products in consideration such bathymetry, waves, current movement and drift, pollution, ocean colour, surface temperatures (SSTs), sea surface height anomalies and sea surface colour revealing the abundance of chlorophyll a)." ;
+               :eoServType "Map fish shoals" ;
+               :relatedAreaAction "Monitor fisheries" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_070
+:EOService_070 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :FisheriesArea ;
+               :eoServDescription "Track and localization of licensed fishing vessels movements and detect suspicious activity, fleet management services (ocean colour, PP, SST, etc)." ;
+               :eoServType "Detect and monitor illegal fishing" ;
+               :relatedAreaAction "Monitor fisheries" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_071
+:EOService_071 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :SeaIceAndIcebergsArea ;
+               :eoServDescription "Detect sea-ice and icebergs (ice cover, sea ice thickness, height of the ice surface, water body extent) during ship routing" ;
+               :eoServType "Detect and monitor ice-risk at sea" ;
+               :relatedAreaAction "Monitor sea-ice and icebergs" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_072
+:EOService_072 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :ShipsArea ;
+               :eoServDescription "Detect and monitor the movement of ships and activity at associated ports and infrastructures (baseline activity), shipping and navigation." ;
+               :eoServType "Detect ships in critical areas" ;
+               :relatedAreaAction "Ships monitoring, detection and tracking" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_073
+:EOService_073 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :ShipsArea ;
+               :eoServDescription "Monitor sea-traffic, shipping lanes, ship-source pollution, discharges, sea surface temperature (SST)." ;
+               :eoServType "Monitor ship movements" ;
+               :relatedAreaAction "Ships monitoring, detection and tracking" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_074
+:EOService_074 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :MarinePollutionArea ;
+               :eoServDescription "Detect and monitor size, extent and location of oil spills, as well as providing information on wind, current and waves to predict oil movement. The oil spill threats are on early warning stages of natural oil seepage and during the disaster monitoring and characterization)." ;
+               :eoServType "Detect and monitor oil slicks" ;
+               :relatedAreaAction "Monitor marine pollution" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_075
+:EOService_075 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :MarinePollutionArea ;
+               :eoServDescription "Monitoring of methane and other gases flared from gas flares and oil rigs, oil wells due to possible malfunctioning. Typically service accompanying forecast weather conditions" ;
+               :eoServType "Monitor oil rigs and flares" ;
+               :relatedAreaAction "Monitor marine pollution" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_076
+:EOService_076 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CriticalAssetsArea ;
+               :eoServDescription "Geospatial intelligence analysis, sensitive risk areas (mines, unexploded objects (UXO), de-mining) mapping, high risk areas mapping, precision mapping, activity detection, auxiliary research and judgment on anti-terrorism in important areas of public security" ;
+               :eoServType "Monitor sensitive risk areas" ;
+               :relatedAreaAction "Monitor critical assets" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_077
+:EOService_077 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CriticalAssetsArea ;
+               :eoServDescription "Risk evaluation, threat analysis, vulnerability assessment, dams monitoring, water treatment monitoring facilities monitoring, oil fields monitoring, pipelines monitoring, pumping stations monitoring, airports monitoring, governmental buildings monitoring, transport networks monitoring." ;
+               :eoServType "Monitor critical infrastructure" ;
+               :relatedAreaAction "Monitor critical assets" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_078
+:EOService_078 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CriticalAssetsArea ;
+               :eoServDescription "Mapping heritage sites and in supporting the archaeological investigation, understand the scale, impact, opportunities, responses and tools for conserving world heritage and mitigating threats, vulnerability assessment, damage assessment, risk evaluation, looting tracking. Detect ground deformation and monitor subsidence at archaeological sites, monuments and historic urban centres to detect different types of surface changes caused by erosion, floods, vegetation or human actions" ;
+               :eoServType "Cultural heritage assessment" ;
+               :relatedAreaAction "Monitor critical assets" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_079
+:EOService_079 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CriticalAssetsArea ;
+               :eoServDescription "Border control monitoring, terrorism threat risk assessment, piracy, illegal cropping analysis, cross-border state disputes analysis." ;
+               :eoServType "General crime and security surveillance assessment" ;
+               :relatedAreaAction "Monitor critical assets" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_080
+:EOService_080 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CustomsAndBordersArea ;
+               :eoServDescription "Border area monitoring, coastal area monitoring, migration monitoring." ;
+               :eoServType "Monitor land & marine border incursions" ;
+               :relatedAreaAction "Monitor borders" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_081
+:EOService_081 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CustomsAndBordersArea ;
+               :eoServDescription "Monitor movement of people, population pressures, monitoring of settlements, evolution, characterization, situation maps, migration and cleansing monitoring, population pressures, displacement of population assessment, planning of contingency operations and operations security & coordination maps (moving objects such vehicles), impact on the surrounding environment, humanitarian camps." ;
+               :eoServType "Assess pressures on populations and monitor the humanitarian movement" ;
+               :relatedAreaAction "Monitor borders" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_082
+:EOService_082 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :CustomsAndBordersArea ;
+               :eoServDescription "Monitor economic activity, transportation of legal and illegal goods monitoring, tracking and identification (drug trafficking monitoring), smuggling location, maritime traffic assessment." ;
+               :eoServType "Monitor transport routes" ;
+               :relatedAreaAction "Monitor borders" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_083
+:EOService_083 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :HealthEpidemicAndDiseasesArea ;
+               :eoServDescription "Health maps and epidemic vector control mapping (daily disease risk maps, NDVI, land cover, soil type), environmental monitoring of endemic diseases and chronic diseases, public health emergencies disaster/danger, pollution-health risks profiling in the urban environment." ;
+               :eoServType "Forecasting epidemics and diseases" ;
+               :relatedAreaAction "Monitor health" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService_084
+:EOService_084 rdf:type owl:NamedIndividual ,
+                        :EOService ;
+               :fromArea :FoodSecurityAndProductionArea ;
+               :eoServDescription "Map and assess the extent and intensity of the drought. support food security throughout the cycle, from design to implementation, monitoring, evaluation, and adaptive decision making. Assess a variety of physical and biological parameters in ecosystems and economy; maximize sustainable yield and productivity by providing timely and accurate information (early warning system) like; drought, insect plagues, pest and diseases, infection risks, storm damage. Monitor crop’s growth, monitor groundwater and water levels in rivers, radiation and soil, etc." ;
+               :eoServType "Food security monitoring" ;
+               :relatedAreaAction "Food security & production" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EarthquakesArea
+:EarthquakesArea rdf:type owl:NamedIndividual ,
+                          :Area ;
+                 :fromDomain :DisastersAndGeohazardsDomain ;
+                 :areaKeyWords "…understanding, mapping and responding to active tectonics, surface ruptures and quantifying earthquake risks, estimating the distribution/depth of ground motion and slip on faults." ;
+                 :areaName "Earthquakes" ;
+                 :thematicLevel 2 ;
+                 rdfs:label "Earthquakes"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EducationTrainingAndResearchSector
+:EducationTrainingAndResearchSector rdf:type owl:NamedIndividual ,
+                                             :Sector ;
+                                    :fromMarket :CitizensAndSocietyMarket ;
+                                    :hasUserGroup :USG_EducationTrainingAndResearch ;
+                                    :sectorName "Education, training & research" ;
+                                    rdfs:label "Education, training & research"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EmergencyAndSocialProtectionSector
+:EmergencyAndSocialProtectionSector rdf:type owl:NamedIndividual ,
+                                             :Sector ;
+                                    :fromMarket :DefenceAndSecurityMarket ;
+                                    :hasUserGroup :USG_EmergencyAndSocialProtection ;
+                                    :sectorName "Emergency & social protection" ;
+                                    rdfs:label "Emergency & social protection"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EnergyAndMineralResourcesMarket
+:EnergyAndMineralResourcesMarket rdf:type owl:NamedIndividual ,
+                                          :Market ;
+                                 :hasSector :OilAndGasSector ,
+                                            :RawMaterialsSector ,
+                                            :RenewableEnergySector ;
+                                 :marketName "Energy and mineral resources" ;
+                                 dc:description "Users in energy and mineral resources deal with the harvesting of energy from renewable resources and extractive industries including oil and gas and raw materials. EO information helps them in exploring potential locations to build new mines or power plants, in identifying risks from infrastructure and in managing the environmental impact of their operations. Uses that apply to the extractive industries: a study of landforms, structures, and the subsurface, to understand physical processes creating and modifying the Earth's crust."@en ;
+                                 rdfs:label "Energy and mineral resources"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EnvironmentalClimateAndHealthMarket
+:EnvironmentalClimateAndHealthMarket rdf:type owl:NamedIndividual ,
+                                              :Market ;
+                                     :hasSector :EnvironmentalEcosystemsAndPollutionSector ,
+                                                :HealthCareSector ,
+                                                :MeteoAndClimateSector ;
+                                     :marketName "Environmental, Climate & Health" ;
+                                     dc:description """Users in the public administrations or private organizations using EO to increase the environmental or climate change impact on policy making decisions which are key to our safety and our economy i.e., assisting in developing monitoring to evaluate and deliver policy goals, provide an assessment of ecosystems, rapid
+response to major environmental risk events, or those associated with health security & care. These users are largely related to international treaties and hence a strong international collaboration."""@en ;
+                                     rdfs:label "Environmental, Climate & Health"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EnvironmentalEcosystemsAndPollutionSector
+:EnvironmentalEcosystemsAndPollutionSector rdf:type owl:NamedIndividual ,
+                                                    :Sector ;
+                                           :fromMarket :EnvironmentalClimateAndHealthMarket ;
+                                           :hasUserGroup :USG_EnvironmentalEcosystemsAndPollution ;
+                                           :sectorName "Environmental ecosystems & pollution" ;
+                                           rdfs:label "Environmental ecosystems & pollution"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#FinancialAndDigitalServicesMarket
+:FinancialAndDigitalServicesMarket rdf:type owl:NamedIndividual ,
+                                            :Market ;
+                                   :hasSector :ICTKnowledgeAndDigitalInterfacesSector ,
+                                              :InsuranceAndRealEstateSector ,
+                                              :NewsAndMediaSector ,
+                                              :RetailAndGeomarketingSector ;
+                                   :marketName "Financial & Digital services" ;
+                                   dc:description """Users in financial and digital services cover a broad area of activity that touches on many other market sectors such as insurance & real estate, retail, news & media and digital interfaces.
+They look to better understand risks, accelerate claims, and detect fraud. The categories included are identifiable as a “service” for the tertiary sector which provides advice, access, experience activities and knowledge and there are not part of the physical supply of goods"""@en ;
+                                   rdfs:label "Financial & Digital services"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#FiresArea
+:FiresArea rdf:type owl:NamedIndividual ,
+                    :Area ;
+           :fromDomain :DisastersAndGeohazardsDomain ;
+           :areaKeyWords "…observation and measurement capabilities for monitoring fire events (fire management, post-fire erosion monitoring, the basis for risk assessment, evaluation based on tree cover/type density maps), and estimating risks (areas that are dry and susceptible to wildfire outbreak, actively flaming and smouldering fires, burned area, and smoke and trace gas emissions), and extent of burnt areas for rapid damage estimation and recovery planning." ;
+           :areaName "Fires" ;
+           :thematicLevel 2 ;
+           rdfs:label "Fires"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#FisheriesArea
+:FisheriesArea rdf:type owl:NamedIndividual ,
+                        :Area ;
+               :fromDomain :MarineAndOceanDomain ;
+               :areaKeyWords "… improve understanding (through bio-geochemical analyses and forecasts for global and regional seas, topography, ocean colour, sea-surface temperature and ocean currents, key inputs for fish stock numerical modelling) of fish stock (including resilience and vulnerability) to natural and anthropogenic factors such as over-fishing effects (surveillance capabilities for the detection of illegal, unreported and undetected fishing activities)." ;
+               :areaName "Fisheries" ;
+               :thematicLevel 2 ;
+               rdfs:label "Fisheries"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#FishingSector
+:FishingSector rdf:type owl:NamedIndividual ,
+                        :Sector ;
+               :fromMarket :ManagedLivingResourcesMarket ;
+               :hasUserGroup :USG_Fishing ;
+               :sectorName "Fishing" ;
+               rdfs:label "Fishing"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#FloodsArea
+:FloodsArea rdf:type owl:NamedIndividual ,
+                     :Area ;
+            :fromDomain :DisastersAndGeohazardsDomain ;
+            :areaKeyWords "… assess the scale and/or extent of actual or potential flooding events (closely associated with modelled or measured rainfall and cascading geohazard models)." ;
+            :areaName "Floods" ;
+            :thematicLevel 2 ;
+            rdfs:label "Floods"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#FoodSecurityAndProductionArea
+:FoodSecurityAndProductionArea rdf:type owl:NamedIndividual ,
+                                        :Area ;
+                               :fromDomain :SecurityAndSafetyDomain ;
+                               :areaKeyWords "…better monitoring and targeting of food aid and security issues through e.g. water monitoring (droughts), early warning system for pest and disease infection risks, crop losses associated with certain environmental conditions, e.g. temperature, rainfall, humidity." ;
+                               :areaName "Food Security & Production" ;
+                               :thematicLevel 2 ;
+                               rdfs:label "Food Security & Production"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ForestrySector
+:ForestrySector rdf:type owl:NamedIndividual ,
+                         :Sector ;
+                :fromMarket :ManagedLivingResourcesMarket ;
+                :hasUserGroup :USG_Forestry ;
+                :sectorName "Forestry" ;
+                rdfs:label "Forestry"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ForestsArea
+:ForestsArea rdf:type owl:NamedIndividual ,
+                      :Area ;
+             :fromDomain :LandDomain ;
+             :areaKeyWords "…efficient use and management of forest resources (inventory & timber harvesting), providing intelligence & insights into forest composition like tree species, tree height and diameter (DBH), tree growth & productivity, tree cover density, wood inventory, harvest planning. Insights into forest health (biodiversity, protected areas) & threats, e.g. deforestation, drought, insect plagues, soil health, storm damage, and other forest disturbances." ;
+             :areaName "Forests" ;
+             :thematicLevel 2 ;
+             rdfs:label "Forests"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#GeologyArea
+:GeologyArea rdf:type owl:NamedIndividual ,
+                      :Area ;
+             :fromDomain :LandDomain ;
+             :areaKeyWords "…multi-scale geological mapping and mineral exploration of any terrain and climatic environment, including services such elevation data sets which suit their study objectives in terms of scale, resolution and environment. Properties of soils, surface lithology can be detected." ;
+             :areaName "Geology" ;
+             :thematicLevel 2 ;
+             rdfs:label "Geology"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#HealthCareSector
+:HealthCareSector rdf:type owl:NamedIndividual ,
+                           :Sector ;
+                  :fromMarket :EnvironmentalClimateAndHealthMarket ;
+                  :hasUserGroup :USG_HealthCare ;
+                  :sectorName "Health care" ;
+                  rdfs:label "Health care"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#HealthEpidemicAndDiseasesArea
+:HealthEpidemicAndDiseasesArea rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/eiffo/eotaxonomy#HealthEpidemicsAndDiseasesArea
+:HealthEpidemicsAndDiseasesArea rdf:type owl:NamedIndividual ,
+                                         :Area ;
+                                :fromDomain :SecurityAndSafetyDomain ;
+                                :areaKeyWords "…monitoring, identification and predict threats to human health. environmental and climate influences on appearance of unusual spreading of disease provoked through zoonosis (such Covid19), proximity to hazardous locations (such as toxic or nuclear waste sites), changes in biodiversity, land use, and land degradation, etc. can influence health outcomes. air quality, risk maps, etc combined with analytics and modelling are applied to improve health security." ;
+                                :areaName "Health (epidemic & diseases)" ;
+                                :thematicLevel 2 ;
+                                rdfs:label "Health (epidemic & diseases)"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#HumanitarianOperationsSector
+:HumanitarianOperationsSector rdf:type owl:NamedIndividual ,
+                                       :Sector ;
+                              :fromMarket :DefenceAndSecurityMarket ;
+                              :hasUserGroup :USG_HumanitarianOperations ;
+                              :sectorName "Humanitarian operations" ;
+                              rdfs:label "Humanitarian operations"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ICTKnowledgeAndDigitalInterfacesSector
+:ICTKnowledgeAndDigitalInterfacesSector rdf:type owl:NamedIndividual ,
+                                                 :Sector ;
+                                        :fromMarket :FinancialAndDigitalServicesMarket ;
+                                        :hasUserGroup :USG_ICTKnowledgeAndDigitalInterfaces ;
+                                        :sectorName "ICT, knowledge & digital interfaces" ;
+                                        rdfs:label "ICT, knowledge & digital interfaces"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#InfrastructureAndTransportMarket
+:InfrastructureAndTransportMarket rdf:type owl:NamedIndividual ,
+                                           :Market ;
+                                  :hasSector :CommunicationsAndConnectivitySector ,
+                                             :ConstructionSector ,
+                                             :MarineAndMaritimeSector ,
+                                             :TransportAndLogisticsSector ,
+                                             :TravelAndTourismSector ,
+                                             :UtilitiesAndSuppliesSector ;
+                                  :marketName "Infrastructure & Transport" ;
+                                  dc:description """Users in transport and infrastructure apply to all manufacturing and physical
+supply in land but also marine domains including transport & logistics, utilities,
+construction, communication & connectivity, and tourism. They oversee assets, monitor competition, build competitive advantage and source ground-truthing data."""@en ;
+                                  rdfs:label "Infrastructure & Transport"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#InfrastructureArea
+:InfrastructureArea rdf:type owl:NamedIndividual ,
+                             :Area ;
+                    :fromDomain :BuiltEnvironmentAndHumanFactorsDomain ;
+                    :areaKeyWords "… infrastructure health, asset optimisation and monitoring such construction of new buildings, energy, water supply (i.e., hydropower in snow reservoir), sewer systems or information networks susceptible to vulnerability due to engineering works, industrial activities or other effects which can develop land subsidence due to landslip, mining or other." ;
+                    :areaName "Infrastructure" ;
+                    :thematicLevel 2 ;
+                    rdfs:label "Infrastructure"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#InlandWatersArea
+:InlandWatersArea rdf:type owl:NamedIndividual ,
+                           :Area ;
+                  :fromDomain :LandDomain ;
+                  :areaKeyWords "…monitor the extent of reservoirs and lakes, observe seasonal activity, track resource utilization (reliable, repetitive, and low-cost information for water supply management) and environmental benefits, provision of temporal and spatial information on parameters which provide insight into the ecological status, dynamics and trends of inland waters. Key parameters of water quality assessments include turbidity, suspended matter, chlorophyll-a, harmful algal blooms and trophic state classification." ;
+                  :areaName "Inland Waters" ;
+                  :thematicLevel 2 ;
+                  rdfs:label "Inland Waters"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#InsuranceAndRealEstateSector
+:InsuranceAndRealEstateSector rdf:type owl:NamedIndividual ,
+                                       :Sector ;
+                              :fromMarket :FinancialAndDigitalServicesMarket ;
+                              :hasUserGroup :USG_InsuranceAndRealEstate ;
+                              :sectorName "Insurance & real estate" ;
+                              rdfs:label "Insurance & real estate"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#LandDomain
+:LandDomain rdf:type owl:NamedIndividual ,
+                     :Domain ;
+            :hasAlignedCopernicusService :CopernicusService_03 ;
+            :hasArea :AgricultureFieldsArea ,
+                     :BioDiversityAndLandEcosystemArea ,
+                     :ForestsArea ,
+                     :GeologyArea ,
+                     :InlandWatersArea ,
+                     :LandUseLandCoverArea ,
+                     :SnowAndIceArea ,
+                     :TopographyAndMotionArea ;
+            :domainName "Land" ;
+            :thematicLevel 1 ;
+            dc:description "Land resources and its management form the basis of all societies. It includes all services/applications that are focused on monitoring, assessing quality & availability, managing, planning and improving the use of land areas and its ecosystems (land, soil and inland water). The key track on the evolution of the land surface (use, cover, seasonal and annual changes and monitors its variables) even if it involves human intervention (environmental challenges, impact evaluation or suitability analysis)." ;
+            rdfs:label "Land"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#LandUseLandCoverArea
+:LandUseLandCoverArea rdf:type owl:NamedIndividual ,
+                               :Area ;
+                      :fromDomain :LandDomain ;
+                      :areaKeyWords "…LU/LC - land use (biophysical coverage of land), land cover (socioeconomic use of land) - and land-use change (LUC) data are often used to detect ecosystem change risk factors." ;
+                      :areaName "Land Use / Land Cover" ;
+                      :thematicLevel 2 ;
+                      rdfs:label "Land Use / Land Cover"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#LandslidesArea
+:LandslidesArea rdf:type owl:NamedIndividual ,
+                         :Area ;
+                :fromDomain :DisastersAndGeohazardsDomain ;
+                :areaKeyWords "… detection, monitoring and interpretation of different types of terrain motions such as ground displacement or landslide flows through e.g. characterization of scale, slope stability, surface/surface deformation, properties of the material (such as rock, soil, ice), meteorological (rainfall, temperature), hydrogeological parameters." ;
+                :areaName "Landslides" ;
+                :thematicLevel 2 ;
+                rdfs:label "Landslides"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#LeisureSector
+:LeisureSector rdf:type owl:NamedIndividual ,
+                        :Sector ;
+               :fromMarket :CitizensAndSocietyMarket ;
+               :hasUserGroup :USG_Leisure ;
+               :sectorName "Leisure" ;
+               rdfs:label "Leisure"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#LocalAndRegionalPlanningSector
+:LocalAndRegionalPlanningSector rdf:type owl:NamedIndividual ,
+                                         :Sector ;
+                                :fromMarket :UrbanDevelopmentMarket ;
+                                :hasUserGroup :USG_LocalAndRegionalPlanning ;
+                                :sectorName "Local & regional planning" ;
+                                rdfs:label "Local & regional planning"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ManagedLivingResourcesMarket
+:ManagedLivingResourcesMarket rdf:type owl:NamedIndividual ,
+                                       :Market ;
+                              :hasSector :AgricultureSector ,
+                                         :ConstructionSector ,
+                                         :FishingSector ,
+                                         :ForestrySector ;
+                              :marketName "Managed living resources" ;
+                              dc:description """Users in managed living resources refer to human activities exploiting natural
+organic resources. Knowledge and nformation products to forge a viable strategy for the user’s operations such as the assessment of the status of the resource due to natural or human activities for effective commercial exploitation and conservation. This includes agriculture, fishing and forestry sectors."""@en ;
+                              rdfs:label "Managed living resources"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#MarineAndMaritimeSector
+:MarineAndMaritimeSector rdf:type owl:NamedIndividual ,
+                                  :Sector ;
+                         :fromMarket :InfrastructureAndTransportMarket ;
+                         :hasUserGroup :USG_MarineAndMaritime ;
+                         :sectorName "Marine & maritime" ;
+                         rdfs:label "Marine & maritime"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#MarineAndOceanDomain
+:MarineAndOceanDomain rdf:type owl:NamedIndividual ,
+                               :Domain ;
+                      :hasAlignedCopernicusService :CopernicusService_05 ;
+                      :hasArea :BiodiversityAndMarineEcosystemArea ,
+                               :CoastalArea ,
+                               :FisheriesArea ,
+                               :MarinePollutionArea ,
+                               :MetoceanArea ,
+                               :SeaIceAndIcebergsArea ,
+                               :ShipsArea ;
+                      :domainName "Marine and Ocean" ;
+                      :thematicLevel 1 ;
+                      dc:description "The marine & ocean domain covers the tracking, measuring, observing, modelling and assessment of all maritime & marine focused activities across a broad range of applications such as marine safety, e.g. marine operations, oil spill combat, ship routing, defence, search & rescue; marine resources, e.g. fish stock management; marine and coastal environment, e.g. water quality, pollution, coastal activities; climate and seasonal forecasting, e.g. ice surveys, seasonal forecasting… Concerning the concept of “Digital Ocean” improving the monitoring of the Blue, Green, White and Brown Ocean, the classification may be linked as blue (metocean, marine pollution, water quality, ships & navigation...etc), green (fisheries, ecosystem and biodiversity) and white (sea ice & icebergs) while brown is related to coastal zones." ;
+                      rdfs:label "Marine and Ocean"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#MarinePollutionArea
+:MarinePollutionArea rdf:type owl:NamedIndividual ,
+                              :Area ;
+                     :fromDomain :MarineAndOceanDomain ;
+                     :areaKeyWords "…detection of marine oil spills through SAR, support research on marine litter with forecasts of sea currents and seasurface heights (altimetry), sea-surface salinity, sea-surface temperature, ocean colour and sea-ice data." ;
+                     :areaName "Marine Pollution" ;
+                     :thematicLevel 2 ;
+                     rdfs:label "Marine Pollution"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#MarketView_01
+:MarketView_01 rdf:type owl:NamedIndividual ,
+                        :MarketView ;
+               :hasMarket :CitizensAndSocietyMarket ,
+                          :DefenceAndSecurityMarket ,
+                          :EnergyAndMineralResourcesMarket ,
+                          :EnvironmentalClimateAndHealthMarket ,
+                          :FinancialAndDigitalServicesMarket ,
+                          :InfrastructureAndTransportMarket ,
+                          :ManagedLivingResourcesMarket ,
+                          :UrbanDevelopmentMarket ;
+               :viewDescription "This view: 1) Structures the market from the customer point of view; 2) is based on customer segmentation, 3) identifies the type of organisation that fits into each one, and 4) helps associate types of users with their requirements" ;
+               :viewName "EARSC marketview" ;
+               :viewVersion "3.0" ;
+               :viewYear 2020 .
+
+
+###  http://purl.org/eiffo/eotaxonomy#MeteoAndClimateSector
+:MeteoAndClimateSector rdf:type owl:NamedIndividual ,
+                                :Sector ;
+                       :fromMarket :EnvironmentalClimateAndHealthMarket ;
+                       :hasUserGroup :USG_MeteoAndClimate ;
+                       :sectorName "Meteo & climate" ;
+                       rdfs:label "Meteo & climate"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#MetereologyArea
+:MetereologyArea rdf:type owl:NamedIndividual ,
+                          :Area ;
+                 :fromDomain :AtmosphereAndClimateChangeDomain ;
+                 :areaKeyWords "…seasonal preparedness, forecasting of meteorological variables e.g. air temperature, wind, humidity, cloud coverage, precipitation and evapotranspiration (related to numerical weather prediction models, in-situ observational data and machine learning techniques)." ;
+                 :domainName "Metereology" ;
+                 :thematicLevel 2 ;
+                 rdfs:label "Metereology"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#MetoceanArea
+:MetoceanArea rdf:type owl:NamedIndividual ,
+                       :Area ;
+              :fromDomain :MarineAndOceanDomain ;
+              :areaKeyWords "…observations for quality meteorology over oceans (offshore weather and sea state monitoring) complemented with NRT data collection of variables such as wave height and frequency, wind speed and direction and ocean current velocity on global and regional scales." ;
+              :areaName "Metocean" ;
+              :thematicLevel 2 ;
+              rdfs:label "Metocean"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#MultiHazardArea
+:MultiHazardArea rdf:type owl:NamedIndividual ,
+                          :Area ;
+                 :fromDomain :DisastersAndGeohazardsDomain ;
+                 :areaKeyWords "… early warning systems and multi-hazard disaster risk information and assessment (identify, analyse, evaluate, treat, monitor and review) in the different phases of multi-hazard risk management such as safety, the provision of a synoptic view of the region of interest, pre-event baseline mapping extending back several years and, in many cases, damage estimates." ;
+                 :areaName "Multi-hazard" ;
+                 :thematicLevel 2 ;
+                 rdfs:label "Multi-hazard"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#NewsAndMediaSector
+:NewsAndMediaSector rdf:type owl:NamedIndividual ,
+                             :Sector ;
+                    :fromMarket :FinancialAndDigitalServicesMarket ;
+                    :hasUserGroup :USG_NewsAndMedia ;
+                    :sectorName "News & media" ;
+                    rdfs:label "News & media"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#OilAndGasSector
+:OilAndGasSector rdf:type owl:NamedIndividual .
+
+
+###  http://purl.org/eiffo/eotaxonomy#OilAndGasSectorSector
+:OilAndGasSectorSector rdf:type owl:NamedIndividual ,
+                                :Sector ;
+                       :fromMarket :EnergyAndMineralResourcesMarket ;
+                       :hasUserGroup :USG_OilAndGas ;
+                       :sectorName "Oil & gas" ;
+                       rdfs:label "Oil & gas"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#RawMaterialsSector
+:RawMaterialsSector rdf:type owl:NamedIndividual ,
+                             :Sector ;
+                    :fromMarket :EnergyAndMineralResourcesMarket ;
+                    :hasUserGroup :USG_RawMaterials ;
+                    :sectorName "Raw materials" ;
+                    rdfs:label "Raw materials"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#RenewableEnergySector
+:RenewableEnergySector rdf:type owl:NamedIndividual ,
+                                :Sector ;
+                       :fromMarket :EnergyAndMineralResourcesMarket ;
+                       :hasUserGroup :USG_RenewableEnergy ;
+                       :sectorName "Renewable energy" ;
+                       rdfs:label "Renewable energy"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#RetailAndGeomarketingSector
+:RetailAndGeomarketingSector rdf:type owl:NamedIndividual ,
+                                      :Sector ;
+                             :fromMarket :FinancialAndDigitalServicesMarket ;
+                             :hasUserGroup :USG_RetailAndGeomarketing ;
+                             :sectorName "Retail & geomarketing" ;
+                             rdfs:label "Retail & geomarketing"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#SeaIceAndIcebergsArea
+:SeaIceAndIcebergsArea rdf:type owl:NamedIndividual ,
+                                :Area ;
+                       :fromDomain :MarineAndOceanDomain ;
+                       :areaKeyWords "…monitoring and forecasts of sea ice, including its extent, thickness, motion and ridges, hydrodynamic forecasts, ice monitoring and forecasting to allow for safe and efficient transportation route planning, improve the precision of ice thickness measurements." ;
+                       :areaName "Sea-ice and Icebergs" ;
+                       :thematicLevel 2 ;
+                       rdfs:label "Sea-ice and Icebergs"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#SecurityAndSafetyDomain
+:SecurityAndSafetyDomain rdf:type owl:NamedIndividual ,
+                                  :Domain ;
+                         :hasAlignedCopernicusService :CopernicusService_06 ;
+                         :hasArea :CriticalAssetsArea ,
+                                  :CustomsAndBorderArea ,
+                                  :FoodSecurityAndProductionArea ,
+                                  :HealthEpidemicsAndDiseasesArea ;
+                         :domainName "Security & Safety" ;
+                         :thematicLevel 1 ;
+                         dc:description "It is the provision of EO services defining, collecting, analysing information to provide  intelligence & safety (understand events, anticipated impacts and quick respond). It also includes political boundaries such as borders. Receive and share information quickly, understanding of complex operating environments such as border surveillance, maritime surveillance, support to EU External Action, ensuring security and sovereignty." ;
+                         rdfs:label "Security & Safety"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#SecurityDefenceAndMilitarySector
+:SecurityDefenceAndMilitarySector rdf:type owl:NamedIndividual ,
+                                           :Sector ;
+                                  :fromMarket :DefenceAndSecurityMarket ;
+                                  :hasUserGroup :USG_SecurityDefenceAndMilitary ;
+                                  :sectorName "Security, defence & military" ;
+                                  rdfs:label "Security, defence & military"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ShipsArea
+:ShipsArea rdf:type owl:NamedIndividual ,
+                    :Area ;
+           :fromDomain :MarineAndOceanDomain ;
+           :areaKeyWords "…fleet tracking, provide real-time sea-ice data to ensure navigation safety in polar shipping routes, shipping route optimisation, marine reserves and protected area monitoring, illegal activity detection." ;
+           :areaName "Ships" ;
+           :thematicLevel 2 ;
+           rdfs:label "Ships"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#SmartCitiesSector
+:SmartCitiesSector rdf:type owl:NamedIndividual ,
+                            :Sector ;
+                   :fromMarket :UrbanDevelopmentMarket ;
+                   :hasUserGroup :USG_SmartCities ;
+                   :sectorName "Smart cities" ;
+                   rdfs:label "Smart cities"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#SnowAndIceArea
+:SnowAndIceArea rdf:type owl:NamedIndividual ,
+                         :Area ;
+                :fromDomain :LandDomain ;
+                :areaKeyWords "…verification of snow-related processes in land surface models, the impact of snow cover changes on ecosystems/biodiversity/human activities (e.g. road or mountain safety), analyse impacts of changes in the snow on water availability and permafrost, the role of snow in climate-related changes to the hydrological regime/cycle/surface-atmosphere energy fluxes. Monitor snow cover (snowpack conditions such as depth, wetness), ice mass balance." ;
+                :areaName "Snow and Ice" ;
+                :thematicLevel 2 ;
+                rdfs:label "Snow and Ice"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ThematicView_01
+:ThematicView_01 rdf:type owl:NamedIndividual ,
+                          :ThematicView ;
+                 :hasDomain :AtmosphereAndClimateChangeDomain ,
+                            :BuiltEnvironmentAndHumanFactorsDomain ,
+                            :DisastersAndGeohazardsDomain ,
+                            :LandDomain ,
+                            :MarineAndOceanDomain ,
+                            :SecurityAndSafetyDomain ;
+                 :viewDescription "This view: 1) -Structure of the EO domain from a technical approach; 2) Based on an expertise view; 3) Seek to gather EO services into groups; 4) Adds meaning & insight to each" ;
+                 :viewName "EARSC thematic view" ;
+                 :viewVersion "3.0" ;
+                 :viewYear 2020 ;
+                 dc:description "Basic description of a Copernicus Service to be aligned with the Domains (thematic view)" ;
+                 rdfs:label "Copernicus Service" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#TopographyAndMotionArea
+:TopographyAndMotionArea rdf:type owl:NamedIndividual ,
+                                  :Area ;
+                         :fromDomain :LandDomain ;
+                         :areaKeyWords "…topographic measurements deliver consistently digital elevation models (DEMs) for the mapping of large areas and in the monitoring of elevation changes in areas of land subsidence or uplift, ground subsidence, assets and infrastructures stability monitoring." ;
+                         :areaName "Topography & Motion" ;
+                         :thematicLevel 2 ;
+                         rdfs:label "Topography & Motion"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#TransportAndLogisticsSector
+:TransportAndLogisticsSector rdf:type owl:NamedIndividual ,
+                                      :Sector ;
+                             :fromMarket :InfrastructureAndTransportMarket ;
+                             :hasUserGroup :USG_TransportAndLogistics ;
+                             :sectorName "Transport & logistics" ;
+                             rdfs:label "Transport & logistics"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#TransportNetworksArea
+:TransportNetworksArea rdf:type owl:NamedIndividual ,
+                                :Area ;
+                       :fromDomain :BuiltEnvironmentAndHumanFactorsDomain ;
+                       :areaKeyWords "… monitor the stability of rail and road networks by analysing/predicting and assessing track/terrain settlement behaviour including the identification of possible ‘hotspots’ or high-risk areas (geological hazards, weather forecasts…) in the network that is under threat." ;
+                       :areaName "Transport Networks" ;
+                       :thematicLevel 2 ;
+                       rdfs:label "Transport Networks"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#TravelAndTourismSector
+:TravelAndTourismSector rdf:type owl:NamedIndividual ,
+                                 :Sector ;
+                        :fromMarket :InfrastructureAndTransportMarket ;
+                        :hasUserGroup :USG_TravelAndTourism ;
+                        :sectorName "Travel & tourism" ;
+                        rdfs:label "Travel & tourism"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_Agriculture
+:USG_Agriculture rdf:type owl:NamedIndividual ,
+                          :UserGroup ;
+                 :coversSector :AgricultureSector ;
+                 :hasEONeed :EONeed_001 ,
+                            :EONeed_002 ,
+                            :EONeed_003 ,
+                            :EONeed_004 ,
+                            :EONeed_005 ,
+                            :EONeed_006 ,
+                            :EONeed_007 ,
+                            :EONeed_008 ;
+                 :usDescription "Agricultural commodities/trading, agricultural production / horticulture, agricultural services, agriculture machinery, agriculture and rural development policy, agri chemicals / plants & fertilizers, animal production / livestock/ Stock traders on commodity price like wheat, coffee. The EO/GI users also include agriculture and rural policy makers and insurers." ;
+                 :usName "Agriculture" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_CommunicationsAndConnectivity
+:USG_CommunicationsAndConnectivity rdf:type owl:NamedIndividual ,
+                                            :UserGroup ;
+                                   :coversSector :CommunicationsAndConnectivitySector ;
+                                   :hasEONeed :EONeed_048 ,
+                                              :EONeed_049 ;
+                                   :usDescription "Construction companies, civil engineering consultancies, architect and design companies, planning authorities, and national land agencies" ;
+                                   :usName "Communications & connectivity" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_Construction
+:USG_Construction rdf:type owl:NamedIndividual ,
+                           :UserGroup ;
+                  :coversSector :ConstructionSector ;
+                  :hasEONeed :EONeed_029 ,
+                             :EONeed_030 ,
+                             :EONeed_031 ,
+                             :EONeed_032 ,
+                             :EONeed_033 ,
+                             :EONeed_034 ;
+                  :usDescription "Construction companies, civil engineering consultancies, architect and design companies, planning authorities, and national land agencies dealing with structures, tunnels, etc." ;
+                  :usName "Construction" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_ConsumerSolutions
+:USG_ConsumerSolutions rdf:type owl:NamedIndividual ,
+                                :UserGroup ;
+                       :coversSector :ConsumerSolutionsSector ;
+                       :hasEONeed :EONeed_100 ;
+                       :usDescription "Mobile devices, social media platforms, apps developers" ;
+                       :usName "Consumer solutions" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_EducationTrainingAndResearch
+:USG_EducationTrainingAndResearch rdf:type owl:NamedIndividual ,
+                                           :UserGroup ;
+                                  :coversSector :EducationTrainingAndResearchSector ;
+                                  :hasEONeed :EONeed_103 ,
+                                             :EONeed_104 ,
+                                             :EONeed_105 ,
+                                             :EONeed_106 ;
+                                  :usDescription "Schools and education authorities, universities, research organisations, and professional training organisations" ;
+                                  :usName "Education, training & research" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_EmergencyAndSocialProtection
+:USG_EmergencyAndSocialProtection rdf:type owl:NamedIndividual ,
+                                           :UserGroup ;
+                                  :coversSector :EmergencyAndSocialProtectionSector ;
+                                  :hasEONeed :EONeed_080 ,
+                                             :EONeed_081 ,
+                                             :EONeed_082 ;
+                                  :usDescription "Coast guards, ambulance services, fire services, police services, civil protection organisations, and rescue services. They benefit from increased efficiencies and effectiveness through monitoring, detecting and assessing natural risks/disasters" ;
+                                  :usName "Emergency & social protection" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_EnvironmentalEcosystemsAndPollution
+:USG_EnvironmentalEcosystemsAndPollution rdf:type owl:NamedIndividual ,
+                                                  :UserGroup ;
+                                         :coversSector :EnvironmentalEcosystemsAndPollutionSector ;
+                                         :hasEONeed :EONeed_089 ,
+                                                    :EONeed_090 ,
+                                                    :EONeed_091 ;
+                                         :usDescription "Environmental ecosystems & pollution users include coast guards, ambulance services, fire services, police services, civil protection organisations and rescue services" ;
+                                         :usName "Environmental ecosystems & pollution" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_Fishing
+:USG_Fishing rdf:type owl:NamedIndividual ,
+                      :UserGroup ;
+             :coversSector :FishingSector ;
+             :hasEONeed :EONeed_009 ,
+                        :EONeed_010 ;
+             :usDescription "Fish stock management, fishing fleets, fishery distribution logistics, aquaculture / fish farms, coastal management agencies. Besides, the users include fisheries authorities / policy makers." ;
+             :usName "Fishing" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_Forestry
+:USG_Forestry rdf:type owl:NamedIndividual ,
+                       :UserGroup ;
+              :coversSector :ForestrySector ;
+              :hasEONeed :EONeed_011 ,
+                         :EONeed_012 ,
+                         :EONeed_013 ,
+                         :EONeed_014 ,
+                         :EONeed_015 ,
+                         :EONeed_016 ;
+              :usDescription "Forest management, forest services, commodities, logging industry, wood, paper and pulp industry, forest  policy, forest machinery. They also include forest policy makers" ;
+              :usName "Forestry" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_HealthCare
+:USG_HealthCare rdf:type owl:NamedIndividual ,
+                         :UserGroup ;
+                :coversSector :HealthCareSector ;
+                :hasEONeed :EONeed_092 ,
+                           :EONeed_093 ;
+                :usDescription "Public administration personnel, civil servants, public health community, etc working on health issues such as air quality, forecasting sunlight exposure, forecasting epidemics, diseases" ;
+                :usName "Health care" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_HumanitarianOperations
+:USG_HumanitarianOperations rdf:type owl:NamedIndividual ,
+                                     :UserGroup ;
+                            :coversSector :HumanitarianOperationsSector ;
+                            :hasEONeed :EONeed_085 ,
+                                       :EONeed_086 ,
+                                       :EONeed_087 ,
+                                       :EONeed_088 ;
+                            :usDescription "Humanitarian aid and support organisations such as; at European level (DG RELEX, DG ECHO, DG ENV/ MIC), at UN level (OCHA, UNHCR, UNDPKO, UNDP, UNOPS, UNITAR, UNICEF, UNESCO, WFP), International (IFRC, WHO, WB, donor organizations), and national level (Civil Protection Agencies, Ministries of Internal Affairs/ Civil Protection Department, Development and Aid agencies)" ;
+                            :usName "Humanitarian operations" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_ICTKnowledgeAndDigitalInterfaces
+:USG_ICTKnowledgeAndDigitalInterfaces rdf:type owl:NamedIndividual ,
+                                               :UserGroup ;
+                                      :coversSector :ICTKnowledgeAndDigitalInterfacesSector ;
+                                      :hasEONeed :EONeed_066 ,
+                                                 :EONeed_067 ;
+                                      :usDescription "Fixed and mobile telecommunications providers" ;
+                                      :usName "ICT, knowledge &  digital interfaces" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_InsuranceAndRealEstate
+:USG_InsuranceAndRealEstate rdf:type owl:NamedIndividual ,
+                                     :UserGroup ;
+                            :coversSector :InsuranceAndRealEstateSector ;
+                            :hasEONeed :EONeed_060 ,
+                                       :EONeed_061 ,
+                                       :EONeed_062 ,
+                                       :EONeed_063 ;
+                            :usDescription "Primary insurance companies, re-insurance sector, insurance brokers, insurance service suppliers, commercial banks, major projects, and international financial institutions)" ;
+                            :usName "Insurance & real estate" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_Leisure
+:USG_Leisure rdf:type owl:NamedIndividual ,
+                      :UserGroup ;
+             :coversSector :LeisureSector ;
+             :hasEONeed :EONeed_101 ,
+                        :EONeed_102 ;
+             :usDescription "People oriented to basic public understanding on EO services for their leisure activities" ;
+             :usName "Leisure" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_LocalAndRegionalPlanning
+:USG_LocalAndRegionalPlanning rdf:type owl:NamedIndividual ,
+                                       :UserGroup ;
+                              :coversSector :LocalAndRegionalPlanningSector ;
+                              :hasEONeed :EONeed_075 ,
+                                         :EONeed_076 ,
+                                         :EONeed_077 ,
+                                         :EONeed_078 ,
+                                         :EONeed_079 ;
+                              :usDescription "Spatial planning departments of municipalities, spatial planning offices, and spatial planning policy makers" ;
+                              :usName "Local & regional planning" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_MarineAndMaritime
+:USG_MarineAndMaritime rdf:type owl:NamedIndividual ,
+                                :UserGroup ;
+                       :coversSector :MarineAndMaritimeSector ;
+                       :hasEONeed :EONeed_053 ,
+                                  :EONeed_054 ,
+                                  :EONeed_055 ;
+                       :usDescription "Ports & Harbours administration, bulk cargo carriers, cruise liners operators, ferry operators, naval operations, and rescue and safety at sea" ;
+                       :usName "Marine & maritime" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_MeteoAndClimate
+:USG_MeteoAndClimate rdf:type owl:NamedIndividual ,
+                              :UserGroup ;
+                     :coversSector :MeteoAndClimateSector ;
+                     :hasEONeed :EONeed_094 ,
+                                :EONeed_095 ,
+                                :EONeed_096 ,
+                                :EONeed_097 ,
+                                :EONeed_098 ,
+                                :EONeed_099 ;
+                     :usDescription "Meteorologists in a range of downstream sectors" ;
+                     :usName "Meteo & climate" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_NewsAndMedia
+:USG_NewsAndMedia rdf:type owl:NamedIndividual ,
+                           :UserGroup ;
+                  :coversSector :NewsAndMediaSector ;
+                  :hasEONeed :EONeed_065 ;
+                  :usDescription "Television companies, broadcasting providers, news and information agencies, web service providers, and entertainment software providers." ;
+                  :usName "News & media" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_OilAndGas
+:USG_OilAndGas rdf:type owl:NamedIndividual ,
+                        :UserGroup ;
+               :coversSector :OilAndGasSector ;
+               :hasEONeed :EONeed_022 ,
+                          :EONeed_023 ,
+                          :EONeed_024 ,
+                          :EONeed_025 ,
+                          :EONeed_026 ,
+                          :EONeed_027 ,
+                          :EONeed_028 ;
+               :usDescription "Offshore and onshore exploration and production, drilling and support services, oil and gas commodities trading, and energy planners." ;
+               :usName "Oil & Gas" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_RawMaterials
+:USG_RawMaterials rdf:type owl:NamedIndividual ,
+                           :UserGroup ;
+                  :coversSector :RawMaterialsSector ;
+                  :hasEONeed :EONeed_029 ,
+                             :EONeed_030 ,
+                             :EONeed_031 ,
+                             :EONeed_032 ,
+                             :EONeed_033 ,
+                             :EONeed_034 ;
+                  :usDescription "Mining and quarrying companies, exploration and survey specialists, commodities traders, exploration and extraction equipment suppliers, drilling, excavation and support services, and regional planners / policy makers" ;
+                  :usName "Raw materials" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_RenewableEnergy
+:USG_RenewableEnergy rdf:type owl:NamedIndividual ,
+                              :UserGroup ;
+                     :coversSector :RenewableEnergySector ;
+                     :hasEONeed :EONeed_017 ,
+                                :EONeed_018 ,
+                                :EONeed_019 ,
+                                :EONeed_020 ,
+                                :EONeed_021 ;
+                     :usDescription "Solar energy providers, wind energy providers, tidal energy providers, energy and carbon traders, local and regional planners, and national policy makers" ;
+                     :usName "Renewable energy" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_RetailAndGeomarketing
+:USG_RetailAndGeomarketing rdf:type owl:NamedIndividual ,
+                                    :UserGroup ;
+                           :coversSector :RetailAndGeomarketingSector ;
+                           :hasEONeed :EONeed_064 ;
+                           :usDescription "Retail centres and advertising and marketing agencies. They use EO/GI data in the field of navigation and Location Based Services (LBS), shopping chains or logistics" ;
+                           :usName "Retail & geomarketing" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_SecurityDefenceAndMilitary
+:USG_SecurityDefenceAndMilitary rdf:type owl:NamedIndividual ,
+                                         :UserGroup ;
+                                :coversSector :SecurityDefenceAndMilitarySector ;
+                                :hasEONeed :EONeed_083 ,
+                                           :EONeed_084 ;
+                                :usDescription "Border control organisations, police and rescue forces, military services, and intelligence services" ;
+                                :usName "Security, defence & military" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_SmartCities
+:USG_SmartCities rdf:type owl:NamedIndividual ,
+                          :UserGroup ;
+                 :coversSector :SmartCitiesSector ;
+                 :hasEONeed :EONeed_068 ,
+                            :EONeed_069 ,
+                            :EONeed_070 ,
+                            :EONeed_071 ,
+                            :EONeed_072 ,
+                            :EONeed_073 ,
+                            :EONeed_074 ;
+                 :usDescription "Urban planners, architects, spatial planning offices, urban policy makers" ;
+                 :usName "Smart cities" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_TransportAndLogistics
+:USG_TransportAndLogistics rdf:type owl:NamedIndividual ,
+                                    :UserGroup ;
+                           :coversSector :TransportAndLogisticsSector ;
+                           :hasEONeed :EONeed_050 ,
+                                      :EONeed_051 ,
+                                      :EONeed_052 ;
+                           :usDescription "Road transport operators, haulage, road infrastructure operators, tolls, airport operators, rail operators, airlines and airline services, and transport engineers" ;
+                           :usName "Transport & logistics" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_TravelAndTourism
+:USG_TravelAndTourism rdf:type owl:NamedIndividual ,
+                               :UserGroup ;
+                      :coversSector :TravelAndTourismSector ;
+                      :hasEONeed :EONeed_056 ,
+                                 :EONeed_057 ,
+                                 :EONeed_058 ,
+                                 :EONeed_059 ;
+                      :usDescription "Tour operators, leisure service providers, hotels, parks etc., offices of tourism, travel agencies, ski and coastal resorts, surfers & sailors" ;
+                      :usName "Travel & tourism" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#USG_UtilitiesAndSupplies
+:USG_UtilitiesAndSupplies rdf:type owl:NamedIndividual ,
+                                   :UserGroup ;
+                          :coversSector :UtilitiesAndSuppliesSector ;
+                          :hasEONeed :EONeed_042 ,
+                                     :EONeed_043 ,
+                                     :EONeed_044 ,
+                                     :EONeed_045 ,
+                                     :EONeed_046 ,
+                                     :EONeed_047 ;
+                          :usDescription "Operators of utilities such as water, electricity, waste, power stations (including hydroelectric), water plants, landfill and waste, a well as survey companies, regulatory bodies, distribution companies, regional planners / policy makers" ;
+                          :usName "Utilities & supplies" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UrbanAreasArea
+:UrbanAreasArea rdf:type owl:NamedIndividual ,
+                         :Area ;
+                :fromDomain :BuiltEnvironmentAndHumanFactorsDomain ;
+                :areaKeyWords "…monitoring urban expansion (site development information and urban growth monitoring), sustainable urban development (highlighting urban 'hot spots', town planning, identification of urban risk management priorities, land management, insights into human settlement layers or green/smart spaces (tree canopy cover, urban forest diversity and air quality), community dependency assessments." ;
+                :areaName "Urban Areas" ;
+                :thematicLevel 2 ;
+                rdfs:label "Urban Areas"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UrbanDevelopmentMarket
+:UrbanDevelopmentMarket rdf:type owl:NamedIndividual ,
+                                 :Market ;
+                        :hasSector :LocalAndRegionalPlanningSector ,
+                                   :SmartCitiesSector ;
+                        :marketName "Urban Development" ;
+                        dc:description """Users in urban development and users involved in the development of rural settlements perform tasks at local and regional scales (to the scale of nations)
+on mapping land use and monitoring urbanization. These users benefit from EO information to manage the use of land & its impacts. Users include experts in e.g. urban planners, architects, spatial planning offices, urban policy makers in public/private sectors in smart cities or generic urban local/regional planning belong to this category."""@en ;
+                        rdfs:label "Urban Development"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UserNeed_Analyse
+:UserNeed_Analyse rdf:type owl:NamedIndividual ,
+                           :UserNeed ;
+                  :hasDIKW :DIKW_Knowledge ;
+                  :unAddedValue 4 ;
+                  :unBloomTax "Analyse & Apply" ;
+                  :unDefinition "to study or examine something in detail to discover more about it (apply knowledge by detailing the elements and critically examine and relate these parts separately and/or concerning all the process)" ;
+                  :unName "Analyse" ;
+                  :unSynomyn "apply" ,
+                             "detail" ,
+                             "parse" ,
+                             "process" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UserNeed_Assess
+:UserNeed_Assess rdf:type owl:NamedIndividual ,
+                          :UserNeed ;
+                 :hasDIKW :DIKW_Wisdom ;
+                 :unAddedValue 6 ;
+                 :unBloomTax "Create & Evaluate" ;
+                 :unDefinition "to watch and check a situation carefully for a period of time (not a one-time event) to discover something about it (evaluate and create is a selective exercise that attempts to systematically and objectively assess progress towards, evaluate knowledge and learning during the effort to achieve an outcome" ;
+                 :unName "Assess" ;
+                 :unSynomyn "create" ,
+                            "evaluate" ,
+                            "quantify" ,
+                            "report" ,
+                            "review" ,
+                            "understand" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UserNeed_Detect
+:UserNeed_Detect rdf:type owl:NamedIndividual ,
+                          :UserNeed ;
+                 :hasDIKW :DIKW_Data ;
+                 :unAddedValue 2 ;
+                 :unBloomTax "Understand" ;
+                 :unDefinition "to notice something that is partly hidden or not clear, or to discover something, especially using a special method" ;
+                 :unName "Detect" ;
+                 :unSynomyn "highlight" ,
+                            "identify" ,
+                            "measure" ,
+                            "recognize" ,
+                            "spot" ,
+                            "warn" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UserNeed_Forecast
+:UserNeed_Forecast rdf:type owl:NamedIndividual ,
+                            :UserNeed ;
+                   :hasDIKW :DIKW_Knowledge ;
+                   :unAddedValue 5 ;
+                   :unBloomTax "Analyse & Apply" ;
+                   :unDefinition "to provide statements covering a range of different outcomes, to say what you expect to happen in the future (predict future events based on specified assumptions)" ;
+                   :unName "Forecast" ;
+                   :unSynomyn "estimate" ,
+                              "model" ,
+                              "plan" ,
+                              "predict" ,
+                              "project" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UserNeed_Map
+:UserNeed_Map rdf:type owl:NamedIndividual ,
+                       :UserNeed ;
+              :hasDIKW :DIKW_Data ;
+              :unAddedValue 1 ;
+              :unBloomTax "Remember" ;
+              :unDefinition "to represent an area of land in the form of a map (a feature the way it is arranged or organized)" ;
+              :unName "Map" ;
+              :unSynomyn "classify" ,
+                         "locate" ,
+                         "trace" ,
+                         "understand" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UserNeed_Monitor
+:UserNeed_Monitor rdf:type owl:NamedIndividual ,
+                           :UserNeed ;
+                  :hasDIKW :DIKW_Data ;
+                  :unAddedValue 3 ;
+                  :unBloomTax "Analyse & Apply" ;
+                  :unDefinition "to watch and check a situation carefully for a period of time in order to discover something about it (keeping track and understand how the natural and manmade environment change (status of) over time, it is continuing function that aims primarily to provide the management)" ;
+                  :unName "Monitor" ;
+                  :unSynomyn "follow" ,
+                             "observe" ,
+                             "record" ,
+                             "track" ,
+                             "understand" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UtilitiesAndSuppliesSector
+:UtilitiesAndSuppliesSector rdf:type owl:NamedIndividual ,
+                                     :Sector ;
+                            :fromMarket :InfrastructureAndTransportMarket ;
+                            :sectorName "Utilities & supplies" ;
+                            rdfs:label "Utilities & supplies"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#VolcanosArea
+:VolcanosArea rdf:type owl:NamedIndividual ,
+                       :Area ;
+              :fromDomain :DisastersAndGeohazardsDomain ;
+              :areaKeyWords "… identifying volcanic hazards (data for detection, discrimination & distribution of volcanic ash) and assessing associated risks for human settlements and the environment, detecting and self-directing observations of an eruption arising from volcanic activity such as lava flow, ground fissures, earthquakes and mud slides, as well as the environmental effects of the gas and ashes released by an eruption, monitor precursors to volcanic eruptions (colour changes in crater lakes, damage to vegetation, and ice melting on ice-capped volcanoes) leading up to a possible eruption and assess their significance." ;
+              :areaName "Volcanos" ;
+              :thematicLevel 2 ;
+              rdfs:label "Volcanos"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#WasteArea
+:WasteArea rdf:type owl:NamedIndividual ,
+                    :Area ;
+           :fromDomain :BuiltEnvironmentAndHumanFactorsDomain ;
+           :areaKeyWords "…monitor spatial and temporal changes in legal waste sites and detect illegal dumping sites providing a series of reports and/or alerts with evidence of the location and extent of the waste site identified" ;
+           :areaName "Waste" ;
+           :thematicLevel 2 ;
+           rdfs:label "Waste"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

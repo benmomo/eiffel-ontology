@@ -1,0 +1,325 @@
+@prefix : <http://purl.org/eiffo#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix eo: <http://purl.org/eiffo/eotaxonomy#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdg: <http://metadata.un.org/sdg/ontology#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core> .
+@prefix eiffo: <http://purl.org/eiffo> .
+@prefix schema: <http://schema.org/> .
+@base <http:/purl.org/eiffo> .
+
+<http:/purl.org/eiffo> rdf:type owl:Ontology ;
+                        dc:creator "Benjamin Molina"@en ;
+                        dc:date "2022-02-10"@en ;
+                        dc:description """The EIFFEL ontology intends to help while searching for EO services and EO datasets or collections. It links with an SDG ontology (goal-target-indicator-series), so that a service (or maybe dataset) fulfills a target. The target entity serves as link, but it can be extended.
+Services and datasets are also considered as extension fro mschema.org in order to allow wider acceptance in the scientific community."""@en ;
+                        dc:language "en"@en ;
+                        dc:rights "This ontology is distributed under the Apache 2 license https://www.apache.org/licenses/LICENSE-2.0"@en ;
+                        dc:title "EIFFEL ontology (EIFF-O)"@en ;
+                        rdfs:label "EIFFEL ontology to search for EO services and datasets"@en ;
+                        rdfs:seeAlso "EIFFEL project  (https://www.eiffel4climate.eu/), SDG ontology (https://github.com/UNStats/LOD4Stats), EO taxonomy (https://earsc-portal.eu/display/EOwiki/EO+Taxonomy) and GCOS ECV taxonomy (https://gcos.wmo.int/en/essential-climate-variables)"@en ;
+                        owl:versionInfo "0.1"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+dc:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/eiffo#coversSegment
+:coversSegment rdf:type owl:ObjectProperty ;
+               rdfs:domain :Application ,
+                           :DataCollection ,
+                           :Dataset ,
+                           :Provider ,
+                           :Document ;
+               rdfs:range eo:Segment ;
+               rdfs:label "covers segment"@en .
+
+
+###  http://purl.org/eiffo#fromDataCollection
+:fromDataCollection rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Dataset ;
+                    rdfs:range :DataCollection ;
+                    rdfs:label "de coleccion de datos"@es ,
+                               "from data collection"@en .
+
+
+###  http://purl.org/eiffo#fromSector
+:fromSector rdf:type owl:ObjectProperty ;
+            rdfs:domain :User ;
+            rdfs:range eo:Sector .
+
+
+###  http://purl.org/eiffo#hasApplication
+:hasApplication rdf:type owl:ObjectProperty ;
+                rdfs:domain :Provider ;
+                rdfs:range :Application ;
+                rdfs:label "has application"@en ,
+                           "proporciona aplicacion"@es .
+
+
+###  http://purl.org/eiffo#hasDataCollection
+:hasDataCollection rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Provider ;
+                   rdfs:range :DataCollection ;
+                   rdfs:label "has data collection"@en ,
+                              "proporciona coleccion de datos"@es .
+
+
+###  http://purl.org/eiffo#hasDataset
+:hasDataset rdf:type owl:ObjectProperty ;
+            rdfs:domain :DataCollection ,
+                        :Provider ;
+            rdfs:range :Dataset ;
+            rdfs:label "has dataset"@es ,
+                       "tiene conjunto de datos"@es .
+
+
+###  http://purl.org/eiffo#hasECV
+:hasECV rdf:type owl:ObjectProperty ;
+        rdfs:domain :EVInfo ;
+        rdfs:range <http://purl.org/eiffo/ecv#ECV> ;
+        rdfs:label "has ECV"@en .
+
+
+###  http://purl.org/eiffo#hasEVInfo
+:hasEVInfo rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf skos:related ;
+           rdfs:domain :DataCollection ,
+                       :Dataset ,
+                       :Provider ,
+                       :Document ;
+           rdfs:range :EVInfo ;
+           rdfs:label "has EVInfo"@en .
+
+
+###  http://purl.org/eiffo#hasProvider
+:hasProvider rdf:type owl:ObjectProperty ;
+             rdfs:domain :Application ,
+                         :Dataset ;
+             rdfs:range :Provider ;
+             rdfs:label "has provider"@en ,
+                        "tiene proveedor"@es .
+
+
+###  http://purl.org/eiffo#hasSDGTarget
+:hasSDGTarget rdf:type owl:ObjectProperty ;
+              rdfs:domain :TargetInfo ;
+              rdfs:range sdg:Target .
+
+
+###  http://purl.org/eiffo#hasTagetInfo
+:hasTagetInfo rdf:type owl:ObjectProperty ;
+              rdfs:domain :Application ;
+              rdfs:range :TargetInfo .
+
+
+###  http://www.w3.org/2004/02/skos/corerelated
+skos:related rdf:type owl:ObjectProperty .
+
+
+###  http:/purl.org/eiffo#searchesFor
+:searchesFor rdf:type owl:ObjectProperty ;
+             rdfs:domain :User ;
+             rdfs:range :Application ,
+                        :DataCollection ,
+                        :Dataset ,
+                        :Document ,
+                        :Provider .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://metadata.un.org/sdg/ontology#Target
+sdg:Target rdf:type owl:Class .
+
+
+###  http://purl.org/eiffo#Application
+:Application rdf:type owl:Class ;
+             rdfs:subClassOf schema:Service ,
+                             eo:EOApplication ,
+                             <http://www.w3.org/2004/02/skos/core#Concept> ;
+             dc:description """An application defines the EO service offered by a Provider by typically using Datasets and, probably, ML techniques. It is a collection of functionalities that intends to fulfill a particular target, or more.
+Applications can be conceptually mapped to EIFFEL pilots, although these pilots might encompass one or more services.
+The Applications entity extends the Service defined in schema.org"""@en ;
+             rdfs:label "Aplicacion"@es ,
+                        "Application"@en .
+
+
+###  http://purl.org/eiffo#DataCollection
+:DataCollection rdf:type owl:Class ;
+                rdfs:subClassOf schema:DataCatalog ,
+                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                dc:description """A data collection is a group of earth observation (EO) datasets sharing exactly the same product specifications. All data sets belonging to a data collection were observed with the identical sensor and processed with an identical algorithm.
+Data collections can be categorized by satellite data, in situ data, models or even statistics. This classification has been used by the NextGeoss project.
+The Data Collection entity is based on the DataCatalog class from schema.org"""@en ;
+                rdfs:label "Colleccion de datos"@es ,
+                           "Data Collection"@en .
+
+
+###  http://purl.org/eiffo#Dataset
+:Dataset rdf:type owl:Class ;
+         rdfs:subClassOf schema:Dataset ,
+                         <http://www.w3.org/2004/02/skos/core#Concept> ;
+         dc:description """A dataset is a structured collection of data generally associated with a single aspect. Data are observations or measurements represented as text, numbers, or multimedia, and they can be either processed or unprocessed.
+According to the JRC (Joint Research Center), Earth observation is the gathering of information about planet Earth’s physical, chemical and biological systems via remote sensing technologies, usually involving satellites carrying imaging devices. All this information are somehow packed in data collections and datasets.
+The Dataset entity is based on the Dataset class from schema.org"""@en ;
+         rdfs:label "Conjunto de datos"@es ,
+                    "Dataset"@en .
+
+
+###  http://purl.org/eiffo#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf schema:DigitalDocument ,
+                          <http://www.w3.org/2004/02/skos/core#Concept> ;
+          dc:description "A document typically refers to available publications -with DOI - related to the usage of EO datasets and EO applications"@en ;
+          rdfs:label "Document"@en ,
+                     "Documento"@es .
+
+
+###  http://purl.org/eiffo#EVInfo
+:EVInfo rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+        dc:description """Container for Essential VAriables (EVs). Essential Variables (EVs) are variables known to be critical for observing and monitoring a given facet of the Earth system. Many professional organizations have sponsored the collaboration of institutions across the world to identify essential variables in their respective fields of study. These include oceanography, climatology, biodiversity studies, and geodiversity. Having a common set of accurate and sustained measurements with standards for data collection and dissemination ensures the usability of data across multiple platforms and agencies.
+
+Consistent measurements of EVs, as identified by subject matter experts, need to be maintained over time to accurately serve as a means to monitor and assess change to Earth systems, including the atmosphere, biosphere, land, and ocean. Expert panels, consisting of scientific and technical individuals from academia, international space agencies (like NASA and the European Space Agency), government organizations, and non-governmental organizations review the requirements for EV observations, including temporal frequency and spatial resolution, and then match these requirements to the capabilities of existing instruments (from moorings to satellites). Many of NASA’s current missions collect data that meet EV requirements.
+More information can be found at https://earthdata.nasa.gov/learn/backgrounders/essential-variables"""@en ;
+        rdfs:label "EVInfo"@en .
+
+
+###  http://purl.org/eiffo#Provider
+:Provider rdf:type owl:Class ;
+          rdfs:subClassOf schema:Organization ,
+                          <http://www.w3.org/2004/02/skos/core#Concept> ;
+          dc:description "A provider is an entity providing either services, collections or datasets related to Earth Observation (EO). It is based on the 'Organization' entity from schema.org"@en ;
+          rdfs:label "Proveedor"@es ,
+                     "Provider"@en .
+
+
+###  http://purl.org/eiffo#TargetInfo
+:TargetInfo rdf:type owl:Class ;
+            rdfs:label "MetaInfo"@es ,
+                       "TargetInfo"@en .
+
+
+###  http://purl.org/eiffo#User
+:User rdf:type owl:Class ;
+      rdfs:subClassOf schema:Person ,
+                      <http://www.w3.org/2004/02/skos/core#Concept> ;
+      dc:description "A user is the entity searching for applications, datasets, providers or documents. It derives from the Person entity in schema.org"@en ;
+      rdfs:label "User"@en ,
+                 "Usuario"@es .
+
+
+###  http://purl.org/eiffo/ecv#ECV
+<http://purl.org/eiffo/ecv#ECV> rdf:type owl:Class .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Sector
+eo:Sector rdf:type owl:Class .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Segment
+eo:Segment rdf:type owl:Class .
+
+
+###  http://schema.org/DataCatalog
+schema:DataCatalog rdf:type owl:Class .
+
+
+###  http://schema.org/Dataset
+schema:Dataset rdf:type owl:Class .
+
+
+###  http://schema.org/DigitalDocument
+schema:DigitalDocument rdf:type owl:Class .
+
+
+###  http://schema.org/Organization
+schema:Organization rdf:type owl:Class .
+
+
+###  http://schema.org/Person
+schema:Person rdf:type owl:Class .
+
+
+###  http://schema.org/Service
+schema:Service rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/eiffo#PUN.DS.ESP.1
+:PUN.DS.ESP.1 rdf:type owl:NamedIndividual ;
+              <http://www.w3.org/2004/02/skos/core#inScheme> "eiffo"@en ;
+              <http://www.w3.org/2004/02/skos/core#note> "PUN.DS.ESP.11"@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Mapping disaster areas for situation awareness and detecting sensitive risk areas"@en .
+
+
+###  http://purl.org/eiffo#PUN.DS.ESP.2
+:PUN.DS.ESP.2 rdf:type owl:NamedIndividual ;
+              <http://www.w3.org/2004/02/skos/core#inScheme> "eiffo"@en ;
+              <http://www.w3.org/2004/02/skos/core#note> "PUN.DS.ESP.2"@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> """economic and social vulnerability assessment to natural hazards and
+climate change (monitoring, action and adaptation)"""@en .
+
+
+###  http://purl.org/eiffo#PUN.DS.ESP.3
+:PUN.DS.ESP.3 rdf:type owl:NamedIndividual ;
+              <http://www.w3.org/2004/02/skos/core#inScheme> "eiffo"@en ;
+              <http://www.w3.org/2004/02/skos/core#note> "PUN.DS.ESP.3"@en ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "assess loss (€/m2) mostly for assets combined with in-situ data"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
