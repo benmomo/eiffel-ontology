@@ -9,6 +9,7 @@ services:
      - "443:443"    
   links:
      - eiffo-backend-webvowl
+     - eiffo-backend-tagging
             
  
  eiffo-backend-webvowl:  
@@ -38,4 +39,12 @@ services:
      - "8080:8080"
   links:
      - eiffo-backend-fuseki
- 
+
+
+ eiffo-backend-tagging:
+  image: benmomo/eiffo-backend-tagging:0.0.1 
+  container_name: eiffo-backend-tagging  
+  
+  ports:
+     - "3000:3000"
+  
