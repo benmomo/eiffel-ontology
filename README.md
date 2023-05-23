@@ -23,7 +23,7 @@ Usage and Documentation
 ===
 
 
-The **ontology** folder includes all the ontologies as TTL files. They might be updated as the EIFFEL project evolves.
+The **ontology** folder includes all the ontologies as TTL files. For the EO and ECV ontologies, there is a simple ontology file (no individuals) and a knowledge base file (with individuals). There might be updated as the EIFFEL project evolves.
 
 
 Besides the ontologies, there is a **set of tools** including a visual viewer, a REST API and a SPARQL interface. They have been implemented as Docker containers and are publicly available in DockerHub. The **docker** folder includes a docker-compose file that shows a basic usage of the whole set. You might test it in your own computer.
