@@ -1,0 +1,391 @@
+@prefix : <http://purl.org/eiffo/ecv#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix ecv: <file:/E:/dcom/prj/eiffel/WP3/devel/eiffo3/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdg: <http://metadata.un.org/sdg/ontology> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix schema: <http://schema.org/> .
+@prefix zbwext: <file:/E:/dcom/prj/eiffel/WP3/devel/eiffo3/../namespaces/zbw-extensions/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <http://purl.org/eiffo/ecv> .
+
+<http://purl.org/eiffo/ecv> rdf:type owl:Ontology ;
+                             dc:creator "Benjamin Molina"@en ;
+                             dc:date "2022"@en ;
+                             dc:description """The EIFFEL ontology intends to help while searching for EO services and EO datasets or collections. In doing that, it makes use of the ECV taxonomy, which was created by GCOS, but not as a formal file (format)
+Though it could have been integrated directly in the EIFFEL ontology, it was desgined in a modular way, so that it can be extended and reused independently."""@en ;
+                             dc:language "en"@en ;
+                             dc:rights "The ECV taxonomy is available under the Creative Commons Attribution 4.0 Unported license; see http://creativecommons.org/licenses/by/4.0/. In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). Proper Attribution: Simply include the statement \"This work is based on the ECV taxonomy, developed by  Benjamin Molina  from the ECV taxonomy documented by GCOS (https://gcos.wmo.int/en/essential-climate-variables/table), used by the EIFFEL project and available at https://purl.org/eiffo/ecvtaxonomy\""@en ;
+                             dc:title "ECV (GCOS) taxonomy"@en ;
+                             rdfs:label "ECV Taxonomy translated from the GCOS ECV website"@en ;
+                             rdfs:seeAlso "EIFFEL project  (https://www.eiffel4climate.eu/),  and ECV taxonomy (https://gcos.wmo.int/en/essential-climate-variables/table)"@en ;
+                             owl:versionInfo "0.1"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+dc:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/eiffo/ecv#hasECVProducRequirement
+:hasECVProducRequirement rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/eiffo/ecv#scientifiAreaName
+:scientifiAreaName rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/coreinScheme
+skos:inScheme rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/corenotation
+skos:notation rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/coreprefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/coretopConceptOf
+skos:topConceptOf rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/eiffo/ecv#hasDataSource
+:hasDataSource rdf:type owl:ObjectProperty ;
+               rdfs:domain :ECV ;
+               rdfs:range :DataSource .
+
+
+###  http://purl.org/eiffo/ecv#hasDomain
+:hasDomain rdf:type owl:ObjectProperty ;
+           rdfs:domain :ECV ;
+           rdfs:range :Domain .
+
+
+###  http://purl.org/eiffo/ecv#hasECVProduct
+:hasECVProduct rdf:type owl:ObjectProperty ;
+               rdfs:domain :ECV ;
+               rdfs:range :ECVProduct .
+
+
+###  http://purl.org/eiffo/ecv#hasECVProductRequirement
+:hasECVProductRequirement rdf:type owl:ObjectProperty ;
+                          rdfs:domain :ECVProduct ;
+                          rdfs:range :ECVProductRequirement .
+
+
+###  http://purl.org/eiffo/ecv#hasECVSteward
+:hasECVSteward rdf:type owl:ObjectProperty ;
+               rdfs:domain :ECV ;
+               rdfs:range :ECVSteward .
+
+
+###  http://purl.org/eiffo/ecv#hasScientificArea
+:hasScientificArea rdf:type owl:ObjectProperty ;
+                   rdfs:domain :ECV ;
+                   rdfs:range :ScientificArea .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/eiffo/ecv#domainLevel
+:domainLevel rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Domain ;
+             rdfs:range xsd:integer .
+
+
+###  http://purl.org/eiffo/ecv#domainName
+:domainName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Domain ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#dsLink
+:dsLink rdf:type owl:DatatypeProperty ;
+        rdfs:domain :DataSource ;
+        rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#dsName
+:dsName rdf:type owl:DatatypeProperty ;
+        rdfs:domain :DataSource ;
+        rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#dsType
+:dsType rdf:type owl:DatatypeProperty ;
+        rdfs:domain :DataSource ;
+        rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#ecvDescription
+:ecvDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :ECV ;
+                rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#ecvFactsheetLink
+:ecvFactsheetLink rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :ECV ;
+                  rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#ecvIconLink
+:ecvIconLink rdf:type owl:DatatypeProperty ;
+             rdfs:domain :ECV ;
+             rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#ecvName
+:ecvName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :ECV ;
+         rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#frequency
+:frequency rdf:type owl:DatatypeProperty ;
+           rdfs:domain :ECVProductRequirement ;
+           rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#productDefinition
+:productDefinition rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :ECVProduct ;
+                   rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#productName
+:productName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :ECVProduct ;
+             rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#requiredMeasurementUncertainty
+:requiredMeasurementUncertainty rdf:type owl:DatatypeProperty ;
+                                rdfs:domain :ECVProductRequirement ;
+                                rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#resolution
+:resolution rdf:type owl:DatatypeProperty ;
+            rdfs:domain :ECVProductRequirement ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#scientificAreaName
+:scientificAreaName rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :ScientificArea ;
+                    rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#stability
+:stability rdf:type owl:DatatypeProperty ;
+           rdfs:domain :ECVProductRequirement ;
+           rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#standardsReferences
+:standardsReferences rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :ECVProductRequirement ;
+                     rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#stewardAffiliation
+:stewardAffiliation rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :ECVSteward ;
+                    rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/ecv#stewardName
+:stewardName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :ECVSteward ;
+             rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/eiffo/ecv#AnthroposphereDomain
+:AnthroposphereDomain rdf:type owl:Class ;
+                      rdfs:subClassOf :LandDomain ;
+                      rdfs:label "Anthroposphere"@en .
+
+
+###  http://purl.org/eiffo/ecv#AtmosphereDomain
+:AtmosphereDomain rdf:type owl:Class ;
+                  rdfs:subClassOf :Domain ;
+                  rdfs:label "Atmosphere"@en .
+
+
+###  http://purl.org/eiffo/ecv#AtmosphericCompositionDomain
+:AtmosphericCompositionDomain rdf:type owl:Class ;
+                              rdfs:subClassOf :AtmosphereDomain ;
+                              rdfs:label "Atmospheric Composition"@en .
+
+
+###  http://purl.org/eiffo/ecv#BiogeochemicalDomain
+:BiogeochemicalDomain rdf:type owl:Class ;
+                      rdfs:subClassOf :OceanDomain ;
+                      rdfs:label "Biogeochemical"@en .
+
+
+###  http://purl.org/eiffo/ecv#BiologicalEcosystemsDomain
+:BiologicalEcosystemsDomain rdf:type owl:Class ;
+                            rdfs:subClassOf :OceanDomain ;
+                            rdfs:label "Biological/Ecosystems"@en .
+
+
+###  http://purl.org/eiffo/ecv#BiosphereDomain
+:BiosphereDomain rdf:type owl:Class ;
+                 rdfs:subClassOf :LandDomain ;
+                 rdfs:label "Biosphere"@en .
+
+
+###  http://purl.org/eiffo/ecv#CryosphereDomain
+:CryosphereDomain rdf:type owl:Class ;
+                  rdfs:subClassOf :LandDomain ;
+                  rdfs:label "Cryosphere"@en .
+
+
+###  http://purl.org/eiffo/ecv#DataSource
+:DataSource rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/ecv#Domain
+:Domain rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+        dc:description "Represents the different domains as defined by GCOS for ECVs"@en ;
+        rdfs:label "Domain"@en .
+
+
+###  http://purl.org/eiffo/ecv#ECV
+:ECV rdf:type owl:Class ;
+     rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+     dc:description """As for WMO (World Meteorological Organization), an ECV is a physical, chemical or biological variable or a group of linked variables that critically contributes to the characterization of Earth’ s climate.
+ECV datasets provide the empirical evidence needed to understand and predict the evolution of climate, to guide mitigation and adaptation measures, to assess risks and enable attribution of climate events to underlying causes, and to underpin climate services.
+ECVs are observed according to the GCOS Climate Monitoring Principles.
+More information can be found at https://public.wmo.int/en/programmes/global-climate-observing-system/essential-climate-variables"""@en ;
+     rdfs:label "EssentialClimateVariable"@en ;
+     skos:inScheme <http://purl.org/eiffo/ecv/> ;
+     skos:notation "A" ;
+     skos:prefLabel "EssentialClimateVariable"@en ;
+     skos:topConceptOf <http://purl.org/eiffo/ecv/> .
+
+
+###  http://purl.org/eiffo/ecv#ECVProduct
+:ECVProduct rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/ecv#ECVProductRequirement
+:ECVProductRequirement rdf:type owl:Class ;
+                       rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/ecv#ECVSteward
+:ECVSteward rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+            rdfs:label "ECV Steward"@en .
+
+
+###  http://purl.org/eiffo/ecv#HydrosphereDomain
+:HydrosphereDomain rdf:type owl:Class ;
+                   rdfs:subClassOf :LandDomain ;
+                   rdfs:label "Hydrosphere"@en .
+
+
+###  http://purl.org/eiffo/ecv#LandDomain
+:LandDomain rdf:type owl:Class ;
+            rdfs:subClassOf :Domain ;
+            rdfs:label "Land"@en .
+
+
+###  http://purl.org/eiffo/ecv#OceanDomain
+:OceanDomain rdf:type owl:Class ;
+             rdfs:subClassOf :Domain ;
+             rdfs:label "Ocean"@en .
+
+
+###  http://purl.org/eiffo/ecv#PhysicalDomain
+:PhysicalDomain rdf:type owl:Class ;
+                rdfs:subClassOf :OceanDomain ;
+                rdfs:label "Physical"@en .
+
+
+###  http://purl.org/eiffo/ecv#ScientificArea
+:ScientificArea rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+                rdfs:label "Scientific Area"@en .
+
+
+###  http://purl.org/eiffo/ecv#SurfaceDomain
+:SurfaceDomain rdf:type owl:Class ;
+               rdfs:subClassOf :AtmosphereDomain ;
+               rdfs:label "Surface"@en .
+
+
+###  http://purl.org/eiffo/ecv#UpperAirDomain
+:UpperAirDomain rdf:type owl:Class ;
+                rdfs:subClassOf :AtmosphereDomain ;
+                rdfs:label "Upper-Air"@en .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

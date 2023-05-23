@@ -585,7 +585,7 @@ its impacts on the atmosphere, meteorology or hydrological cycles."""@en ;
                          :Area ;
                 :fromDomain :AtmosphereAndClimateChangeDomain ;
                 :areaKeyWords "…quality-controlled information related to air composition, pollution and health, solar energy, greenhouse gases (GHG) emissions and climate forcing’s." ;
-                :domainName "Atmosphere" ;
+                :areaName "Atmosphere" ;
                 :thematicLevel 2 ;
                 rdfs:label "Atmosphere"@en .
 
@@ -640,7 +640,7 @@ its impacts on the atmosphere, meteorology or hydrological cycles."""@en ;
                             :Area ;
                    :fromDomain :AtmosphereAndClimateChangeDomain ;
                    :areaKeyWords "…long-term datasets (also linked to weather forecasts) on key indicators of climate change systematically generated and preserved to better understand climate change and associated adaptation and mitigation measures and risk management (i.e., large-scale ecological response to global climate change such greening of the Arctic). The assessment of climatic variations may persist over decades or more. This is measured through geophysical quantity/quantities associated with climate variations and change as well as the impact of climate change onto Earth (time series analysis, anomaly detection, missing data reconstruction, forecasting). Climate change is triggering factors on geohazards or direct effect for many land and ocean processes." ;
-                   :domainName "Climate Change" ;
+                   :areaName "Climate Change" ;
                    :thematicLevel 2 ;
                    rdfs:label "Climate Change"@en .
 
@@ -2576,7 +2576,7 @@ organic resources. Knowledge and nformation products to forge a viable strategy 
                           :Area ;
                  :fromDomain :AtmosphereAndClimateChangeDomain ;
                  :areaKeyWords "…seasonal preparedness, forecasting of meteorological variables e.g. air temperature, wind, humidity, cloud coverage, precipitation and evapotranspiration (related to numerical weather prediction models, in-situ observational data and machine learning techniques)." ;
-                 :domainName "Metereology" ;
+                 :areaName "Metereology" ;
                  :thematicLevel 2 ;
                  rdfs:label "Metereology"@en .
 

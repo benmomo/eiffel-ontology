@@ -1,0 +1,545 @@
+@prefix : <http://purl.org/eiffo/eotaxonomy#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sdg: <http://metadata.un.org/sdg/ontology> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core> .
+@prefix schema: <http://schema.org/> .
+@base <http:/purl.org/eiffo/eotaxonomy> .
+
+<http:/purl.org/eiffo/eotaxonomy> rdf:type owl:Ontology ;
+                                   dc:creator "Benjamin Molina"@en ;
+                                   dc:date "2022"@en ;
+                                   dc:description "The EIFFEL ontology intends to help while searching for EO services and EO datasets or collections. In doing that, it makes use of the EO taxonomy, which was drafted as a document, but not ported into a formal file. Though it could have been integrated directly in the EIFFEL ontology, it was desgined in a modular way, so that it can be extended and reused independently."@en ;
+                                   dc:language "en"@en ;
+                                   dc:rights "The EO taxonomy is available under the Creative Commons Attribution 4.0 Unported license; see http://creativecommons.org/licenses/by/4.0/. In a nutshell, you are free to copy, distribute and transmit the work; to remix/adapt the work (e.g. to import the ontology and create specializations of its elements), as long as you attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). Proper Attribution: Simply include the statement \"This work is based on the EO taxonomy, developed by  Benjamin Molina  from the EO taxonomy documented by EARSC (https://earsc-portal.eu/display/EOwiki/EO+Taxonomy), used by the EIFFEL project and available at https://purl.org/eiffo/eotaxonomy\""@en ;
+                                   dc:title "EO (EARSC) taxonomy"@en ;
+                                   rdfs:label "EO Taxonomy translated from the EARSC document to be used in the EIFFEL project"@en ;
+                                   rdfs:seeAlso "EIFFEL project  (https://www.eiffel4climate.eu/),  and EO taxonomy (https://earsc-portal.eu/display/EOwiki/EO+Taxonomy)"@en ;
+                                   owl:versionInfo "0.1"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/language
+dc:language rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/rights
+dc:rights rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/corealtLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#broader
+<http://www.w3.org/2004/02/skos/core#broader> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+<http://www.w3.org/2004/02/skos/core#inScheme> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+<http://www.w3.org/2004/02/skos/core#note> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/eiffo/eotaxonomy#coversSector
+:coversSector rdf:type owl:ObjectProperty ;
+              rdfs:domain :UserGroup ;
+              rdfs:range :Sector .
+
+
+###  http://purl.org/eiffo/eotaxonomy#fromArea
+:fromArea rdf:type owl:ObjectProperty ;
+          rdfs:domain :EOService ;
+          rdfs:range :Area ;
+          rdfs:label "fromArea"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#fromDomain
+:fromDomain rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf skos:broader ;
+            owl:inverseOf :hasArea ;
+            rdfs:domain :Area ;
+            rdfs:range :Domain ;
+            rdfs:label "fromDomain"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#fromMarket
+:fromMarket rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf skos:broader ;
+            owl:inverseOf :hasSector ;
+            rdfs:domain :Sector ;
+            rdfs:range :Market ;
+            rdfs:label "fromMarket"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#fromSector
+:fromSector rdf:type owl:ObjectProperty ;
+            rdfs:domain :EOService ;
+            rdfs:range :Sector .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasAlignedCopernicusService
+:hasAlignedCopernicusService rdf:type owl:ObjectProperty ;
+                             rdfs:domain :Domain ;
+                             rdfs:range :CopernicusService .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasArea
+:hasArea rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf skos:narrower ;
+         rdfs:domain :Domain ;
+         rdfs:range :Area ;
+         rdfs:label "hasArea"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasDIKW
+:hasDIKW rdf:type owl:ObjectProperty ;
+         rdfs:domain :UserNeed ;
+         rdfs:range :DIKW .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasDomain
+:hasDomain rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf skos:narrower ;
+           rdfs:domain :ThematicView ;
+           rdfs:range :Domain ;
+           rdfs:label "hasDomain"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasEONeed
+:hasEONeed rdf:type owl:ObjectProperty ;
+           rdfs:domain :UserGroup ;
+           rdfs:range :EONeed .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasMarket
+:hasMarket rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf skos:narrower ;
+           rdfs:domain :MarketView ;
+           rdfs:range :Market ;
+           rdfs:label "hasMarket"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasSector
+:hasSector rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf skos:narrower ;
+           rdfs:domain :Market ;
+           rdfs:range :Sector ;
+           rdfs:label "hasSector"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasService
+:hasService rdf:type owl:ObjectProperty ;
+            rdfs:domain :Area ,
+                        :Sector ;
+            rdfs:range :EOService ;
+            rdfs:label "hasService"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#hasUserGroup
+:hasUserGroup rdf:type owl:ObjectProperty ;
+              rdfs:domain :Sector ;
+              rdfs:range :UserGroup .
+
+
+###  http://purl.org/eiffo/eotaxonomy#usesParameter
+:usesParameter rdf:type owl:ObjectProperty ;
+               rdfs:domain :EOApplication ;
+               rdfs:range :Parameter ;
+               rdfs:label "usesParameter"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#usesProduct
+:usesProduct rdf:type owl:ObjectProperty ;
+             rdfs:domain :EOApplication ;
+             rdfs:range :Product ;
+             rdfs:label "usesProduct"@en .
+
+
+###  http://www.w3.org/2004/02/skos/corebroader
+skos:broader rdf:type owl:ObjectProperty .
+
+
+###  http://www.w3.org/2004/02/skos/corenarrower
+skos:narrower rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/eiffo/eotaxonomy#areaKeyWords
+:areaKeyWords rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Area ;
+              rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#areaName
+:areaName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Area ;
+          rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#cApplicationAreas
+:cApplicationAreas rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :CopernicusService ;
+                   rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#cName
+:cName rdf:type owl:DatatypeProperty ;
+       rdfs:domain :CopernicusService ;
+       rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#cShortName
+:cShortName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :CopernicusService ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#dikwDescription
+:dikwDescription rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :DIKW ;
+                 rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#dikwName
+:dikwName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :DIKW ;
+          rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#dikwQuestion
+:dikwQuestion rdf:type owl:DatatypeProperty ;
+              rdfs:domain :DIKW ;
+              rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#domainName
+:domainName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Domain ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#eoNeedDescription
+:eoNeedDescription rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EONeed ;
+                   rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#eoServDescription
+:eoServDescription rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EOService ;
+                   rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#eoServType
+:eoServType rdf:type owl:DatatypeProperty ;
+            rdfs:domain :EOService ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#marketName
+:marketName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Market ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#relatedAreaAction
+:relatedAreaAction rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :EOService ;
+                   rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#sectorName
+:sectorName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Sector ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#thematicLevel
+:thematicLevel rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Area ,
+                           :Domain ,
+                           :EOService ;
+               rdfs:range xsd:integer .
+
+
+###  http://purl.org/eiffo/eotaxonomy#unAddedValue
+:unAddedValue rdf:type owl:DatatypeProperty ;
+              rdfs:domain :UserNeed ;
+              rdfs:range xsd:integer .
+
+
+###  http://purl.org/eiffo/eotaxonomy#unBloomTax
+:unBloomTax rdf:type owl:DatatypeProperty ;
+            rdfs:domain :UserNeed ;
+            rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#unDefinition
+:unDefinition rdf:type owl:DatatypeProperty ;
+              rdfs:domain :UserNeed ;
+              rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#unName
+:unName rdf:type owl:DatatypeProperty ;
+        rdfs:domain :UserNeed ;
+        rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#unSynomyn
+:unSynomyn rdf:type owl:DatatypeProperty ;
+           rdfs:domain :UserNeed ;
+           rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#usDescription
+:usDescription rdf:type owl:DatatypeProperty ;
+               rdfs:domain :UserGroup ;
+               rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#usName
+:usName rdf:type owl:DatatypeProperty ;
+        rdfs:domain :UserGroup ;
+        rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#viewDescription
+:viewDescription rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :View ;
+                 rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#viewName
+:viewName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :View ;
+          rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#viewVersion
+:viewVersion rdf:type owl:DatatypeProperty ;
+             rdfs:domain :View ;
+             rdfs:range xsd:string .
+
+
+###  http://purl.org/eiffo/eotaxonomy#viewYear
+:viewYear rdf:type owl:DatatypeProperty ;
+          rdfs:domain :View ;
+          rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/eiffo/eotaxonomy#Area
+:Area rdf:type owl:Class ;
+      rdfs:subClassOf :Segment ;
+      dc:description """Classifies concepts in greater detail. e.g. different segments. The upgrade in 2020 proposes 31 areas compared with the 25 in the previous taxonomy.
+The value thematicLevel is 2 for all instances of this class""" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#CopernicusService
+:CopernicusService rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/eotaxonomy#DIKW
+:DIKW rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Domain
+:Domain rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+        dc:description "According to the EO taxonomy, this is a single block of knowledge (big category of objects). It is the largest conceptual category (typically nouns) covering all known areas of EO services from the supplier’s point of view. The EARSC taxonomy contains 6 classes. Sometimes Domain class is also called Thematic class. The value thematicLevel is 1 for all individuals of this class" ;
+        rdfs:label "Domain" ;
+        skos:altLabel "Thematic" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ECV
+:ECV rdf:type owl:Class ;
+     rdfs:subClassOf :EssentialVariable ;
+     dc:description """As for WMO (World Meteorological Organization), an ECV is a physical, chemical or biological variable or a group of linked variables that critically contributes to the characterization of Earth’ s climate.
+ECV datasets provide the empirical evidence needed to understand and predict the evolution of climate, to guide mitigation and adaptation measures, to assess risks and enable attribution of climate events to underlying causes, and to underpin climate services.
+ECVs are observed according to the GCOS Climate Monitoring Principles.
+More information can be found at https://public.wmo.int/en/programmes/global-climate-observing-system/essential-climate-variables"""@en ;
+     rdfs:label "EssentialClimateVariable"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOApplication
+:EOApplication rdf:type owl:Class ;
+               rdfs:subClassOf :EOService ;
+               dc:description "The value thematicLevel is 4 for all individuals of this class" ;
+               rdfs:label "EOApplication"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EONeed
+:EONeed rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+        rdfs:label "EONeed" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EOService
+:EOService rdf:type owl:Class ;
+           rdfs:subClassOf schema:Service ,
+                           <http://www.w3.org/2004/02/skos/core#Concept> ;
+           dc:description "EO services (sometimes considered applications by service providers) propose an action or a sequence of actions (specific events appropriate in a given situation, e.g., “assess the environmental impact of farming”. For example, it unifies major entities such as environment, agriculture or deeper in granularity such as crops. The range today covers more than 80 services. The range as for 2020 covers more than 80 services. The v alue thematiclevel is 3 for all instances of this class"@en ;
+           rdfs:label "EOService"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#EssentialVariable
+:EssentialVariable rdf:type owl:Class ;
+                   rdfs:subClassOf :Parameter .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Market
+:Market rdf:type owl:Class ;
+        rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/eotaxonomy#MarketView
+:MarketView rdf:type owl:Class ;
+            rdfs:subClassOf :View ;
+            dc:description """According to the EO taxonomy, the market (user) view:
+-Structures the market from the customer point of view
+- Is based on customer segmentation
+-Identifies the type of organisation that fits into each one
+-Helps associate types of users with their requirements
+
+ Moreover, the market (user) view is organized:
+- By Market – Services are grouped Into 8 main markets, 
+- By Sectors – Each market is split into a number of more specific sectors corresponding to specific niches within that market to which the services apply’.There are 26 sectors in total.
+- By sector composition - examples are given of the types of organisation that make up the market sector e.g. users in managed living resources refer to human activities exploiting natural organic resources. This helps define the sector and its EO-related needs."""@en ;
+            rdfs:label "MarketView"@en ;
+            <http://www.w3.org/2004/02/skos/core#altLabel> "UserView" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Parameter
+:Parameter rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Product
+:Product rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+         rdfs:label "Product"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Provider
+:Provider rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+          dc:description "A provider is an entity providing either services, collections or datasets related to Earth Observation (EO). It is based on the 'Organization' entity from schema.org"@en ;
+          rdfs:label "Proveedor"@es ,
+                     "Provider"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Sector
+:Sector rdf:type owl:Class ;
+        rdfs:subClassOf :Segment .
+
+
+###  http://purl.org/eiffo/eotaxonomy#Segment
+:Segment rdf:type owl:Class ;
+         rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+         dc:description """An Earth Observation segment is way of classifying the different services by sectors in the EO arenna, according to a specific taxonomy.
+This ontology follows the EO Taxonomy drafted by EARSC, which provides a market (user) view as well as a thematic (provider) view.
+More information about the EO taxonomy can be found at https://earsc-portal.eu/display/EOwiki/EO+Taxonomy"""@en ;
+         rdfs:label "Earth Observation Segment"@en .
+
+
+###  http://purl.org/eiffo/eotaxonomy#ThematicView
+:ThematicView rdf:type owl:Class ;
+              rdfs:subClassOf :View ;
+              dc:description """According to the EO taxonomy, the market (user) view:
+-Structure of the EO domain from a technical approach
+-Based on an expertise view
+-Seek to gather EO services into groups
+-Add meaning & insight to each service
+
+ Moreover, the market (user) view is organized:
+- By Domains – Services are grouped Into 8 main domains, 
+- By Areas – Each domain is split into a number of more specific areas corresponding to specific groups within that domain to which the services apply’.There are 26 sectors in total."""@en ,
+                             """According tot he EO taxonmy, the Thematic(provider)  view:
+-Structure of the EO domain from a technical approach
+-Based on an expertise view -Seek to gather EO services into groups
+-Add meaning & insight to each service
+
+Moreover, it is organized:
+
+- Into 6 main Domains (or classes) - This refers to the various applications of EO technologies and stems from the different scientific schools from which different approaches have developed.
+- By Areas - These Domains are then split into 32 thematic segments (or Areas) below that showing specialisations within those field,
+- By service descriptions and keywords – a non-exhaustive list of keywords are provided for each Area that help to define that Area. These keywords are presented in relation to a fixed set of verbs that describe the action undertaken in the service, e.g. monitor, detect, track, assess."""@en ;
+              rdfs:label "ThematicView"@en ;
+              <http://www.w3.org/2004/02/skos/core#altLabel> "ProviderView" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UserGroup
+:UserGroup rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+           rdfs:label "UserGroup" .
+
+
+###  http://purl.org/eiffo/eotaxonomy#UserNeed
+:UserNeed rdf:type owl:Class ;
+          rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> .
+
+
+###  http://purl.org/eiffo/eotaxonomy#View
+:View rdf:type owl:Class ;
+      rdfs:subClassOf <http://www.w3.org/2004/02/skos/core#Concept> ;
+      dc:description """An Earth Observation view is way of classifying the different services by sectors in the EO arenna, according to a specific taxonomy.
+This ontology follows the EO Taxonomy drafted by EARSC, which provides a market (user) view as well as a thematic (provider) view.
+More information about the EO taxonomy can be found at https://earsc-portal.eu/display/EOwiki/EO+Taxonomy"""@en ;
+      rdfs:label "View"@en .
+
+
+###  http://schema.org/Service
+schema:Service rdf:type owl:Class .
+
+
+###  http://www.w3.org/2004/02/skos/core#Concept
+<http://www.w3.org/2004/02/skos/core#Concept> rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
